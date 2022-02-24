@@ -1,0 +1,64 @@
+<div class="grid p-fluid" >
+    <div class="col-4"></div>
+    <div class="col-8 p-offset-3 card p-shadow-24 p-fluid " style="margin-top: 19px;">
+
+        <div class="field col-12 md:col-4">
+            <span class="p-float-label p-input-icon-right">
+                <i class="pi pi-user"></i>
+                <input type="text" id="nombre" pInputText> 
+                <label for="nombre">Nombre</label>
+             </span>
+        </div>
+
+        <div class="field col-12 md:col-4">
+            <span class="p-float-label p-input-icon-right">
+                <i class="pi pi-user"></i>
+                <input type="text" id="apellido" pInputText> 
+                <label for="apellido">Apellido</label>
+             </span>
+        </div>
+
+        <div class="field col-12 md:col-4">
+            <span class="p-float-label">
+                <p-dropdown inputId="dropdown" [autoDisplayFirst]="false" [options]="tipoDoc" optionLabel="name"></p-dropdown>
+                <label for="dropdown">Tipo de documento</label>
+            </span>
+        </div>
+
+        <div class="field col-12 md:col-4">
+            <span class="p-float-label p-input-icon-right">
+                <i class="pi pi-id-card"></i>
+                <input type="number" id="numdoc" pInputText> 
+                <label for="numdoc">N° de documento</label>
+             </span>
+        </div>
+
+        <div class="field col-12 md:col-4">
+            <span class="p-float-label p-input-icon-right">
+                <i class="pi pi-envelope"></i>
+                <input type="text" id="correo" pInputText> 
+                <label for="correo">Correo institucional</label>
+             </span>
+        </div>
+
+        <div class="field col-12 md:col-4">
+            <span class="p-float-label p-input-icon-right">
+                <i class="pi pi-key"></i>
+                <input type="text" id="contra" pInputText> 
+                <label for="contra">Contraseña</label>
+             </span>
+        </div>
+
+        <div class="field col-12 md:col-4">
+            <span class="p-float-label p-input-icon-right">
+                <i class="pi pi-key"></i>
+                <input type="text" id="contra2" pInputText> 
+                <label for="contra2">Confirmación de contraseña</label>
+             </span>
+        </div>
+
+
+
+    </div>
+</div>
+
