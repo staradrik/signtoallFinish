@@ -16,6 +16,8 @@ export class RegisterComponent implements OnInit {
 
   
 
+  selectedValue: string = 'val1';
+
   miFormulario: FormGroup = this.fb.group({
     nombre:     ['', [ Validators.required ]],
     apellido:     ['', [ Validators.required ]],
@@ -47,7 +49,7 @@ export class RegisterComponent implements OnInit {
 
               
               }
-
+  
   ngOnInit(): void {
   }
 

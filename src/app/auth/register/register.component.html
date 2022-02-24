@@ -1,12 +1,24 @@
 <div class="grid p-fluid" >
     <div class="col-4"></div>
+
     <div class="col-8 p-offset-3 card p-shadow-24 p-fluid " style="margin-top: 19px;">
+
+        <div class="field col-12 md:col-4">
+            <div class="field-radiobutton">
+                <div class="col">
+                       <p-radioButton name="estudiante" value="estudiante" [(ngModel)]="selectedValue" inputId="estudiante"></p-radioButton>
+                    <label for="estudiante">  Estudiante <i class="pi pi-palette"></i> </label>                  
+                </div>                   
+                        <p-radioButton name="profesor" value="profesor" [(ngModel)]="selectedValue" inputId="profesor"></p-radioButton>
+                    <label for="profesor">Profesor <i class="pi pi-book"></i> </label>  
+            </div>
+        </div>
 
         <div class="field col-12 md:col-4">
             <span class="p-float-label p-input-icon-right">
                 <i class="pi pi-user"></i>
                 <input type="text" id="nombre" pInputText> 
-                <label for="nombre">Nombre</label>
+                <label for="nombre">Nombre </label>
              </span>
         </div>
 
@@ -56,6 +68,12 @@
                 <label for="contra2">Confirmación de contraseña</label>
              </span>
         </div>
+
+        <div class="field col-12 md:col-4">
+            <button pButton pRipple type="button" label="Registrar" class="p-button-outlined p-button-rounded
+            p-button-info"></button>
+        </div>
+
 
 
 
