@@ -19,6 +19,7 @@ import { AuthComponent } from './auth/auth.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { ModuloMatematicasComponent } from './modulo-matematicas/modulo-matematicas.component';
+import { ModuloEspannolComponent } from './modulo-espannol/modulo-espannol.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { ModuloMatematicasComponent } from './modulo-matematicas/modulo-matemati
     AuthComponent,
     LoginComponent,
     RegisterComponent,
-    ModuloMatematicasComponent
+    ModuloMatematicasComponent,
+    ModuloEspannolComponent
   ],
   imports: [
     AppRoutingModule,
