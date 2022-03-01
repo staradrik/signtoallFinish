@@ -31,6 +31,8 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { ModuloMatematicasComponent } from './modulo-matematicas/modulo-matematicas.component';
 import { ModuloEspannolComponent } from './modulo-espannol/modulo-espannol.component';
+import { SopaNumerosComponent } from './modulo-matematicas/sopa-numeros/sopa-numeros.component';
+import { MemoramaComponent } from './modulo-espannol/memorama/memorama.component';
 
 
 
@@ -49,7 +51,9 @@ import { ModuloEspannolComponent } from './modulo-espannol/modulo-espannol.compo
     LoginComponent,
     RegisterComponent,
     ModuloMatematicasComponent,
-    ModuloEspannolComponent
+    ModuloEspannolComponent,
+    SopaNumerosComponent,
+    MemoramaComponent
   ],
   imports: [
     AppRoutingModule,

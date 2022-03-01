@@ -45,7 +45,7 @@
                         <p-rating [ngModel]="product.rating" [readonly]="true" [cancel]="false"></p-rating>
                     </div>
                     <div class="product-grid-item-bottom">
-                        <p-button icon="pi pi-shopping-cart" [disabled]="product.inventoryStatus === 'OUTOFSTOCK'"></p-button>
+                        <p-button icon="pi pi-arrow-up-right" [disabled]="product.inventoryStatus === 'OUTOFSTOCK'"></p-button>
                     </div>
                 </div>
             </div>
