@@ -12,14 +12,13 @@ const routes: Routes = [
     children: [
       {path:'login', component:LoginComponent},
       {path:'registro', component:RegisterComponent},
-      {path:'modEspannol',component:ModuloEspannolComponent,
-        children:[ 
-        {path:'memorama', component:MemoramaComponent} ]
+      {path:'modEspannol',
+      component:ModuloEspannolComponent,
+      loadChildren: () => import('./modulo-espannol/modulo-espannol.module').then(m => m.ModuloEspannolModule)
       },
       {path:'modMatematicas',
       component:ModuloMatematicasComponent,
-        children:[
-        {path:'sopNumeros', component:SopaNumerosComponent} ]
+      loadChildren: () => import('./modulo-matematicas/modulo-matematicas.module').then(m => m.ModuloMatematicasModule)
       },
       { path: '**', redirectTo: '/notfound' }
     ]

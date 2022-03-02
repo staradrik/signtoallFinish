@@ -34,16 +34,6 @@ import { ModuloEspannolComponent } from './modulo-espannol/modulo-espannol.compo
 import { SopaNumerosComponent } from './modulo-matematicas/sopa-numeros/sopa-numeros.component';
 import { MemoramaComponent } from './modulo-espannol/memorama/memorama.component';
 
-
-
-
-
-
-
-
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
