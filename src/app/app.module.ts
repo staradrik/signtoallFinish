@@ -1,5 +1,6 @@
 //Modulos
 import { AppRoutingModule } from './app-routing.module';
+import { BreadcrumbModule } from "primeng/breadcrumb";
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {ButtonModule} from 'primeng/button';
@@ -27,12 +28,14 @@ import { ServicioService } from './servicios/servicio.service';
 //Componentes
 import { AppComponent } from './app.component';
 import { AuthComponent } from './auth/auth.component';
+import { BreadcrumbComponent } from './ui/breadcrumb/breadcrumb.component';
 import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { ModuloMatematicasComponent } from './modulo-matematicas/modulo-matematicas.component';
 import { ModuloEspannolComponent } from './modulo-espannol/modulo-espannol.component';
 import { SopaNumerosComponent } from './modulo-matematicas/sopa-numeros/sopa-numeros.component';
 import { MemoramaComponent } from './modulo-espannol/memorama/memorama.component';
+
 
 @NgModule({
   declarations: [
@@ -43,10 +46,12 @@ import { MemoramaComponent } from './modulo-espannol/memorama/memorama.component
     ModuloMatematicasComponent,
     ModuloEspannolComponent,
     SopaNumerosComponent,
-    MemoramaComponent
+    MemoramaComponent,
+    BreadcrumbComponent
   ],
   imports: [
     AppRoutingModule,
+    BreadcrumbModule,
     BrowserModule,
     BrowserAnimationsModule,
     ButtonModule,
