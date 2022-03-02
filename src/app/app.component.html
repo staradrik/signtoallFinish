@@ -1,1 +1,13 @@
-<router-outlet></router-outlet>
+<div class="flex">
+    <p-card header="Sign to All">
+        <app-panel-menu></app-panel-menu>
+    </p-card>
+    <p-divider layout="vertical"></p-divider>
+    <div>
+        <app-breadcrumb [items]="ruta" ></app-breadcrumb>
+        <div>
+            <p-divider></p-divider>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

@@ -19,7 +19,7 @@ export class ModuloEspannolComponent implements OnInit {
 
   sortField: string = "";
 
-  ruta: MenuItem[] = [] //ruta para el breadcrumb
+  
   
   constructor(private productService: ServicioService, private primengConfig: PrimeNGConfig) { }
 
@@ -33,10 +33,7 @@ export class ModuloEspannolComponent implements OnInit {
 
       this.primengConfig.ripple = true;
 
-      this.ruta = [ //ruta para el breadcrumb
-        {label:'Inicio'},
-        {label:'Actividades'}
-    ];
+      
   }
   onSortChange(event: any) {
     let value = event.value;
