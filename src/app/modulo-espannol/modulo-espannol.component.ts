@@ -19,8 +19,6 @@ export class ModuloEspannolComponent implements OnInit {
 
   sortField: string = "";
 
-  
-  
   constructor(private productService: ServicioService, private primengConfig: PrimeNGConfig) { }
 
   ngOnInit(): void {

@@ -1,0 +1,19 @@
+<div class="flex">
+    <p-card header="Advanced Card" subheader="Card Subheader" [style]="{width: '360px'}" styleClass="p-card-shadow">
+        <ng-template pTemplate="Sign to All">
+            <img alt="Card" type="image/png" src="../../../img/Logo.png">
+        </ng-template>
+        <app-panel-menu></app-panel-menu>
+    </p-card>
+    <p-divider layout="vertical"></p-divider>
+    <div>
+        <app-breadcrumb [items]="ruta" ></app-breadcrumb>
+        <div>
+            <p-divider></p-divider>
+            <app-modulo-matematicas *ngIf="curso; else modulo"></app-modulo-matematicas>
+            <ng-template #modulo>
+                <app-modulo-espannol #modulo></app-modulo-espannol>
+            </ng-template>
+        </div>
+    </div>
+</div>

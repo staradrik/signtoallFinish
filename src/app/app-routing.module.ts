@@ -6,12 +6,20 @@ import { MemoramaComponent } from './modulo-espannol/memorama/memorama.component
 import { ModuloEspannolComponent } from './modulo-espannol/modulo-espannol.component';
 import { ModuloMatematicasComponent } from './modulo-matematicas/modulo-matematicas.component';
 import { SopaNumerosComponent } from './modulo-matematicas/sopa-numeros/sopa-numeros.component';
+import { ActividadesComponent } from './ui/actividades/actividades.component';
 
 const routes: Routes = [ 
   {path:'',
     children: [
-      {path:'login', component:LoginComponent},
-      {path:'registro', component:RegisterComponent},
+      {path:'login', 
+      component:LoginComponent
+      },
+      {path:'registro', 
+      component:RegisterComponent
+      },
+      {path:'actividades',
+      component:ActividadesComponent
+      },
       {path:'modEspannol',
       component:ModuloEspannolComponent,
       loadChildren: () => import('./modulo-espannol/modulo-espannol.module').then(m => m.ModuloEspannolModule)

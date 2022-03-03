@@ -9,6 +9,8 @@ import { Product } from '../interfaces/product';
 export class ServicioService {
 
   status: string[] = ['OUTOFSTOCK', 'INSTOCK', 'LOWSTOCK'];
+    
+  private curso:number = 1;
 
   productNames: string[] = [
       "Bamboo Watch", 
@@ -111,5 +113,9 @@ export class ServicioService {
 
   generateRating() {
       return Math.floor(Math.random() * Math.floor(5)+1);
+  }
+
+  obtenerCurso(){
+      return this.curso;
   }
 }

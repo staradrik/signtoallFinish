@@ -39,6 +39,7 @@ import { ModuloEspannolComponent } from './modulo-espannol/modulo-espannol.compo
 import { SopaNumerosComponent } from './modulo-matematicas/sopa-numeros/sopa-numeros.component';
 import { MemoramaComponent } from './modulo-espannol/memorama/memorama.component';
 import { PanelMenuComponent } from './ui/panel-menu/panel-menu.component';
+import { ActividadesComponent } from './ui/actividades/actividades.component';
 
 
 
@@ -53,7 +54,8 @@ import { PanelMenuComponent } from './ui/panel-menu/panel-menu.component';
     SopaNumerosComponent,
     MemoramaComponent,
     BreadcrumbComponent,
-    PanelMenuComponent
+    PanelMenuComponent,
+    ActividadesComponent
   ],
   imports: [
     AccordionModule,
