@@ -30,32 +30,13 @@ import {ToastModule} from 'primeng/toast';
 import { ServicioService } from './servicios/servicio.service';
 //Componentes
 import { AppComponent } from './app.component';
-import { AuthComponent } from './auth/auth.component';
-import { BreadcrumbComponent } from './ui/breadcrumb/breadcrumb.component';
-import { LoginComponent } from './auth/login/login.component';
-import { RegisterComponent } from './auth/register/register.component';
-import { ModuloMatematicasComponent } from './modulo-matematicas/modulo-matematicas.component';
-import { ModuloEspannolComponent } from './modulo-espannol/modulo-espannol.component';
-import { SopaNumerosComponent } from './modulo-matematicas/sopa-numeros/sopa-numeros.component';
-import { MemoramaComponent } from './modulo-espannol/memorama/memorama.component';
-import { PanelMenuComponent } from './ui/panel-menu/panel-menu.component';
-import { ActividadesComponent } from './ui/actividades/actividades.component';
+
 
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    AuthComponent,
-    LoginComponent,
-    RegisterComponent,
-    ModuloMatematicasComponent,
-    ModuloEspannolComponent,
-    SopaNumerosComponent,
-    MemoramaComponent,
-    BreadcrumbComponent,
-    PanelMenuComponent,
-    ActividadesComponent
+    AppComponent
   ],
   imports: [
     AccordionModule,
@@ -84,7 +65,7 @@ import { ActividadesComponent } from './ui/actividades/actividades.component';
     SelectButtonModule,
     ToastModule
   ],
-  providers: [ServicioService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

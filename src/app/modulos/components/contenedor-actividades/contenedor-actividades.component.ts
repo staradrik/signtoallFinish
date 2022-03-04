@@ -1,16 +1,18 @@
-import {Component} from '@angular/core';
-//import { ProductService } from './productservice';
-import { Product } from '../interfaces/product';
+import { Component, OnInit } from '@angular/core';
+import { Product } from '../../../interfaces/product';
 import {SelectItem} from 'primeng/api';
 import { PrimeNGConfig } from 'primeng/api';
-import { ServicioService } from '../servicios/servicio.service';
+import { ServicioService } from '../../../servicios/servicio.service';
+import { Router } from '@angular/router';
+
 
 @Component({
-  selector: 'app-modulo-matematicas',
-  templateUrl: './modulo-matematicas.component.html',
-  styleUrls: [] 
+  selector: 'app-contenedor-actividades',
+  templateUrl: './contenedor-actividades.component.html',
+  styles: [
+  ]
 })
-export class ModuloMatematicasComponent {
+export class ContenedorActividadesComponent implements OnInit {
 
   products: Product[]=[];
 
@@ -20,7 +22,9 @@ export class ModuloMatematicasComponent {
 
   sortField: string = "";
 
-  constructor(private productService: ServicioService, private primengConfig: PrimeNGConfig) { }
+  constructor(private productService: ServicioService, 
+              private primengConfig: PrimeNGConfig,
+              private router: Router) { }
 
   ngOnInit() {
       this.productService.getProducts().then(data => this.products = data);
@@ -45,4 +49,9 @@ export class ModuloMatematicasComponent {
           this.sortField = value;
       }
   }
+
+  IrSopNum(){
+    this.router.navigate(['/actividades/sopNumeros']);
+  }
+
 }

@@ -1,3 +1,5 @@
+<router-outlet></router-outlet>
+
 <div class="flex">
     <p-card header="Sign to all"  [style]="{width: '280px'}" styleClass="p-card-shadow">
         <app-panel-menu></app-panel-menu>
@@ -7,9 +9,9 @@
         <app-breadcrumb [items]="ruta" ></app-breadcrumb>
         <div>
             <p-divider></p-divider>
-            <app-modulo-matematicas *ngIf="curso; else modulo"></app-modulo-matematicas>
+           <app-contenedor-actividades *ngIf="curso; else modulo"></app-contenedor-actividades>
             <ng-template #modulo>
-                <app-modulo-espannol #modulo></app-modulo-espannol>
+               <!--condicional-->
             </ng-template>
         </div>
     </div>

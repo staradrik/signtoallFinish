@@ -1,14 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { MenuItem } from 'primeng/api';
-
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
-  title = 'sign';
-  ngOnInit(): void {
-  }
+export class AppComponent{
+ title = 'sign';
+
+ constructor(private router: Router) { }
+
+ IrActividad(){
+  this.router.navigate(['/actividades/vistaAct']);
+}
+
 }
