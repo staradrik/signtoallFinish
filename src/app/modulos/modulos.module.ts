@@ -23,6 +23,7 @@ import { PanelMenuComponent } from './components/panel-menu/panel-menu.component
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { ContenedorActividadesComponent } from './components/contenedor-actividades/contenedor-actividades.component';
 import { MemoramaComponent } from './components/español/memorama/memorama.component';
+import { ContenedorMatematicasComponent } from './components/contenedor-matematicas/contenedor-matematicas.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { MemoramaComponent } from './components/español/memorama/memorama.compo
     PanelMenuComponent,
     BreadcrumbComponent,
     ContenedorActividadesComponent,
-    MemoramaComponent
+    MemoramaComponent,
+    ContenedorMatematicasComponent
   ],
   imports: [
     BreadcrumbModule,

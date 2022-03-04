@@ -4,6 +4,8 @@ import {SelectItem} from 'primeng/api';
 import { PrimeNGConfig } from 'primeng/api';
 import { ServicioService } from '../../../servicios/servicio.service';
 import { Router } from '@angular/router';
+import { EspannolService } from 'src/app/servicios/espannol.service';
+import { Actividades } from 'src/app/interfaces/Actividades';
 
 
 @Component({
@@ -14,7 +16,8 @@ import { Router } from '@angular/router';
 })
 export class ContenedorActividadesComponent implements OnInit {
 
-  products: Product[]=[];
+
+  activity: Actividades[]=[];
 
   sortOptions: SelectItem[] =[];
 
@@ -24,14 +27,16 @@ export class ContenedorActividadesComponent implements OnInit {
 
   constructor(private productService: ServicioService, 
               private primengConfig: PrimeNGConfig,
-              private router: Router) { }
+              private router: Router,
+              private EspannolServices: EspannolService) { }
 
   ngOnInit() {
-      this.productService.getProducts().then(data => this.products = data);
+      //this.productService.getProducts().then(data => this.products = data);
+      this.EspannolServices.getActivity().then(data => this.activity = data);
 
       this.sortOptions = [
-          {label: 'Reciente', value: '!price'},
-          {label: 'Antigua', value: 'price'}
+          {label: 'Reciente', value: '!rating'},
+          {label: 'Antigua', value: 'rating'}
       ];
 
       this.primengConfig.ripple = true;
@@ -57,6 +62,4 @@ export class ContenedorActividadesComponent implements OnInit {
   IrMemoLet(){
     this.router.navigate(['/actividades/memoLetras']);
   }
-
-
 }

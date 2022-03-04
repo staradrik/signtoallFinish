@@ -9,9 +9,9 @@
         <app-breadcrumb [items]="ruta" ></app-breadcrumb>
         <div>
             <p-divider></p-divider>
-           <app-contenedor-actividades *ngIf="curso; else modulo"></app-contenedor-actividades>
+           <app-contenedor-actividades *ngIf="curso<3; else modulo"></app-contenedor-actividades>
             <ng-template #modulo>
-               <!--condicional-->
+               <app-contenedor-matematicas></app-contenedor-matematicas>
             </ng-template>
         </div>
     </div>

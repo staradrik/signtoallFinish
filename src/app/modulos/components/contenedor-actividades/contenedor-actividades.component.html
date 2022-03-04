@@ -1,7 +1,7 @@
 <div class="grid list-demo">
 	<div class="col-12">
 		<div class="card">
-			<p-dataView #dv [value]="products" [paginator]="true" [rows]="9" filterBy="name"
+			<p-dataView #dv [value]="activity" [paginator]="true" [rows]="9" filterBy="name"
 						[sortField]="sortField" [sortOrder]="sortOrder" layout="grid">
 				<ng-template pTemplate="header">
 					<div class="flex flex-column md:flex-row md:justify-content-between">
@@ -14,13 +14,13 @@
 					</div>
 				</ng-template>
 
-				<ng-template let-product pTemplate="listItem">
+				<ng-template let-activity pTemplate="listItem">
 					<div class="col-12">
 						<div class="product-list-item card">
-							<img [src]="'assets/images/' + product.image" [alt]="product.name"/>
+							<img [src]="'assets/images/ActEspannol/' + activity.image" [alt]="activity.name"/>
 							<div class="product-list-detail">
-								<div class="product-name">{{product.name}}</div>
-								<p-rating [ngModel]="product.rating" [readonly]="true" [cancel]="false"></p-rating>
+								<div class="product-name">{{activity.name}}</div>
+								<p-rating [ngModel]="activity.rating" [readonly]="true" [cancel]="false"></p-rating>
 								
 							</div>
 							<div class="product-list-action">
@@ -28,7 +28,7 @@
                                     <button pButton pRipple type="button" icon="pi pi-window-maximize" class="p-button-rounded p-button-warning"
 									(click)="IrMemoLet()"></button>
                                     <br>
-                                    <p-tag styleClass="mr-2" severity="success">{{product.inventoryStatus}}</p-tag>
+                                    <p-tag styleClass="mr-2" severity="success">{{activity.status}}</p-tag>
                                 </span>
 								
 								<span></span>
@@ -37,17 +37,17 @@
 					</div>
 				</ng-template>
 
-				<ng-template let-product pTemplate="gridItem">
+				<ng-template let-activity pTemplate="gridItem">
 					<div class="col-12 md:col-4">
 						<div class="product-grid-item card">
 							<div class="product-grid-item-top">
-								<p-tag styleClass="mr-2" severity="success" >{{product.inventoryStatus}}</p-tag>
+								<p-tag styleClass="mr-2" severity="success" >{{activity.status}}</p-tag>
 							</div>
 							<div class="product-grid-item-content">
-								<img [src]="'assets/images/' + product.image"  [alt]="product.name"/>
-								<div class="product-name">{{product.name}}</div>
+								<img [src]="'assets/images/ActEspannol/' + activity.image"  [alt]="activity.name"/>
+								<div class="product-name">{{activity.name}}</div>
                              					
-								<p-rating [ngModel]="product.rating" [readonly]="true" [cancel]="false"></p-rating>
+								<p-rating [ngModel]="activity.rating" [readonly]="true" [cancel]="false"></p-rating>
 							</div>
 							<div class="product-grid-item-bottom">
 								
@@ -60,6 +60,4 @@
 			</p-dataView>
 		</div>
 	</div>
-
-	
 </div>

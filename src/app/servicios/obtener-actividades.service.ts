@@ -39,10 +39,7 @@ export class ObtenerActividadesService {
         },
         {
           label: 'Ahorcado'
-        },
-        {
-          label: 'Otros'
-        },
+        }
       ]
     }
   ];

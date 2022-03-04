@@ -1,0 +1,44 @@
+{
+	"data": [
+		{
+			"id": "1000",
+			"name": "Memorama",
+			"image": "memorama.jpg",
+			"category": "ActividadesE",
+			"status": "REALIZADA",
+			"rating": 5
+		},
+		{
+			"id": "1001",
+			"name": "Sopa de letras",
+			"image": "sopaLetras.jpg",
+			"category": "ActividadesE",
+			"status": "REALIZADA",
+			"rating": 5
+		},
+        {
+			"id": "1002",
+			"name": "Vocabulario",
+			"image": "vocabulario.jpg",
+			"category": "ActividadesE",
+			"status": "REALIZADA",
+			"rating": 5
+		},
+        {
+			"id": "1003",
+			"name": "Rompecabezas",
+			"image": "rompecabezas.jpg",
+			"category": "ActividadesE",
+			"status": "REALIZADA",
+			"rating": 5
+		},
+        {
+			"id": "1004",
+			"name": "Ahorcado",
+			"image": "ahorcado.jpg",
+			"category": "ActividadesE",
+			"status": "REALIZADA",
+			"rating": 5
+		}
+	]
+}
