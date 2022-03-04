@@ -18,31 +18,7 @@ export class ServicioService {
       "Blue Band", 
       "Blue T-Shirt", 
       "Bracelet", 
-      "Brown Purse", 
-      "Chakra Bracelet",
-      "Galaxy Earrings",
-      "Game Controller",
-      "Gaming Set",
-      "Gold Phone Case",
-      "Green Earbuds",
-      "Green T-Shirt",
-      "Grey T-Shirt",
-      "Headphones",
-      "Light Green T-Shirt",
-      "Lime Band",
-      "Mini Speakers",
-      "Painted Phone Case",
-      "Pink Band",
-      "Pink Purse",
-      "Purple Band",
-      "Purple Gemstone Necklace",
-      "Purple T-Shirt",
-      "Shoes",
-      "Sneakers",
-      "Teal T-Shirt",
-      "Yellow Earbuds",
-      "Yoga Mat",
-      "Yoga Set",
+      "Brown Purse"
   ];
 
   constructor(private http: HttpClient) { }
@@ -79,8 +55,6 @@ export class ServicioService {
           inventoryStatus: this.generateStatus(),
           rating: this.generateRating()
       };
-
-     // product.image = product.name.toLocaleLowerCase().split(/[ ,]+/).join('-')+".jpg";;
       return product;
   }
 

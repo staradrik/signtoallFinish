@@ -22,6 +22,7 @@ import { VistaActividadesComponent } from './components/vista-actividades/vista-
 import { PanelMenuComponent } from './components/panel-menu/panel-menu.component';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { ContenedorActividadesComponent } from './components/contenedor-actividades/contenedor-actividades.component';
+import { MemoramaComponent } from './components/español/memorama/memorama.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ContenedorActividadesComponent } from './components/contenedor-activida
     SopaNumerosComponent,
     PanelMenuComponent,
     BreadcrumbComponent,
-    ContenedorActividadesComponent
+    ContenedorActividadesComponent,
+    MemoramaComponent
   ],
   imports: [
     BreadcrumbModule,

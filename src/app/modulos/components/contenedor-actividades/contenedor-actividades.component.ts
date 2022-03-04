@@ -54,4 +54,9 @@ export class ContenedorActividadesComponent implements OnInit {
     this.router.navigate(['/actividades/sopNumeros']);
   }
 
+  IrMemoLet(){
+    this.router.navigate(['/actividades/memoLetras']);
+  }
+
+
 }
