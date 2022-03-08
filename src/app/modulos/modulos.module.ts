@@ -24,6 +24,7 @@ import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.componen
 import { ContenedorActividadesComponent } from './components/contenedor-actividades/contenedor-actividades.component';
 import { MemoramaComponent } from './components/español/memorama/memorama.component';
 import { ContenedorMatematicasComponent } from './components/contenedor-matematicas/contenedor-matematicas.component';
+import { AhorcadoComponent } from './components/español/ahorcado/ahorcado.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ContenedorMatematicasComponent } from './components/contenedor-matemati
     BreadcrumbComponent,
     ContenedorActividadesComponent,
     MemoramaComponent,
-    ContenedorMatematicasComponent
+    ContenedorMatematicasComponent,
+    AhorcadoComponent
   ],
   imports: [
     BreadcrumbModule,

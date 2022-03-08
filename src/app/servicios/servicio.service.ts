@@ -10,7 +10,7 @@ export class ServicioService {
 
   status: string[] = ['OUTOFSTOCK', 'INSTOCK', 'LOWSTOCK'];
     
-  private curso:number = 4;
+  private curso:number = 2;
 
   productNames: string[] = [
       "Bamboo Watch", 

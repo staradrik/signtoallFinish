@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AhorcadoComponent } from './components/español/ahorcado/ahorcado.component';
 import { MemoramaComponent } from './components/español/memorama/memorama.component';
 
 import { SopaNumerosComponent } from './components/matematicas/sopa-numeros/sopa-numeros.component';
@@ -12,6 +13,7 @@ const routes: Routes = [
       {path: 'vistaAct',component: VistaActividadesComponent},    
       {path: 'sopNumeros',component: SopaNumerosComponent},
       {path: 'memoLetras', component: MemoramaComponent},        
+      {path: 'ahorcado', component: AhorcadoComponent},
       {path: '**',redirectTo: '/notfound'}     
     ]
   }
