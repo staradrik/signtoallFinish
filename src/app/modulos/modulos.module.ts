@@ -14,6 +14,9 @@ import {RatingModule} from 'primeng/rating';
 import { ReactiveFormsModule } from '@angular/forms';
 import {RippleModule} from 'primeng/ripple';
 import { TagModule } from 'primeng/tag';
+import {InputNumberModule} from 'primeng/inputnumber';
+import {PasswordModule} from 'primeng/password';
+import {RadioButtonModule} from 'primeng/radiobutton';
 
 import { ModulosRoutingModule } from './modulos-routing.module';
 
@@ -25,6 +28,8 @@ import { ContenedorActividadesComponent } from './components/contenedor-activida
 import { MemoramaComponent } from './components/español/memorama/memorama.component';
 import { ContenedorMatematicasComponent } from './components/contenedor-matematicas/contenedor-matematicas.component';
 import { AhorcadoComponent } from './components/español/ahorcado/ahorcado.component';
+import { RegistroComponent } from './components/registro/registro.component';
+import { InicioSesionComponent } from './components/inicio-sesion/inicio-sesion.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +40,9 @@ import { AhorcadoComponent } from './components/español/ahorcado/ahorcado.compo
     ContenedorActividadesComponent,
     MemoramaComponent,
     ContenedorMatematicasComponent,
-    AhorcadoComponent
+    AhorcadoComponent,
+    RegistroComponent,
+    InicioSesionComponent
   ],
   imports: [
     BreadcrumbModule,
@@ -52,7 +59,10 @@ import { AhorcadoComponent } from './components/español/ahorcado/ahorcado.compo
     RatingModule,
     ReactiveFormsModule,
     RippleModule,
-    TagModule 
+    TagModule,
+    InputNumberModule,
+    PasswordModule,
+    RadioButtonModule 
   ],
   exports:[
     VistaActividadesComponent

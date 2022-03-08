@@ -2,8 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AhorcadoComponent } from './components/español/ahorcado/ahorcado.component';
 import { MemoramaComponent } from './components/español/memorama/memorama.component';
+import { InicioSesionComponent } from './components/inicio-sesion/inicio-sesion.component';
 
 import { SopaNumerosComponent } from './components/matematicas/sopa-numeros/sopa-numeros.component';
+import { RegistroComponent } from './components/registro/registro.component';
 import { VistaActividadesComponent } from './components/vista-actividades/vista-actividades.component';
 
 const routes: Routes = [
@@ -14,6 +16,8 @@ const routes: Routes = [
       {path: 'sopNumeros',component: SopaNumerosComponent},
       {path: 'memoLetras', component: MemoramaComponent},        
       {path: 'ahorcado', component: AhorcadoComponent},
+      {path: 'registro', component: RegistroComponent},
+      {path: 'iniciarSesion', component: InicioSesionComponent},
       {path: '**',redirectTo: '/notfound'}     
     ]
   }
