@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PrimeNGConfig, SelectItem } from 'primeng/api';
+import { Actividades } from 'src/app/interfaces/Actividades';
 import { Product } from 'src/app/interfaces/product';
+import { MatematicasService } from 'src/app/servicios/matematicas.service';
 import { ServicioService } from 'src/app/servicios/servicio.service';
 
 @Component({
@@ -13,7 +15,7 @@ import { ServicioService } from 'src/app/servicios/servicio.service';
 export class ContenedorMatematicasComponent implements OnInit {
 
 
-  products: Product[]=[];
+  activity: Actividades[]=[];
 
   sortOptions: SelectItem[] =[];
 
@@ -23,20 +25,19 @@ export class ContenedorMatematicasComponent implements OnInit {
 
   constructor(private productService: ServicioService, 
               private primengConfig: PrimeNGConfig,
-              private router: Router) { }
+              private router: Router,
+              private matematicasServices: MatematicasService) { }
 
   ngOnInit() {
-      this.productService.getProducts().then(data => this.products = data);
-
+      this.matematicasServices.getActivity().then(data => this.activity = data);
       this.sortOptions = [
-          {label: 'Reciente', value: '!price'},
-          {label: 'Antigua', value: 'price'}
-      ];
+        {label: 'Reciente', value: '!rating'},
+        {label: 'Antigua', value: 'rating'}
+    ];
 
-      this.primengConfig.ripple = true;
-  }
-  
-  onSortChange(event: any) {
+    this.primengConfig.ripple = true;
+    }
+    onSortChange(event: any) {
       let value = event.value;
 
       if (value.indexOf('!') === 0) {
@@ -56,4 +57,4 @@ export class ContenedorMatematicasComponent implements OnInit {
   IrMemoLet(){
     this.router.navigate(['/actividades/memoLetras']);
   }
-}
+ }

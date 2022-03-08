@@ -4,47 +4,48 @@
 			"id": "1000",
 			"name": "Sopa de numeros",
 			"image": "numerosSopa.jpg",
-			"category": "ActividadesE",
+			"category": "ActividadesM",
 			"Status": "REALIZADA",
-			"rating": 5
+			"rating": 5,
+			"url": "/actividades/sopNumeros"
 		},
 		{
 			"id": "1001",
 			"name": "Relacion de numeros",
-			"image": "numerosSopa.jpg",
-			"category": "ActividadesE",
+			"image": "relacionNum.jpg",
+			"category": "ActividadesM",
 			"Status": "REALIZADA",
 			"rating": 5
 		},
         {
 			"id": "1002",
 			"name": "Memorama",
-			"image": "numerosSopa.jpg",
-			"category": "ActividadesE",
+			"image": "memorama.jpg",
+			"category": "ActividadesM",
 			"Status": "REALIZADA",
 			"rating": 5
 		},
         {
 			"id": "1003",
 			"name": "Rompecabezas",
-			"image": "numerosSopa.jpg",
-			"category": "ActividadesE",
+			"image": "rompecabezas.jpg",
+			"category": "ActividadesM",
 			"Status": "REALIZADA",
 			"rating": 5
 		},
         {
 			"id": "1004",
 			"name": "Sumas y restas",
-			"image": "numerosSopa.jpg",
-			"category": "ActividadesE",
+			"image": "sumasResta.jpg",
+			"category": "ActividadesM",
 			"Status": "REALIZADA",
 			"rating": 5
 		},
         {
 			"id": "1005",
 			"name": "Multiplicacion y división",
-			"image": "numerosSopa.jpg",
-			"category": "ActividadesE",
+			"image": "multiDiv.jpg",
+			"category": "ActividadesM",
 			"Status": "REALIZADA",
 			"rating": 5
 		}

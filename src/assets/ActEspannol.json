@@ -6,7 +6,8 @@
 			"image": "memorama.jpg",
 			"category": "ActividadesE",
 			"status": "REALIZADA",
-			"rating": 5
+			"rating": 5,
+			"url": "/actividades/memoLetras"
 		},
 		{
 			"id": "1001",
@@ -14,7 +15,8 @@
 			"image": "sopaLetras.jpg",
 			"category": "ActividadesE",
 			"status": "REALIZADA",
-			"rating": 5
+			"rating": 5,
+			"url": "/actividades/sopLetras"
 		},
         {
 			"id": "1002",
@@ -22,7 +24,8 @@
 			"image": "vocabulario.jpg",
 			"category": "ActividadesE",
 			"status": "REALIZADA",
-			"rating": 5
+			"rating": 5,
+			"url": "/actividades/vocavulario"
 		},
         {
 			"id": "1003",
