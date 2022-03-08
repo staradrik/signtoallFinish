@@ -26,7 +26,7 @@
 							<div class="product-list-action">
 								<span class="product-price">           
                                     <button pButton pRipple type="button" icon="pi pi-window-maximize" class="p-button-rounded p-button-warning"
-									(click)="IrMemoLet()"></button>
+									routerLink="{{activity.url}}"></button>
                                     <br>
                                     <p-tag styleClass="mr-2" severity="success">{{activity.Status}}</p-tag>
                                 </span>
@@ -52,7 +52,7 @@
 							<div class="product-grid-item-bottom">
 								
 								<button pButton pRipple type="button" icon="pi pi-window-maximize" class="p-button-rounded p-button-help"
-                                (click)="IrSopNum()"></button>
+                                routerLink="{{activity.url}}"></button>
 							</div>
 						</div>
 					</div>
