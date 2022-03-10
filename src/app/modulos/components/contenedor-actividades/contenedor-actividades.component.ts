@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../../../interfaces/product';
 import {SelectItem} from 'primeng/api';
 import { PrimeNGConfig } from 'primeng/api';
 import { ServicioService } from '../../../servicios/servicio.service';
@@ -25,8 +24,7 @@ export class ContenedorActividadesComponent implements OnInit {
 
   sortField: string = "";
 
-  constructor(private productService: ServicioService, 
-              private primengConfig: PrimeNGConfig,
+  constructor(private primengConfig: PrimeNGConfig,
               private router: Router,
               private EspannolServices: EspannolService) { }
 
