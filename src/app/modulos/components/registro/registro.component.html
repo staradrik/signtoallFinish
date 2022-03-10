@@ -6,8 +6,13 @@
     />
   
     <div class="form">
+        
         <p-card>
-          <p-button label="Iniciar Sesión"></p-button>
+            <div class="col-4">
+               <button pButton type="button" label="Iniciar Sesión" (click)="iraLogin()"
+        class="p-button-info"></button>  
+            </div>
+        
           <img
           [src]="'assets/images/authImagenes/Logo.png'"
           alt="MonoCohete Mono"
@@ -16,63 +21,31 @@
         <p>Bienvenid@, por favor registra tus datos personales</p>
         <p>Selecciona tu rol:</p>
         
-  
-        <form action="registro">
-          <p-radioButton name="groupname" value="val1" label="Profesor"></p-radioButton>
-          <p-radioButton name="groupname" value="val1" label="Estudiante"></p-radioButton>
-          
-              <div class="field col-12 md:col-4">
-                  <span class="p-float-label p-input-icon-right">
-                      <i class="pi pi-credit-card"></i>
-                      <input type="text" id="id" pInputText class="p-inputtext-sm"> 
-                      <!-- <p-inputNumber ></p-inputNumber> -->
-                      <label for="inputtext">Cédula</label>
-                  </span>
-              </div>
-              <div class="field col-12 md:col-4">
-                  <span class="p-float-label p-input-icon-right">
-                      <i class="pi pi-user"></i>
-                      <input type="text" id="nombres" pInputText class="p-inputtext-sm"> 
-                      <label for="inputtext">Nombres</label>
-                  </span>
-              </div>
-              <div class="field col-12 md:col-4">
-                  <span class="p-float-label p-input-icon-right">
-                      <i class="pi pi-user"></i>
-                      <input type="text" id="apellidos" pInputText class="p-inputtext-sm"> 
-                      <label for="inputtext">Apellidos</label>
-                  </span>
-              </div>
-              <div class="field col-12 md:col-4">
-                  <span class="p-float-label p-input-icon-right">
-                      <i class="pi pi-envelope"></i>
-                      <input type="email" id="correo" pInputText class="p-inputtext-sm"> 
-                      <label for="inputtext">Correo</label>
-                  </span>
-              </div>
-              <div class="field col-12 md:col-4">
-                  <span class="p-float-label p-input-icon-right">
-                      <i class="pi pi-key"></i>
-                      <!-- <input type="password" id="password" pInputText class="p-inputtext-sm">  -->
-                      <!-- <input type="password" pPassword /> -->
-                      <p-password></p-password>
-                      <label for="inputtext">Contraseña</label>
-                  </span>
-  
-              </div>
-              <div class="field col-12 md:col-4">
-                  <span class="p-float-label p-input-icon-right">
-                      <i class="pi pi-key"></i>
-                      <!-- <input type="password" id="c_password" pInputText class="p-inputtext-sm">  -->
-                      <p-password></p-password>
-                      <label for="inputtext">Confirmar Contraseña</label>
-                  </span>
-              </div>
-              <p-button label="Registrarse"></p-button>
-              
-          
-            
-        </form>
+        <div class="field col-12 form-element">
+
+            <p-selectButton 
+                [options]="types"
+                (onOptionClick)="changeType($event)">   
+            </p-selectButton>
+        
+        </div>
+
+        <!--Formulario de estudiante-->
+        <div class=" field col-12  form-element" >
+            <span *ngIf="typeName == 'Estudiante'" >
+                <app-ingreso-google></app-ingreso-google>
+            </span>
+        </div>
+
+        <!--Formulario de profesor-->
+        <div class=" field col-12  form-element" >
+            <span *ngIf="typeName == 'Profesor'" >
+                <app-form-profesor></app-form-profesor>
+            </span>
+        </div>
+
+
+        
       </p-card>
     </div>
   </main>

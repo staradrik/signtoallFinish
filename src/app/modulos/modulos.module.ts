@@ -17,6 +17,7 @@ import { TagModule } from 'primeng/tag';
 import {InputNumberModule} from 'primeng/inputnumber';
 import {PasswordModule} from 'primeng/password';
 import {RadioButtonModule} from 'primeng/radiobutton';
+import {SelectButtonModule} from 'primeng/selectbutton';
 
 import { ModulosRoutingModule } from './modulos-routing.module';
 
@@ -30,6 +31,10 @@ import { ContenedorMatematicasComponent } from './components/contenedor-matemati
 import { AhorcadoComponent } from './components/español/ahorcado/ahorcado.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { InicioSesionComponent } from './components/inicio-sesion/inicio-sesion.component';
+import { FormProfesorComponent } from './components/registro/form-profesor/form-profesor.component';
+import { IngresoGoogleComponent } from './components/registro/ingreso-google/ingreso-google.component';
+import { IngresoEstudianteComponent } from './components/inicio-sesion/ingreso-estudiante/ingreso-estudiante.component';
+import { IngresoProfesorComponent } from './components/inicio-sesion/ingreso-profesor/ingreso-profesor.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +47,11 @@ import { InicioSesionComponent } from './components/inicio-sesion/inicio-sesion.
     ContenedorMatematicasComponent,
     AhorcadoComponent,
     RegistroComponent,
-    InicioSesionComponent
+    InicioSesionComponent,
+    FormProfesorComponent,
+    IngresoGoogleComponent,
+    IngresoEstudianteComponent,
+    IngresoProfesorComponent
   ],
   imports: [
     BreadcrumbModule,
@@ -62,7 +71,8 @@ import { InicioSesionComponent } from './components/inicio-sesion/inicio-sesion.
     TagModule,
     InputNumberModule,
     PasswordModule,
-    RadioButtonModule 
+    RadioButtonModule,
+    SelectButtonModule 
   ],
   exports:[
     VistaActividadesComponent

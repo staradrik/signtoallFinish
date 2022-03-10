@@ -7,7 +7,10 @@
   
     <div class="form">
       <p-card>
-          <p-button label="Registrarse" ></p-button>
+        <div class="col-4">
+          <button pButton type="button" label="Registrarse" class="p-button-info"></button>  
+       </div>
+          
           <img
           [src]="'assets/images/authImagenes/Logo.png'"
           alt="MonoCohete Mono"
@@ -16,35 +19,30 @@
         <p>Bienvenid@, por favor ingresa tus datos para poder ingresar</p>
         <p>Selecciona tu rol:</p>
         
-  
-        <form action="registro">
-          <p-radioButton name="groupname" value="val1" label="Profesor"></p-radioButton>
-          <p-radioButton name="groupname" value="val1" label="Estudiante"></p-radioButton>
-          
-              <div class="field col-12 md:col-4">
-                  <span class="p-float-label p-input-icon-right">
-                      <i class="pi pi-credit-card"></i>
-                      <input type="text" id="id" pInputText class="p-inputtext-sm"> 
-                      <!-- <p-inputNumber ></p-inputNumber> -->
-                      <label for="inputtext">Cédula</label>
-                  </span>
-              </div>
-              
-              <div class="field col-12 md:col-4">
-                  <span class="p-float-label p-input-icon-right">
-                      <i class="pi pi-key"></i>
-                      <input type="password" id="password" pInputText class="p-inputtext-sm"> 
-                      <!-- <input type="password" pPassword /> -->
-                      <!-- <p-password></p-password> -->
-                      <label for="inputtext">Contraseña</label>
-                  </span>
-  
-              </div>
-              <p-button label="Iniciar Sesión"></p-button>
-              
-          
-            
-        </form>
+        <div class="field col-12 form-element">
+
+          <p-selectButton 
+              [options]="types"
+              (onOptionClick)="changeType($event)">   
+          </p-selectButton>
+      
+      </div>
+
+        
+        <!--Formulario de estudiante-->
+        <div class=" field col-12  form-element" >
+          <span *ngIf="typeName == 'Estudiante'" >
+              <app-ingreso-estudiante></app-ingreso-estudiante>
+          </span>
+      </div>
+
+      <!--Formulario de profesor-->
+      <div class=" field col-12  form-element" >
+          <span *ngIf="typeName == 'Profesor'" >
+              <app-ingreso-profesor></app-ingreso-profesor>
+          </span>
+      </div>
+
       </p-card>
     </div>
   </main>

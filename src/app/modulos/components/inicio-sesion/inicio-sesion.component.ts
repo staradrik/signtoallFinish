@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { SelectItem } from "primeng/api";
 
 @Component({
   selector: 'app-inicio-sesion',
@@ -7,9 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioSesionComponent implements OnInit {
 
-  constructor() { }
+    //opciones del selecItem [estudiante e profesor]
+    types: SelectItem[] = [];
+    typeName: string = "";
+
+  constructor() { 
+    //Opciones del select item
+    this.types = [
+      {label: "Estudiante", value: "Estudiante", icon: "pi pi-palette" },
+      {label: "Profesor", value: "Profesor", icon: "pi pi-book" },
+    ];
+  }
 
   ngOnInit(): void {
+  }
+
+   //Eleccion de alguna opcion para formulario
+   changeType(event: any){
+    this.typeName = event.option.value
   }
 
 }
