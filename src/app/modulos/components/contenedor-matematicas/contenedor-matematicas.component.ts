@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PrimeNGConfig, SelectItem } from 'primeng/api';
 import { Actividades } from 'src/app/interfaces/Actividades';
-import { Product } from 'src/app/interfaces/product';
 import { MatematicasService } from 'src/app/servicios/matematicas.service';
 import { ServicioService } from 'src/app/servicios/servicio.service';
 
@@ -23,8 +22,7 @@ export class ContenedorMatematicasComponent implements OnInit {
 
   sortField: string = "";
 
-  constructor(private productService: ServicioService, 
-              private primengConfig: PrimeNGConfig,
+  constructor(private primengConfig: PrimeNGConfig,
               private router: Router,
               private matematicasServices: MatematicasService) { }
 
