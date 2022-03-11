@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RutaBreadcrumService } from 'src/app/servicios/ruta-breadcrum.service';
 
 @Component({
   selector: 'app-ahorcado',
@@ -18,7 +19,15 @@ export class AhorcadoComponent implements OnInit {
            'L', 'M', 'N', 'Ñ', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 
            'V', 'W', 'X', 'Y', 'Z'];
 
-  constructor() { }
+  constructor(private breadcrumbService: RutaBreadcrumService) {
+    this.breadcrumbService.setItems([
+      { label: "Inicio" },
+      { label: 'Actividades',
+      routerLink: ['']
+      },
+      { label: 'ahorcado' }
+    ]);
+   }
 
   ngOnInit(): void {
     this.palabraOculta = '_ '.repeat(this.palabra.length);

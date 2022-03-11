@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RutaBreadcrumService {
-  title = 'sign';
-  ruta: MenuItem[] = [
-    {label:'Inicio'},
-    {label:'Actividades'}
-  ] //ruta para el breadcrumb
+  private itemsSource = new Subject<MenuItem[]>();
 
-  obtener():any{
-    return this.ruta;
-  }
+    itemsHandler = this.itemsSource.asObservable();
+
+    setItems(items: MenuItem[]) {
+        this.itemsSource.next(items);
+    }
+
 }

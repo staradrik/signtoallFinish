@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RutaBreadcrumService } from 'src/app/servicios/ruta-breadcrum.service';
 
 @Component({
   selector: 'app-memorama',
@@ -8,7 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MemoramaComponent implements OnInit {
 
-  constructor() { }
+  constructor(private breadcrumbService: RutaBreadcrumService) {
+    this.breadcrumbService.setItems([
+      { label: "Inicio" },
+      { label: 'Actividades',
+      routerLink: ['']
+      },
+      { label: 'memorama' }
+    ]);
+   }
 
   ngOnInit(): void {
   }

@@ -1,19 +1,10 @@
 <router-outlet></router-outlet>
 
-<div class="flex">
-    <p-card header="Sign to all"  [style]="{width: '280px'}" styleClass="p-card-shadow">
-        <app-panel-menu></app-panel-menu>
-    </p-card>
-    <p-divider layout="vertical"></p-divider>
-    <div>
-        <app-breadcrumb [items]="ruta" ></app-breadcrumb>
-        <div>
-            <p-divider></p-divider>
-           <app-contenedor-actividades *ngIf="curso<3; else modulo"></app-contenedor-actividades>
-           <!-- <app-contenedor-matematicas *ngIf="curso<3; else modulo"></app-contenedor-matematicas> -->
-            <ng-template #modulo>
-               <app-contenedor-matematicas></app-contenedor-matematicas>
-            </ng-template>
-        </div>
-    </div>
+<div>
+    <p-divider></p-divider>
+   <app-contenedor-actividades *ngIf="curso<3; else modulo"></app-contenedor-actividades>
+   <!-- <app-contenedor-matematicas *ngIf="curso<3; else modulo"></app-contenedor-matematicas> -->
+    <ng-template #modulo>
+       <app-contenedor-matematicas></app-contenedor-matematicas>
+    </ng-template>
 </div>

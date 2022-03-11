@@ -10,7 +10,7 @@ import { VistaActividadesComponent } from './components/vista-actividades/vista-
 
 const routes: Routes = [
   {
-    path: '',
+    path: '', 
     children: [
       {path: 'vistaAct',component: VistaActividadesComponent},    
       {path: 'sopNumeros',component: SopaNumerosComponent},

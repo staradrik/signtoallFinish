@@ -83,7 +83,7 @@ export class ObtenerActividadesService {
     }
   ];
   obtener(curso:number):any{
-    if (curso==1){
+    if (curso<3){
       return this.actEspannol
     }else{
       return this.actMatematicas

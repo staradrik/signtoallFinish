@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RutaBreadcrumService } from '../../../servicios/ruta-breadcrum.service';
 import { ServicioService } from '../../../servicios/servicio.service';
-import { MenuItem } from 'primeng/api';
 
 
 @Component({
@@ -12,23 +11,15 @@ import { MenuItem } from 'primeng/api';
 })
 export class VistaActividadesComponent implements OnInit {
 
-  constructor(private rutaS:RutaBreadcrumService, 
-              private Estudiante: ServicioService) { }
-              
-  ruta:MenuItem[] = [];
-
+  constructor(private Estudiante: ServicioService,
+    private breadcrumbService: RutaBreadcrumService) {
+     this.breadcrumbService.setItems([
+        { label: "Inicio" },
+        { label: 'Actividades'}
+      ]);
+    }
   curso:number = 0;
-
   ngOnInit(): void {
-    
-    this.ruta = this.rutaS.obtener();
-    /*if (this.Estudiante.obtenerCurso()==1){
-      this.curso = true;
-    }else{
-      this.curso = false
-    }*/
     this.curso = this.Estudiante.obtenerCurso();
-    
   }
-
 }

@@ -22,8 +22,6 @@ import { ModulosRoutingModule } from './modulos-routing.module';
 
 import { SopaNumerosComponent } from './components/matematicas/sopa-numeros/sopa-numeros.component';
 import { VistaActividadesComponent } from './components/vista-actividades/vista-actividades.component';
-import { PanelMenuComponent } from './components/panel-menu/panel-menu.component';
-import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { ContenedorActividadesComponent } from './components/contenedor-actividades/contenedor-actividades.component';
 import { MemoramaComponent } from './components/español/memorama/memorama.component';
 import { ContenedorMatematicasComponent } from './components/contenedor-matematicas/contenedor-matematicas.component';
@@ -35,8 +33,6 @@ import { InicioSesionComponent } from './components/inicio-sesion/inicio-sesion.
   declarations: [
     VistaActividadesComponent,
     SopaNumerosComponent,
-    PanelMenuComponent,
-    BreadcrumbComponent,
     ContenedorActividadesComponent,
     MemoramaComponent,
     ContenedorMatematicasComponent,

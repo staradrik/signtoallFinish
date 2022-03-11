@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RutaBreadcrumService } from 'src/app/servicios/ruta-breadcrum.service';
 
 @Component({
   selector: 'app-sopa-numeros',
@@ -8,7 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SopaNumerosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private breadcrumbService: RutaBreadcrumService) {
+    this.breadcrumbService.setItems([
+      { label: "Inicio" },
+      { label: 'Actividades',
+      routerLink: ['']
+      },
+      { label: 'ahorcado' }
+    ]);
+   }
 
   ngOnInit(): void {
   }
