@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 })
 export class ServicioService {
 
-  private curso:number = 5;
+  private curso:number = 2;
 
   constructor() { }
 
