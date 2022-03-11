@@ -43,8 +43,6 @@ import { MemoramaMatComponent } from './components/matematicas/memorama-mat/memo
   declarations: [
     VistaActividadesComponent,
     SopaNumerosComponent,
-    PanelMenuComponent,
-    BreadcrumbComponent,
     ContenedorActividadesComponent,
     MemoramaComponent,
     ContenedorMatematicasComponent,
