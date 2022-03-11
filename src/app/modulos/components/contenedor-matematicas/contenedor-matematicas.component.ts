@@ -8,8 +8,7 @@ import { ServicioService } from 'src/app/servicios/servicio.service';
 @Component({
   selector: 'app-contenedor-matematicas',
   templateUrl: './contenedor-matematicas.component.html',
-  styles: [
-  ]
+  styleUrls: ['./contenedor-actividades.component.css']
 })
 export class ContenedorMatematicasComponent implements OnInit {
 

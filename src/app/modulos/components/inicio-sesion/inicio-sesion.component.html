@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <main class="contenedor">
     <img
       [src]="'assets/images/authImagenes/MonoLuna.jpg'"
@@ -46,4 +47,56 @@
       </p-card>
     </div>
   </main>
+=======
+<main class="contenedor">
+    <img
+      [src]="'assets/images/authImagenes/MonoLuna.jpg'"
+      alt="MonoLuna Mono Luna"
+      class="img"
+    />
+  
+    <div class="form">
+      <p-card>
+          <p-button label="Registrarse" ></p-button>
+          <img
+          [src]="'assets/images/authImagenes/Logo.png'"
+          alt="MonoCohete Mono"
+          class="logo"
+        />
+        <p>Bienvenid@, por favor ingresa tus datos para poder ingresar</p>
+        <p>Selecciona tu rol:</p>
+        
+  
+        <form action="registro">
+          <p-radioButton name="groupname" value="val1" label="Profesor"></p-radioButton>
+          <p-radioButton name="groupname" value="val1" label="Estudiante"></p-radioButton>
+          
+              <div class="field col-12 md:col-4">
+                  <span class="p-float-label p-input-icon-right">
+                      <i class="pi pi-credit-card"></i>
+                      <input type="text" id="id" pInputText class="p-inputtext-sm"> 
+                      <!-- <p-inputNumber ></p-inputNumber> -->
+                      <label for="inputtext">Cédula</label>
+                  </span>
+              </div>
+              
+              <div class="field col-12 md:col-4">
+                  <span class="p-float-label p-input-icon-right">
+                      <i class="pi pi-key"></i>
+                      <input type="password" id="password" pInputText class="p-inputtext-sm"> 
+                      <!-- <input type="password" pPassword /> -->
+                      <!-- <p-password></p-password> -->
+                      <label for="inputtext">Contraseña</label>
+                  </span>
+  
+              </div>
+              <p-button label="Iniciar Sesión"></p-button>
+              
+          
+            
+        </form>
+      </p-card>
+    </div>
+  </main>
+>>>>>>> a0dbfb2ae0aada0ba69e54a4874e632ce24381ba
   

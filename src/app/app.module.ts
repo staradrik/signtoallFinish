@@ -30,13 +30,17 @@ import {ToastModule} from 'primeng/toast';
 import { ServicioService } from './servicios/servicio.service';
 //Componentes
 import { AppComponent } from './app.component';
+import { BreadcrumbComponent } from './modulos/components/breadcrumb/breadcrumb.component';
+import { PanelMenuComponent } from './modulos/components/panel-menu/panel-menu.component';
 
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PanelMenuComponent,
+    BreadcrumbComponent,
   ],
   imports: [
     AccordionModule,

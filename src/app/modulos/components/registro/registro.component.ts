@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -53,3 +54,20 @@ export class RegistroComponent implements OnInit {
   }
 
 }
+=======
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-registro',
+  templateUrl: './registro.component.html',
+  styleUrls: ['./registro.component.css']
+})
+export class RegistroComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit(): void {
+  }
+
+}
+>>>>>>> a0dbfb2ae0aada0ba69e54a4874e632ce24381ba

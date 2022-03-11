@@ -1,3 +1,4 @@
+
 export interface Actividades {
     id?:string;
     name?:string;
@@ -23,3 +24,4 @@ export interface Image {
 export class RootObject {
     data: ImgMemo[]=[];
 }
+

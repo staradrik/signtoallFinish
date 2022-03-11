@@ -26,7 +26,8 @@ export class ObtenerActividadesService {
       icon: 'pi pi-search',
       items: [
         {
-          label: 'Memorama'
+          label: 'Memorama',
+          routerLink: ['actividades/memoLetras']
         },
         {
           label: 'Sopa de letras'
@@ -38,7 +39,8 @@ export class ObtenerActividadesService {
           label: 'Rompecabezas'
         },
         {
-          label: 'Ahorcado'
+          label: 'Ahorcado',
+          routerLink: ['actividades/ahorcado']
         }
       ]
     }
@@ -62,7 +64,8 @@ export class ObtenerActividadesService {
       icon: 'pi pi-search',
       items: [
         {
-          label: 'Sopa de numeros'
+          label: 'Sopa de numeros',
+          routerLink: ['actividades/sopNumeros']
         },
         {
           label: 'Relacion de numeros'
@@ -83,7 +86,7 @@ export class ObtenerActividadesService {
     }
   ];
   obtener(curso:number):any{
-    if (curso==1){
+    if (curso<3){
       return this.actEspannol
     }else{
       return this.actMatematicas
