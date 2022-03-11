@@ -15,7 +15,7 @@ export class SopaNumerosComponent implements OnInit {
       { label: 'Actividades',
       routerLink: ['']
       },
-      { label: 'ahorcado' }
+      { label: 'sopa de numeros' }
     ]);
    }
 
