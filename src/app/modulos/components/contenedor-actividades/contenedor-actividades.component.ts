@@ -10,8 +10,7 @@ import { Actividades } from 'src/app/interfaces/Actividades';
 @Component({
   selector: 'app-contenedor-actividades',
   templateUrl: './contenedor-actividades.component.html',
-  styles: [
-  ]
+  styleUrls: ['./contenedor-actividades.component.css']
 })
 export class ContenedorActividadesComponent implements OnInit {
 
