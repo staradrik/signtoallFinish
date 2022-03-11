@@ -13,6 +13,7 @@ import {PanelMenuModule} from 'primeng/panelmenu';
 import {RatingModule} from 'primeng/rating';
 import { ReactiveFormsModule } from '@angular/forms';
 import {RippleModule} from 'primeng/ripple';
+import {TableModule} from 'primeng/table';
 import { TagModule } from 'primeng/tag';
 import {InputNumberModule} from 'primeng/inputnumber';
 import {PasswordModule} from 'primeng/password';
@@ -35,6 +36,7 @@ import { FormProfesorComponent } from './components/registro/form-profesor/form-
 import { IngresoGoogleComponent } from './components/registro/ingreso-google/ingreso-google.component';
 import { IngresoEstudianteComponent } from './components/inicio-sesion/ingreso-estudiante/ingreso-estudiante.component';
 import { IngresoProfesorComponent } from './components/inicio-sesion/ingreso-profesor/ingreso-profesor.component';
+import { MemoramaMatComponent } from './components/matematicas/memorama-mat/memorama-mat.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +53,8 @@ import { IngresoProfesorComponent } from './components/inicio-sesion/ingreso-pro
     FormProfesorComponent,
     IngresoGoogleComponent,
     IngresoEstudianteComponent,
-    IngresoProfesorComponent
+    IngresoProfesorComponent,
+    MemoramaMatComponent
   ],
   imports: [
     BreadcrumbModule,
@@ -68,6 +71,7 @@ import { IngresoProfesorComponent } from './components/inicio-sesion/ingreso-pro
     RatingModule,
     ReactiveFormsModule,
     RippleModule,
+    TableModule,
     TagModule,
     InputNumberModule,
     PasswordModule,

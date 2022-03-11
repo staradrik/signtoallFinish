@@ -1,0 +1,19 @@
+{"data":[
+    {"id":1,
+        "avatar":"https://cdn.pixabay.com/photo/2012/04/24/11/24/one-39418_960_720.png"},
+        
+    {"id":2,
+        "avatar":"https://cdn.pixabay.com/photo/2012/04/24/11/24/two-39419_960_720.png"},
+        
+    {"id":3,
+        "avatar":"https://cdn.pixabay.com/photo/2012/04/24/11/25/three-39420_960_720.png"},
+        
+    {"id":4,
+        "avatar":"https://cdn.pixabay.com/photo/2012/04/24/11/25/number-39421_960_720.png"},
+        
+    {"id":5,
+        "avatar":"https://cdn.pixabay.com/photo/2012/04/23/15/35/five-38563_960_720.png"},
+        
+    {"id":6,
+        "avatar":"https://cdn.pixabay.com/photo/2012/04/23/15/36/six-38569_960_720.png"}]        
+   }
