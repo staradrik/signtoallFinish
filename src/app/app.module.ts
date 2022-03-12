@@ -32,6 +32,7 @@ import { ServicioService } from './servicios/servicio.service';
 import { AppComponent } from './app.component';
 import { BreadcrumbComponent } from './modulos/components/breadcrumb/breadcrumb.component';
 import { PanelMenuComponent } from './modulos/components/panel-menu/panel-menu.component';
+import { MessageService } from 'primeng/api';
 
 
 
@@ -69,7 +70,7 @@ import { PanelMenuComponent } from './modulos/components/panel-menu/panel-menu.c
     SelectButtonModule,
     ToastModule
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

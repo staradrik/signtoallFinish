@@ -71,7 +71,8 @@ export class ObtenerActividadesService {
           label: 'Relacion de numeros'
         },
         {
-          label: 'Memorama'
+          label: 'Memorama',
+          routerLink: ['actividades/memoMate']
         },
         {
           label: 'Rompecabezas'

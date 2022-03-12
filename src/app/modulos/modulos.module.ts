@@ -16,6 +16,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import {RippleModule} from 'primeng/ripple';
 import {TableModule} from 'primeng/table';
 import { TagModule } from 'primeng/tag';
+import {ToastModule} from 'primeng/toast';
 import {InputNumberModule} from 'primeng/inputnumber';
 import {PasswordModule} from 'primeng/password';
 import {RadioButtonModule} from 'primeng/radiobutton';
@@ -25,8 +26,6 @@ import { ModulosRoutingModule } from './modulos-routing.module';
 
 import { SopaNumerosComponent } from './components/matematicas/sopa-numeros/sopa-numeros.component';
 import { VistaActividadesComponent } from './components/vista-actividades/vista-actividades.component';
-import { PanelMenuComponent } from './components/panel-menu/panel-menu.component';
-import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
 import { ContenedorActividadesComponent } from './components/contenedor-actividades/contenedor-actividades.component';
 import { MemoramaComponent } from './components/español/memorama/memorama.component';
 import { ContenedorMatematicasComponent } from './components/contenedor-matematicas/contenedor-matematicas.component';
@@ -72,6 +71,7 @@ import { MemoramaMatComponent } from './components/matematicas/memorama-mat/memo
     RippleModule,
     TableModule,
     TagModule,
+    ToastModule,
     InputNumberModule,
     PasswordModule,
     RadioButtonModule,

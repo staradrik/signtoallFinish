@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { RootObject, Image } from '../../../../interfaces/Actividades';
 import { MatematicasService } from 'src/app/servicios/matematicas.service';
+import { RutaBreadcrumService } from '../../../../servicios/ruta-breadcrum.service';
+import { MessageService } from 'primeng/api';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-memorama-mat',
@@ -25,8 +28,16 @@ public _timer: number = 0;
 public interval:any; //buu
 public timerFlag:boolean = false;
 
-  constructor(private memoService:MatematicasService) {
-    this.newGame();
+  constructor(private memoService:MatematicasService,
+              private breadcrumbService: RutaBreadcrumService,
+              private messageService: MessageService,
+              private router: Router) {
+
+              this.newGame();
+              this.breadcrumbService.setItems([
+                { label: "Inicio" },{ label: 'Actividades', routerLink: ['']}, 
+                { label: 'Memorama' }
+              ]);
    }
 
   ngOnInit(): void {
@@ -34,7 +45,7 @@ public timerFlag:boolean = false;
   }
 
   public newGame():void{
-    this.pauseTimer();
+   this.pauseTimer();
    this.memoService.getImaMemo(); 
    this._randArr = [];
    this._randArr = this.randArr;
@@ -71,24 +82,24 @@ public timerFlag:boolean = false;
  
      if(!this.disableFuncFlag){
  
-       //if no photo was clicked
+       //si no se hizo clic en ninguna foto
        if(this.firstImg == undefined || !this.firstImg.clicked){
-         console.log("first image just clicked "+ image.serialNumber);
+         console.log("primera imagen acaba de hacer clic "+ image.serialNumber);
          this.firstImg = image;
          this.firstImg.id = image.id;
          this.firstImg.clicked = true;
        }
        
-       //if first photo already clicked
+       //si ya se hizo clic en la primera foto
        else  if(this.firstImg != undefined && this.firstImg.clicked && this.firstImg.serialNumber != image.serialNumber)
        {
-         console.log("second image just clicked "+ image.serialNumber);
+         console.log("segunda imagen acaba de hacer clic "+ image.serialNumber);
          this.secImg = image;
          this.secImg.id = image.id;
          this.secImg.clicked = true;
          this.disableFuncFlag = true;
-         console.log("this.firstImg.id "+this.firstImg.id);
-         console.log("this.secImg.id "+this.secImg.id);
+         console.log("id primera img "+this.firstImg.id);
+         console.log("id segunda img "+this.secImg.id);
          this.steps +=1;
          setTimeout(()=>{this.checkEquality(this.firstImg,this.secImg);},1000);
        }
@@ -98,19 +109,26 @@ public timerFlag:boolean = false;
    
    }
    public checkEquality(first:Image,sec:Image):void{
-     console.log("checkEqulity() "+ first.id);
+     console.log("comprobar la igualdad() "+ first.id);
  
      if(first.id == sec.id){
        first.paired = true;
        sec.paired = true;
        this.pairs++;
-       if(this.pairs == 6)
+       if(this.pairs == 6){
          this.pauseTimer();
+         this.messageService.add({severity:'success', summary:'¡Excelente!', detail:'Has completado la actividad'});
+         setTimeout( ()=> { this.router.navigate(['/'])}, 1100);
+
+       }
+         
      }
        first.clicked= false;
        sec.clicked = false;
  
      this.disableFuncFlag= false;
+
+     
    }
  
    startTimer() {
@@ -119,9 +137,10 @@ public timerFlag:boolean = false;
      },1000)
    }
  
-   pauseTimer() {
-     clearInterval(this.interval);
+   pauseTimer() {//detener el tiempo
+     clearInterval(this.interval);    
    }
+
    public get timer():number{
      return this._timer;
    }
