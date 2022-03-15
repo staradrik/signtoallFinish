@@ -4,8 +4,7 @@ import { RutaBreadcrumService } from 'src/app/servicios/ruta-breadcrum.service';
 @Component({
   selector: 'app-ahorcado',
   templateUrl: './ahorcado.component.html',
-  styles: [
-  ]
+  styleUrls: ['./ahorcado.component.css']
 })
 export class AhorcadoComponent implements OnInit {
 
@@ -14,6 +13,7 @@ export class AhorcadoComponent implements OnInit {
   intentos:number = 0;
   gano:boolean = false;
   perdio:boolean = false;
+  letra:string = "";
 
   letras = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K',
            'L', 'M', 'N', 'Ñ', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 
@@ -30,14 +30,11 @@ export class AhorcadoComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.palabraOculta = '_ '.repeat(this.palabra.length);
+    this.palabraOculta = '___ '.repeat(this.palabra.length);
   }
 
   existeLetra( letra:string ) {
-    if (this.palabra.indexOf( letra ) >= 0) {
-      console.log('La letra ' + letra + ' existe');
-    }else{
-      console.log('La letra ' + letra + ' no existe');
+    if ((!(this.palabra.indexOf( letra ) >= 0))) {
       this.intentos++;
     }
   }
