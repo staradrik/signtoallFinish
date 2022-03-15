@@ -1,11 +1,10 @@
-<div class="flex">
-    <p-card header="Sign to all"  [style]="{width: '280px'}" styleClass="p-card-shadow">
+<div class="home">
+    <div class="flex">
         <app-panel-menu></app-panel-menu>
-    </p-card>
-    <p-divider layout="vertical"></p-divider>
-    <div>
-        <app-breadcrumb></app-breadcrumb>
-        <router-outlet></router-outlet>
+        <p-divider layout="vertical"></p-divider>
+        <div>
+            <app-breadcrumb></app-breadcrumb>
+            <router-outlet></router-outlet>
+        </div>
     </div>
 </div>
-
