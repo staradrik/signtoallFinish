@@ -28,7 +28,6 @@ export class ContenedorActividadesComponent implements OnInit {
               private EspannolServices: EspannolService) { }
 
   ngOnInit() {
-      //this.productService.getProducts().then(data => this.products = data);
       this.EspannolServices.getActivity().then(data => this.activity = data);
 
       this.sortOptions = [

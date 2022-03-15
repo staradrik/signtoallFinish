@@ -21,7 +21,6 @@ export class AhorcadoComponent implements OnInit {
 
   constructor(private breadcrumbService: RutaBreadcrumService) {
     this.breadcrumbService.setItems([
-      { label: "Inicio" },
       { label: 'Actividades',
       routerLink: ['']
       },

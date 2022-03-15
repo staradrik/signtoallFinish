@@ -14,7 +14,6 @@ export class VistaActividadesComponent implements OnInit {
   constructor(private Estudiante: ServicioService,
     private breadcrumbService: RutaBreadcrumService) {
      this.breadcrumbService.setItems([
-        { label: "Inicio" },
         { label: 'Actividades'}
       ]);
     }
