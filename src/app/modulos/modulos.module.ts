@@ -37,6 +37,7 @@ import { IngresoGoogleComponent } from './components/registro/ingreso-google/ing
 import { IngresoEstudianteComponent } from './components/inicio-sesion/ingreso-estudiante/ingreso-estudiante.component';
 import { IngresoProfesorComponent } from './components/inicio-sesion/ingreso-profesor/ingreso-profesor.component';
 import { MemoramaMatComponent } from './components/matematicas/memorama-mat/memorama-mat.component';
+import { SobreNosotrosComponent } from './components/sobreNosotros/sobreNosotros.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { MemoramaMatComponent } from './components/matematicas/memorama-mat/memo
     IngresoGoogleComponent,
     IngresoEstudianteComponent,
     IngresoProfesorComponent,
-    MemoramaMatComponent
+    MemoramaMatComponent,
+    SobreNosotrosComponent
   ],
   imports: [
     BreadcrumbModule,

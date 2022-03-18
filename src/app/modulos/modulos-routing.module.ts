@@ -9,6 +9,7 @@ import { MemoramaMatComponent } from './components/matematicas/memorama-mat/memo
 import { SopaNumerosComponent } from './components/matematicas/sopa-numeros/sopa-numeros.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { VistaActividadesComponent } from './components/vista-actividades/vista-actividades.component';
+import { SobreNosotrosComponent } from './components/sobreNosotros/sobreNosotros.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,7 @@ const routes: Routes = [
       {path: 'ahorcado', component: AhorcadoComponent},
       {path: 'registro', component: RegistroComponent},
       {path: 'iniciarSesion', component: InicioSesionComponent},
+      {path: 'sobreNosotros', component: SobreNosotrosComponent},
       {path: '**',redirectTo: '/notfound'}     
     ]
   }

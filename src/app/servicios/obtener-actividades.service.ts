@@ -14,7 +14,8 @@ export class ObtenerActividadesService {
       icon: 'pi pi-fw pi-home', 
       items: [
         {
-          label: 'Bienvenida'
+          label: 'Sobre Nosotros',
+          routerLink: ['actividades/sobreNosotros']
         },
         {
           label: 'Salir'
@@ -52,7 +53,8 @@ export class ObtenerActividadesService {
       icon: 'pi pi-fw pi-home', 
       items: [
         {
-          label: 'Bienvenida'
+          label: 'Sobre Nosotros',
+          routerLink: ['actividades/sobreNosotros']
         },
         {
           label: 'Salir'
