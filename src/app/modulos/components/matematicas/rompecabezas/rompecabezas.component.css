@@ -1,0 +1,78 @@
+.imagePuzzle {
+    color: white;
+    width: 1000px;
+    height: 700px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+   
+}
+
+.unsolvedPuzzle, .scoreboard {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 0 5%;
+}
+
+.sectionName {
+    background-color: white;
+    color: black;
+    text-align: center;
+    width: 400px;
+    height: 50px;
+}
+
+.score-detail, .difficulty-levels {
+    color: rgb(58, 7, 199);
+    display: flex;
+    justify-content: space-around;
+}
+
+li {
+    width: 100px;
+    list-style-type: none;
+}
+
+.puzzle {
+    width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    flex-wrap: wrap;
+    box-sizing:border-box;
+    box-shadow: 10px 10px 8px #888888;
+}
+
+.box {
+    display: inline-block;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.finalImage {
+    width: 250px;
+    height: 250px;
+    margin: auto;
+    /*background-image: url("../../assets/images/taj.jpg");*/
+    background-size: 100% 100%;
+}
+
+.unsolved, .solved {
+    width: 50%;
+}
+
+.image-url {
+    margin-top: 5%;
+}
+
+.successMessage{
+    margin: 5%;
+    border: 1px solid green;
+    border-radius: 10px;
+    color: black;
+    background-color: lightgreen;
+    padding: 5%;
+}
+

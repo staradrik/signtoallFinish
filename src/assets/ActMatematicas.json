@@ -33,7 +33,8 @@
 			"image": "rompecabezas.jpg",
 			"category": "ActividadesM",
 			"Status": "REALIZADA",
-			"rating": 5
+			"rating": 5,
+			"url": "/actividades/rompeMate"
 		},
         {
 			"id": "1004",

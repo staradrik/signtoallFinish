@@ -77,7 +77,8 @@ export class ObtenerActividadesService {
           routerLink: ['actividades/memoMate']
         },
         {
-          label: 'Rompecabezas'
+          label: 'Rompecabezas',
+          routerLink: ['actividades/rompeMate']
         },
         {
           label: 'Sumas y restas'

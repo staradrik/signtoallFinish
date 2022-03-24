@@ -10,6 +10,7 @@ import { SopaNumerosComponent } from './components/matematicas/sopa-numeros/sopa
 import { RegistroComponent } from './components/registro/registro.component';
 import { VistaActividadesComponent } from './components/vista-actividades/vista-actividades.component';
 import { SobreNosotrosComponent } from './components/sobreNosotros/sobreNosotros.component';
+import { RompecabezasComponent } from './components/matematicas/rompecabezas/rompecabezas.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,7 @@ const routes: Routes = [
       {path: 'vistaAct',component: VistaActividadesComponent},    
       {path: 'sopNumeros',component: SopaNumerosComponent},
       {path: 'memoMate', component: MemoramaMatComponent},
+      {path: 'rompeMate', component: RompecabezasComponent},
       {path: 'memoLetras', component: MemoramaComponent},        
       {path: 'ahorcado', component: AhorcadoComponent},
       {path: 'registro', component: RegistroComponent},
