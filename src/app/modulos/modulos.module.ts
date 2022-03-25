@@ -39,6 +39,9 @@ import { IngresoProfesorComponent } from './components/inicio-sesion/ingreso-pro
 import { MemoramaMatComponent } from './components/matematicas/memorama-mat/memorama-mat.component';
 import { SobreNosotrosComponent } from './components/sobreNosotros/sobreNosotros.component';
 import { RompecabezasComponent } from './components/matematicas/rompecabezas/rompecabezas.component';
+import { SopLetrasComponent } from './components/español/sop-letras/sop-letras.component';
+import { RompeLetrasComponent } from './components/español/rompe-letras/rompe-letras.component';
+import { VocabularioComponent } from './components/español/vocabulario/vocabulario.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +59,10 @@ import { RompecabezasComponent } from './components/matematicas/rompecabezas/rom
     IngresoProfesorComponent,
     MemoramaMatComponent,
     SobreNosotrosComponent,
-    RompecabezasComponent
+    RompecabezasComponent,
+    SopLetrasComponent,
+    RompeLetrasComponent,
+    VocabularioComponent
   ],
   imports: [
     BreadcrumbModule,

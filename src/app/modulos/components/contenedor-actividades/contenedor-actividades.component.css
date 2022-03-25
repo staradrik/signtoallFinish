@@ -1,6 +1,12 @@
 img {
-    border-radius: 8px;
-    width: 200px;
-    height: 200px;
-    object-position: 0px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 13vmax;
+    height: 13vw;
+    object-fit: fill;
+    border-radius: 15px;
+}
+.activity-name{
+    
 }

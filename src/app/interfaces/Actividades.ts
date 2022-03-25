@@ -10,12 +10,11 @@ export interface Actividades {
 
 export interface ImgMemo {
     id: number,
+    name?: string,
     avatar: string
 }
 
-export interface Image {
-    id?: number,
-    avatar?: string,
+export interface Image extends Partial<Omit<ImgMemo, "name">> {
     clicked?:boolean
     paired?:boolean;
     serialNumber?:number;

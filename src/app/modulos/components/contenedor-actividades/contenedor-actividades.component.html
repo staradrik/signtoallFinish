@@ -17,16 +17,14 @@
 				<ng-template let-activity pTemplate="listItem">
 					<div class="col-12">
 						<div class="product-list-item card">
-							<img [src]="'assets/images/ActEspannol/' + activity.image" [alt]="activity.name"/>
+							<img routerLink="{{activity.url}}" [src]="'assets/images/ActEspannol/' + activity.image" [alt]="activity.name"/>
 							<div class="product-list-detail">
 								<div class="product-name">{{activity.name}}</div>
 								<p-rating [ngModel]="activity.rating" [readonly]="true" [cancel]="false"></p-rating>
 								
 							</div>
 							<div class="product-list-action">
-								<span class="product-price">           
-                                    <button pButton pRipple type="button" icon="pi pi-window-maximize" class="p-button-rounded p-button-warning"
-									routerLink="{{activity.url}}"></button>
+								<span class="product-price">
                                     <br>
                                     <p-tag styleClass="mr-2" severity="success">{{activity.status}}</p-tag>
                                 </span>
@@ -44,15 +42,9 @@
 								<p-tag styleClass="mr-2" severity="success" >{{activity.status}}</p-tag>
 							</div>
 							<div class="product-grid-item-content">
-								<img [src]="'assets/images/ActEspannol/' + activity.image"  [alt]="activity.name"/>
+								<img routerLink="{{activity.url}}" [src]="'assets/images/ActEspannol/' + activity.image"  [alt]="activity.name"/>
 								<div class="product-name">{{activity.name}}</div>
-                             					
 								<p-rating [ngModel]="activity.rating" [readonly]="true" [cancel]="false"></p-rating>
-							</div>
-							<div class="product-grid-item-bottom">
-								
-								<button pButton pRipple type="button" icon="pi pi-window-maximize" class="p-button-rounded p-button-help"
-                                routerLink="{{activity.url}}"></button>
 							</div>
 						</div>
 					</div>
