@@ -4,7 +4,7 @@ import { ServicioService } from './services/servicio.service';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
+  template: '<router-outlet></router-outlet>',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit{

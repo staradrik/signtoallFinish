@@ -44,7 +44,7 @@ import { VistaActividadesComponent } from './vista-actividades/vista-actividades
 import { VocabularioComponent } from './contenedor-español/vocabulario/vocabulario.component';
 
 //Modulo routing
-import { ModulosRoutingModule } from './modulos-routing.module';
+import { WebsiteRoutingModule } from './website-routing.module';
 
 @NgModule({
   declarations: [
@@ -77,7 +77,7 @@ import { ModulosRoutingModule } from './modulos-routing.module';
     DropdownModule,
     InputTextModule,
     FormsModule,
-    ModulosRoutingModule,
+    WebsiteRoutingModule,
     PanelMenuModule,
     RatingModule,
     ReactiveFormsModule,
@@ -94,4 +94,4 @@ import { ModulosRoutingModule } from './modulos-routing.module';
     VistaActividadesComponent
   ]
 })
-export class ModulosModule { }
+export class WebsiteModule { }

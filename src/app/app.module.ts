@@ -36,6 +36,7 @@ import { MessageService } from 'primeng/api';
 
 //Routing
 import { AppRoutingModule } from './app-routing.module';
+import { LayoutComponent } from './website/components/layout/layout.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { AppRoutingModule } from './app-routing.module';
     PanelMenuComponent,
     BreadcrumbComponent,
     NotFoundComponent,
+    LayoutComponent,
   ],
   imports: [
     AccordionModule,
