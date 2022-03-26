@@ -29,8 +29,9 @@ import { ToastModule } from 'primeng/toast';
 
 //Componentes
 import { AppComponent } from './app.component';
-import { BreadcrumbComponent } from './modulos/components/breadcrumb/breadcrumb.component';
-import { PanelMenuComponent } from './modulos/components/panel-menu/panel-menu.component';
+import { BreadcrumbComponent } from './website/components/breadcrumb/breadcrumb.component';
+import { PanelMenuComponent } from './website/components/panel-menu/panel-menu.component';
+import { NotFoundComponent } from './website/pages/not-found/not-found.component';
 import { MessageService } from 'primeng/api';
 
 //Routing
@@ -41,6 +42,7 @@ import { AppRoutingModule } from './app-routing.module';
     AppComponent,
     PanelMenuComponent,
     BreadcrumbComponent,
+    NotFoundComponent,
   ],
   imports: [
     AccordionModule,

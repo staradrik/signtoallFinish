@@ -1,0 +1,34 @@
+<h3>Movimientos: {{steps}}  Tiempo: {{timer}}</h3>
+
+<div class="card">
+    <p-toast></p-toast>
+    <table class="container">
+        <div class="container-div">
+            <tr *ngFor="let r of rows; let x of [0,1,2]">
+                <td *ngFor="let c of cols; let i of [0,3,6,9]">
+                    <div class="container-img">
+                        <!--  muestra el fondo -->
+                    <div *ngIf = "photosArr[randArr[x + i]] != undefined && !photosArr[randArr[x + i]].paired ">
+                        <img (click)="imageClicked(photosArr[randArr[x + i]])" src="/assets/images/ActEspannol/memorama/Tarjeta.jpg" *ngIf = "!photosArr[randArr[x + i]].clicked"/>
+                    </div>
+    
+                    <!-- si la imagen es seleccionada, la muestra-->
+                    <div *ngIf = "photosArr[randArr[x + i]].paired == undefined || !photosArr[randArr[x + i]].paired ">
+                        <img (click)="imageClicked(photosArr[randArr[x + i]])" [src]="photosArr[randArr[x + i]].avatar" *ngIf = "photosArr[randArr[x + i]].clicked"/>
+                    </div>
+                    
+                        <!-- si ambas imagenes son iguales, se muestra un trofeo -->
+                    <div *ngIf = "photosArr[randArr[x + i]] != undefined && photosArr[randArr[x + i]].paired ">
+                        <img  src="/assets/images/ActEspannol/memorama/Win.jpg" />
+                    </div>
+                    </div>
+                </td>
+            </tr>
+        </div>
+    </table>
+</div>
+<br/>
+
+<div>
+    <button pButton pRipple type="button" label="Nueva partida" class="p-button-outlined p-button-rounded p-button-help" (click)="newGame()"></button>
+</div>
