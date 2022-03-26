@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { PrimeNGConfig, SelectItem } from 'primeng/api';
 import { Actividades } from 'src/app/interfaces/Actividades';
 import { MatematicasService } from 'src/app/servicios/matematicas.service';
-import { ServicioService } from 'src/app/servicios/servicio.service';
 
 @Component({
   selector: 'app-contenedor-matematicas',

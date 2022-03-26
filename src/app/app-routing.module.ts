@@ -1,11 +1,11 @@
-import { AppComponent } from './app.component';
-
-
+//Modulos Angular
 import { NgModule} from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
+//Componentes
 import { VistaActividadesComponent } from './modulos/components/vista-actividades/vista-actividades.component';
 
-
+//Routing
 const routes: Routes = [ 
   {path:'',
         children:[

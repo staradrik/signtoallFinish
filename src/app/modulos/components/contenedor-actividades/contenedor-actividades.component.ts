@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {SelectItem} from 'primeng/api';
 import { PrimeNGConfig } from 'primeng/api';
-import { ServicioService } from '../../../servicios/servicio.service';
 import { Router } from '@angular/router';
 import { EspannolService } from 'src/app/servicios/espannol.service';
 import { Actividades } from 'src/app/interfaces/Actividades';
