@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Actividades, Image, RootObject } from '../models/Actividades';
+import { Image, RootObject } from '../models/Actividades';
 
 
 @Injectable({

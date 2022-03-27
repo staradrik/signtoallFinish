@@ -109,7 +109,7 @@ export class MemoramaComponent implements OnInit {
     }
     if(!this.disableFuncFlag){
       //si no se hizo clic en ninguna foto
-      if(this.firstImg == undefined || !this.firstImg.clicked){
+      if(this.firstImg === undefined || !this.firstImg.clicked){
         console.log("primera imagen acaba de hacer clic "+ image.serialNumber);
         this.firstImg = image;
         this.firstImg.id = image.id;
@@ -117,7 +117,7 @@ export class MemoramaComponent implements OnInit {
       }
       
       //si ya se hizo clic en la primera foto
-      else  if(this.firstImg != undefined && this.firstImg.clicked && this.firstImg.serialNumber != image.serialNumber)
+      else  if(this.firstImg !== undefined && this.firstImg.clicked && this.firstImg.serialNumber !== image.serialNumber)
       {
         console.log("segunda imagen acaba de hacer clic "+ image.serialNumber);
         this.secImg = image;
@@ -135,12 +135,12 @@ export class MemoramaComponent implements OnInit {
 
   public checkEquality(first:Image,sec:Image):void{
     console.log("comprobar la igualdad() "+ first.id);
-    if(first.id == sec.id){
+    if(first.id === sec.id){
       first.paired = true;
       sec.paired = true;
       this.pairs++;
       
-      if(this.pairs == 6){
+      if(this.pairs === 6){
         this.pauseTimer();
         this.messageService.add({severity:'success', summary:'¡Excelente!', detail:'Has completado la actividad'});
         setTimeout( ()=> { this.router.navigate(['/'])}, 1100);

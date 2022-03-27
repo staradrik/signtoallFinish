@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { Subscription } from 'rxjs';
 import { RutaBreadcrumService } from '../../../services/ruta-breadcrum.service';
@@ -10,7 +10,7 @@ import { RutaBreadcrumService } from '../../../services/ruta-breadcrum.service';
   ]
 })
 
-export class BreadcrumbComponent implements OnInit {
+export class BreadcrumbComponent implements OnInit, OnDestroy {
 
   subscription: Subscription | undefined;
 

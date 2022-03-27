@@ -31,17 +31,15 @@ export class RegistroComponent implements OnInit {
 
   constructor(private router: Router,
               private fb: FormBuilder) { 
-                
-
-              //Opciones del select item
-              this.types = [
-                {label: "Estudiante", value: "Estudiante", icon: "pi pi-palette" },
-                {label: "Profesor", value: "Profesor", icon: "pi pi-book" },
-              ];
-
+ 
               }
 
   ngOnInit(): void {
+    //Opciones del select item
+    this.types = [
+      {label: "Estudiante", value: "Estudiante", icon: "pi pi-palette" },
+      {label: "Profesor", value: "Profesor", icon: "pi pi-book" },
+    ];
   }
 
   //Eleccion de alguna opcion para formulario

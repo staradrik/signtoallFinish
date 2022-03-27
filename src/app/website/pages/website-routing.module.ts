@@ -2,7 +2,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { VistaActividadesComponent } from './vista-actividades/vista-actividades.component';
-import { SobreNosotrosComponent } from './sobreNosotros/sobreNosotros.component';
+import { SobreNosotrosComponent } from './sobreNosotros/sobre-nosotros.component';
 import { LayoutComponent } from '../components/layout/layout.component';
 
 const routes: Routes = [

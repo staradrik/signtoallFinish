@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styles: [
   ]
 })
-export class FormProfesorComponent implements OnInit {
+export class FormProfesorComponent {
 
   tipoDoc: [{name: string}];
   
@@ -25,8 +25,5 @@ export class FormProfesorComponent implements OnInit {
     private fb: FormBuilder) { 
       this.tipoDoc = [{name: 'C.C'}];
     }
-
-  ngOnInit(): void {
-  }
 
 }

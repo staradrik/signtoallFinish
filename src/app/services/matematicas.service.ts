@@ -1,7 +1,6 @@
-
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Actividades, ImgMemo, Image, RootObject } from '../models/Actividades';
+import { Image, RootObject } from '../models/Actividades';
 
 @Injectable({
   providedIn: 'root'

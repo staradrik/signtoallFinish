@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styles: [
   ]
 })
-export class IngresoProfesorComponent implements OnInit {
+export class IngresoProfesorComponent {
 
 
   
@@ -19,9 +19,5 @@ export class IngresoProfesorComponent implements OnInit {
 
   constructor(private router: Router,
     private fb: FormBuilder) { 
-    }
-
-  ngOnInit(): void {
   }
-
 }

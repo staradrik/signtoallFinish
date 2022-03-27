@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { PrimeNGConfig, SelectItem } from 'primeng/api';
 import { RutaBreadcrumService } from '../../../services/ruta-breadcrum.service';
 import { EstudianteService } from '../../../services/estudiante.service';

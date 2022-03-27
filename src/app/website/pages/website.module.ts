@@ -24,7 +24,7 @@ import { RadioButtonModule } from 'primeng/radiobutton';
 import { SelectButtonModule } from 'primeng/selectbutton';
 
 //Componentes
-import { SobreNosotrosComponent } from './sobreNosotros/sobreNosotros.component';
+import { SobreNosotrosComponent } from './sobreNosotros/sobre-nosotros.component';
 import { VistaActividadesComponent } from './vista-actividades/vista-actividades.component';
 
 //Modulo routing

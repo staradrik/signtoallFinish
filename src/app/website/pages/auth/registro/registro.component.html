@@ -33,14 +33,14 @@
 
         <!--Formulario de estudiante-->
         <div class=" field col-12  form-element" >
-            <span *ngIf="typeName == 'Estudiante'" >
+            <span *ngIf="typeName === 'Estudiante'" >
                 <app-ingreso-google></app-ingreso-google>
             </span>
         </div>
 
         <!--Formulario de profesor-->
         <div class=" field col-12  form-element" >
-            <span *ngIf="typeName == 'Profesor'" >
+            <span *ngIf="typeName === 'Profesor'" >
                 <app-form-profesor></app-form-profesor>
             </span>
         </div>

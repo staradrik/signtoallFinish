@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-ingreso-google',
@@ -6,11 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styles: [
   ]
 })
-export class IngresoGoogleComponent implements OnInit {
+export class IngresoGoogleComponent {
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

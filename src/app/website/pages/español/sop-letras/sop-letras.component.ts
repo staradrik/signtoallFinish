@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-sop-letras',
   templateUrl: './sop-letras.component.html',
   styleUrls: ['./sop-letras.component.css']
 })
-export class SopLetrasComponent implements OnInit {
+export class SopLetrasComponent {
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

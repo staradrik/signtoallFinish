@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-ingreso-estudiante',
@@ -6,11 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styles: [
   ]
 })
-export class IngresoEstudianteComponent implements OnInit {
+export class IngresoEstudianteComponent {
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

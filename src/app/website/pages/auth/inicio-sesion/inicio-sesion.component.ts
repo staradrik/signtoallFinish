@@ -13,6 +13,10 @@ export class InicioSesionComponent implements OnInit {
     typeName: string = "";
 
   constructor() { 
+    
+  }
+
+  ngOnInit(): void {
     //Opciones del select item
     this.types = [
       {label: "Estudiante", value: "Estudiante", icon: "pi pi-palette" },
@@ -20,12 +24,9 @@ export class InicioSesionComponent implements OnInit {
     ];
   }
 
-  ngOnInit(): void {
-  }
-
    //Eleccion de alguna opcion para formulario
    changeType(event: any){
-    this.typeName = event.option.value
+    this.typeName = event.option.value;
   }
 
 }

@@ -14,15 +14,15 @@
 
 
                 <!-- if image is  clicked show image -->
-                <div *ngIf = "photosArr[randArr[x + i]].paired == undefined || !photosArr[randArr[x + i]].paired ">
+                <div *ngIf = "photosArr[randArr[x + i]].paired === undefined || !photosArr[randArr[x + i]].paired ">
                     <img (click)="imageClicked(photosArr[randArr[x + i]])" [src]="photosArr[randArr[x + i]].avatar" *ngIf = "photosArr[randArr[x + i]].clicked"/>
                 </div>
                 <!--  show other background -->
-                <div *ngIf = "photosArr[randArr[x + i]] != undefined && !photosArr[randArr[x + i]].paired ">
+                <div *ngIf = "photosArr[randArr[x + i]] !== undefined && !photosArr[randArr[x + i]].paired ">
                     <img (click)="imageClicked(photosArr[randArr[x + i]])" src="/assets/images/ActMatematicas/pregunta.png" *ngIf = "!photosArr[randArr[x + i]].clicked"/>
                 </div>
 
-                <div *ngIf = "photosArr[randArr[x + i]] != undefined && photosArr[randArr[x + i]].paired ">
+                <div *ngIf = "photosArr[randArr[x + i]] !== undefined && photosArr[randArr[x + i]].paired ">
                     <img  src="/assets/images/ActMatematicas/Hecho.png" />
                 </div>
          
