@@ -28,7 +28,7 @@ import { Router } from '@angular/router';
   }
   img{
     border-radius: 15px;
-    width: 50%;
+    width: 100%;
     object-position: 0px;
     margin-top: 1%;
     margin-bottom: -4px;
@@ -62,7 +62,7 @@ export class MemoramaComponent implements OnInit {
 
   ngOnInit(): void {
     this.breadcrumbService.setItems([
-      { label: 'Actividades', routerLink: ['/actividades']}, 
+      { label: 'Actividades', routerLink: ['/actividades']},
       { label: 'memorama' }
     ]);
     this.newGame();

@@ -20,7 +20,7 @@ export class EspannolService {
   public images:Image[] = [];
 
   public getImaMemo() {
-      this.http.get<RootObject>('assets/images/ActEspannol/memorama/memorama.json').subscribe(res => {
+      this.http.get<RootObject>('assets/images/ActEspañol/memorama/memorama.json').subscribe(res => {
         this.rootObject.data = res.data;
          for(let j = 0; j < 2; j++){
           for(let i = 0; i < res.data.length; i++){   
