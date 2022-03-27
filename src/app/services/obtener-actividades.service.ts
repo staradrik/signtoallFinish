@@ -1,12 +1,14 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { Actividades } from '../models/Actividades';
+import { EstudianteService } from './estudiante.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ObtenerActividadesService {
 
-  constructor() { }
   //español
   actEspannol: MenuItem[] = [
     {
@@ -89,8 +91,29 @@ export class ObtenerActividadesService {
       ]
     }
   ];
-  obtener(curso:number):any{
-    if (curso<3){
+  curso = 0;
+  cursoList: 'ActEspannol' | 'ActMatematicas' = 'ActEspannol';
+
+  constructor(private http: HttpClient,
+    private Estudiante:EstudianteService) {
+    this.curso = this.Estudiante.obtenerCurso();
+   }
+
+  getActivity(){
+    if (this.curso > 3){
+      this.cursoList = 'ActMatematicas';
+    }else{
+      this.cursoList = 'ActEspannol';
+    }
+    return this.http.get<any>(`assets/${this.cursoList}.json`)
+    .toPromise().then(res => <Actividades[]>res.data)
+    .then(data => {return data;});
+  }
+
+  
+
+  getPanelMenu():any{
+    if (this.curso < 3){
       return this.actEspannol
     }else{
       return this.actMatematicas

@@ -12,14 +12,7 @@ export class EspannolService {
     this.getImaMemo();
    }
 
-  getActivity(){
-    return this.http.get<any>('assets/ActEspannol.json')
-    .toPromise().then(res => <Actividades[]>res.data)
-    .then(data => {return data;});
-  }
-
   //Actividades
-
   //Memorama
   public _index = -1;
   public rootObject: RootObject = new RootObject();
@@ -51,6 +44,4 @@ export class EspannolService {
   public get firstImages():Image[]{
     return this.images;
   }
-
-
 }

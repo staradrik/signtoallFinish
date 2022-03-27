@@ -35,7 +35,7 @@ public timerFlag:boolean = false;
 
               this.newGame();
               this.breadcrumbService.setItems([
-                { label: "Inicio" },{ label: 'Actividades', routerLink: ['']}, 
+                { label: 'Actividades', routerLink: ['/actividades']}, 
                 { label: 'Memorama' }
               ]);
    }

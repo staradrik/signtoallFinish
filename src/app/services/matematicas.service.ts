@@ -13,12 +13,6 @@ export class MatematicasService {
     this.getImaMemo();
   }
 
-  getActivity(){
-    return this.http.get<any>('assets/ActMatematicas.json')
-    .toPromise().then(res => <Actividades[]>res.data)
-    .then(data => {return data;});
-  }
-
   //ACTIVIDAD MEMORAMA MATEMATICAS
   public _index = -1;
   public rootObject: RootObject = new RootObject();

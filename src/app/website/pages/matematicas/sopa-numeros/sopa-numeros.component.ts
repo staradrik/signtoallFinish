@@ -11,10 +11,7 @@ export class SopaNumerosComponent implements OnInit {
 
   constructor(private breadcrumbService: RutaBreadcrumService) {
     this.breadcrumbService.setItems([
-      { label: "Inicio" },
-      { label: 'Actividades',
-      routerLink: ['']
-      },
+      { label: 'Actividades', routerLink: ['/actividades']}, 
       { label: 'sopa de numeros' }
     ]);
    }

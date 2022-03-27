@@ -14,7 +14,7 @@ export class RompecabezasComponent implements OnInit {
               private router: Router,
               private breadcrumbService: RutaBreadcrumService) { 
                 this.breadcrumbService.setItems([
-                  { label: "Inicio" },{ label: 'Actividades', routerLink: ['']}, 
+                  { label: 'Actividades', routerLink: ['/actividades']}, 
                   { label: 'Rompecabezas' }
                 ]);
               }

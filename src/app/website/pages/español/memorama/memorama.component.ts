@@ -62,9 +62,7 @@ export class MemoramaComponent implements OnInit {
 
   ngOnInit(): void {
     this.breadcrumbService.setItems([
-      { label: 'Actividades',
-      routerLink: ['']
-      },
+      { label: 'Actividades', routerLink: ['/actividades']}, 
       { label: 'memorama' }
     ]);
     this.newGame();

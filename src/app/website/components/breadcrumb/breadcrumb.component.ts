@@ -26,12 +26,11 @@ export class BreadcrumbComponent implements OnInit {
     this.subscription = this.rutaS.itemsHandler.subscribe(response => {
       this.items = response;
     });
-    this.home = { icon: 'pi pi-home', routerLink: '/' };
+    this.home = { icon: 'pi pi-home', routerLink: '/actividades' };
   }
   ngOnDestroy() {
     if (this.subscription) {
         this.subscription.unsubscribe();
     }
   }
-
 }

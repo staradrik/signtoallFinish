@@ -5,8 +5,8 @@
 			"id": "1000",
 			"name": "Sopa de numeros",
 			"image": "numerosSopa.jpg",
-			"category": "ActividadesM",
-			"Status": "REALIZADA",
+			"category": "Matematicas",
+			"status": "REALIZADA",
 			"rating": 5,
 			"url": "/actividades/sopNumeros"
 		},
@@ -14,16 +14,16 @@
 			"id": "1001",
 			"name": "Relacion de numeros",
 			"image": "relacionNum.jpg",
-			"category": "ActividadesM",
-			"Status": "REALIZADA",
+			"category": "Matematicas",
+			"status": "REALIZADA",
 			"rating": 5
 		},
         {
 			"id": "1002",
 			"name": "Memorama",
 			"image": "memorama.jpg",
-			"category": "ActividadesM",
-			"Status": "REALIZADA",
+			"category": "Matematicas",
+			"status": "REALIZADA",
 			"rating": 5,
 			"url": "/actividades/memoMate"
 		},
@@ -31,8 +31,8 @@
 			"id": "1003",
 			"name": "Rompecabezas",
 			"image": "rompecabezas.jpg",
-			"category": "ActividadesM",
-			"Status": "REALIZADA",
+			"category": "Matematicas",
+			"status": "REALIZADA",
 			"rating": 5,
 			"url": "/actividades/rompeMate"
 		},
@@ -40,16 +40,16 @@
 			"id": "1004",
 			"name": "Sumas y restas",
 			"image": "sumasResta.jpg",
-			"category": "ActividadesM",
-			"Status": "REALIZADA",
+			"category": "Matematicas",
+			"status": "REALIZADA",
 			"rating": 5
 		},
         {
 			"id": "1005",
 			"name": "Multiplicacion y división",
 			"image": "multiDiv.jpg",
-			"category": "ActividadesM",
-			"Status": "REALIZADA",
+			"category": "Matematicas",
+			"status": "REALIZADA",
 			"rating": 5
 		}
 	]

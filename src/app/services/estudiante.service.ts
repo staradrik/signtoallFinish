@@ -1,13 +1,11 @@
-
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ServicioService {
+export class EstudianteService {
 
-  private curso:number = 2;
+  private curso:number = 4;
 
   constructor() { }
 

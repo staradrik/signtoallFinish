@@ -9,7 +9,7 @@
                     <div class="container-img">
                         <!--  muestra el fondo -->
                     <div *ngIf = "photosArr[randArr[x + i]] != undefined && !photosArr[randArr[x + i]].paired ">
-                        <img (click)="imageClicked(photosArr[randArr[x + i]])" src="/assets/images/ActEspannol/memorama/Tarjeta.jpg" *ngIf = "!photosArr[randArr[x + i]].clicked"/>
+                        <img (click)="imageClicked(photosArr[randArr[x + i]])" src="/assets/images/ActEspañol/memorama/Tarjeta.jpg" *ngIf = "!photosArr[randArr[x + i]].clicked"/>
                     </div>
     
                     <!-- si la imagen es seleccionada, la muestra-->
@@ -19,7 +19,7 @@
                     
                         <!-- si ambas imagenes son iguales, se muestra un trofeo -->
                     <div *ngIf = "photosArr[randArr[x + i]] != undefined && photosArr[randArr[x + i]].paired ">
-                        <img  src="/assets/images/ActEspannol/memorama/Win.jpg" />
+                        <img  src="/assets/images/ActEspañol/memorama/Win.jpg" />
                     </div>
                     </div>
                 </td>

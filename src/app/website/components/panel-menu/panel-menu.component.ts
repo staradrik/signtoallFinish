@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { ObtenerActividadesService } from '../../../services/obtener-actividades.service';
-import { ServicioService } from '../../../services/servicio.service';
 
 @Component({
   selector: 'app-panel-menu',
@@ -11,13 +10,12 @@ import { ServicioService } from '../../../services/servicio.service';
 })
 export class PanelMenuComponent implements OnInit {
 
-  constructor(private listaActividades:ObtenerActividadesService, 
-              private Estudiante:ServicioService) { }
+  constructor(private listaActividades:ObtenerActividadesService) { }
 
   items: MenuItem[] = [];
   
   ngOnInit(): void {
-    this.items = this.listaActividades.obtener(this.Estudiante.obtenerCurso());
+    this.items = this.listaActividades.getPanelMenu();
   }
 
 }

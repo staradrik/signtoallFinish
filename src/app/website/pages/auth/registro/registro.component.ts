@@ -50,7 +50,7 @@ export class RegistroComponent implements OnInit {
   }
 
   iraLogin(){
-    this.router.navigate(['/actividades/iniciarSesion']);
+    this.router.navigate(['/login']);
   }
 
 }

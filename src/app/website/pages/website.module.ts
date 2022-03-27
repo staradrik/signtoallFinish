@@ -24,24 +24,22 @@ import { RadioButtonModule } from 'primeng/radiobutton';
 import { SelectButtonModule } from 'primeng/selectbutton';
 
 //Componentes
-import { AhorcadoComponent } from './contenedor-español/ahorcado/ahorcado.component';
-import { ContenedorActividadesComponent } from './contenedor-español/contenedor-actividades.component';
-import { ContenedorMatematicasComponent } from './contenedor-matematicas/contenedor-matematicas.component';
+import { AhorcadoComponent } from './español/ahorcado/ahorcado.component';
 import { FormProfesorComponent } from './auth/registro/form-profesor/form-profesor.component';
 import { IngresoEstudianteComponent } from './auth/inicio-sesion/ingreso-estudiante/ingreso-estudiante.component';
 import { IngresoGoogleComponent } from './auth/registro/ingreso-google/ingreso-google.component';
 import { IngresoProfesorComponent } from './auth/inicio-sesion/ingreso-profesor/ingreso-profesor.component';
 import { InicioSesionComponent } from './auth/inicio-sesion/inicio-sesion.component';
-import { MemoramaComponent } from './contenedor-español/memorama/memorama.component';
-import { MemoramaMatComponent } from './contenedor-matematicas/memorama-mat/memorama-mat.component';
+import { MemoramaComponent } from './español/memorama/memorama.component';
+import { MemoramaMatComponent } from './matematicas/memorama-mat/memorama-mat.component';
 import { RegistroComponent } from './auth/registro/registro.component';
-import { RompecabezasComponent } from './contenedor-matematicas/rompecabezas/rompecabezas.component';
-import { RompeLetrasComponent } from './contenedor-español/rompe-letras/rompe-letras.component';
+import { RompecabezasComponent } from './matematicas/rompecabezas/rompecabezas.component';
+import { RompeLetrasComponent } from './español/rompe-letras/rompe-letras.component';
 import { SobreNosotrosComponent } from './sobreNosotros/sobreNosotros.component';
-import { SopLetrasComponent } from './contenedor-español/sop-letras/sop-letras.component';
-import { SopaNumerosComponent } from './contenedor-matematicas/sopa-numeros/sopa-numeros.component';
+import { SopLetrasComponent } from './español/sop-letras/sop-letras.component';
+import { SopaNumerosComponent } from './matematicas/sopa-numeros/sopa-numeros.component';
 import { VistaActividadesComponent } from './vista-actividades/vista-actividades.component';
-import { VocabularioComponent } from './contenedor-español/vocabulario/vocabulario.component';
+import { VocabularioComponent } from './español/vocabulario/vocabulario.component';
 
 //Modulo routing
 import { WebsiteRoutingModule } from './website-routing.module';
@@ -49,8 +47,6 @@ import { WebsiteRoutingModule } from './website-routing.module';
 @NgModule({
   declarations: [
     AhorcadoComponent,
-    ContenedorActividadesComponent,
-    ContenedorMatematicasComponent,
     FormProfesorComponent,
     IngresoEstudianteComponent,
     IngresoGoogleComponent,

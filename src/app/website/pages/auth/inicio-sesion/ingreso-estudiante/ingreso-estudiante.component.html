@@ -1,1 +1,24 @@
-<p>ingreso-estudiante works!</p>
+<form action="registro">
+       
+    <div class="field col-12 md:col-4">
+        <span class="p-float-label p-input-icon-right">
+            <i class="pi pi-credit-card"></i>
+            <input type="text" id="id" pInputText class="p-inputtext-sm"> 
+            <!-- <p-inputNumber ></p-inputNumber> -->
+            <label for="inputtext">Cédula</label>
+        </span>
+    </div>
+    
+    <div class="field col-12 md:col-4">
+        <span class="p-float-label p-input-icon-right">
+            <i class="pi pi-key"></i>
+            <input type="password" id="password" pInputText class="p-inputtext-sm"> 
+            <!-- <input type="password" pPassword /> -->
+            <!-- <p-password></p-password> -->
+            <label for="inputtext">Contraseña</label>
+        </span>
+
+    </div>
+    <p-button routerLink="/actividades" label="Iniciar Sesión"></p-button>
+    
+</form>

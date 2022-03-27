@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ServicioService } from './services/servicio.service';
+import { EstudianteService } from './services/estudiante.service';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +11,7 @@ export class AppComponent implements OnInit{
  title = 'sign';
  curso:number = 0;
  constructor(private router: Router, 
-              private Estudiante: ServicioService) { }
+              private Estudiante: EstudianteService) { }
 
  IrActividad(){
   this.router.navigate(['/actividades/vistaAct']);

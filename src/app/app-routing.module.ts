@@ -10,7 +10,7 @@ import { RegistroComponent } from './website/pages/auth/registro/registro.compon
 
 //Routing
 const routes: Routes = [ 
-  {path:'', component: LayoutComponent},
+  { path: '', redirectTo: 'login', pathMatch: 'full'},
   {path:'login', component: InicioSesionComponent},
   {path:'signup', component: RegistroComponent},
   {
