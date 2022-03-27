@@ -1,8 +1,7 @@
-//Modulos Angular
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+//Modulos Angular
+import { FormsModule } from '@angular/forms';
 
 //Primeng
 import { BreadcrumbModule } from 'primeng/breadcrumb';
@@ -23,20 +22,25 @@ import { PasswordModule } from 'primeng/password';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { SelectButtonModule } from 'primeng/selectbutton';
 
-//Componentes
-import { SobreNosotrosComponent } from './sobreNosotros/sobreNosotros.component';
-import { VistaActividadesComponent } from './vista-actividades/vista-actividades.component';
+//components
+import { MemoramaMatComponent } from './memorama-mat/memorama-mat.component';
+import { RompecabezasComponent } from './rompecabezas/rompecabezas.component';
+import { SopaNumerosComponent } from './sopa-numeros/sopa-numeros.component';
 
-//Modulo routing
-import { WebsiteRoutingModule } from './website-routing.module';
+//routing
+import { MatematicasRoutingModule } from './matematicas-routing.module';
 import { QuicklinkModule } from 'ngx-quicklink';
+
 
 @NgModule({
   declarations: [
-    SobreNosotrosComponent,
-    VistaActividadesComponent
+    MemoramaMatComponent,
+    RompecabezasComponent,
+    SopaNumerosComponent,
   ],
   imports: [
+    CommonModule,
+    MatematicasRoutingModule,
     BreadcrumbModule,
     ButtonModule,
     CardModule,
@@ -44,12 +48,10 @@ import { QuicklinkModule } from 'ngx-quicklink';
     DataViewModule,
     DividerModule,
     DropdownModule,
-    InputTextModule,
     FormsModule,
-    WebsiteRoutingModule,
+    InputTextModule,
     PanelMenuModule,
     RatingModule,
-    ReactiveFormsModule,
     RippleModule,
     TableModule,
     TagModule,
@@ -59,9 +61,6 @@ import { QuicklinkModule } from 'ngx-quicklink';
     RadioButtonModule,
     SelectButtonModule,
     QuicklinkModule
-  ],
-  exports:[
-    VistaActividadesComponent
   ]
 })
-export class WebsiteModule { }
+export class MatematicasModule { }

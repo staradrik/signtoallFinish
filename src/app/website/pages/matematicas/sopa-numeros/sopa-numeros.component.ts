@@ -10,13 +10,14 @@ import { RutaBreadcrumService } from '../../../../services/ruta-breadcrum.servic
 export class SopaNumerosComponent implements OnInit {
 
   constructor(private breadcrumbService: RutaBreadcrumService) {
+    
+   }
+
+  ngOnInit(): void {
     this.breadcrumbService.setItems([
       { label: 'Actividades', routerLink: ['/actividades']}, 
       { label: 'sopa de numeros' }
     ]);
-   }
-
-  ngOnInit(): void {
   }
 
 }

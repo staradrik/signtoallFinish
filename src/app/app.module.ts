@@ -26,17 +26,25 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RippleModule } from 'primeng/ripple';
 import { SelectButtonModule } from 'primeng/selectbutton';
 import { ToastModule } from 'primeng/toast';
+import { MessageService } from 'primeng/api';
 
 //Componentes
 import { AppComponent } from './app.component';
 import { BreadcrumbComponent } from './website/components/breadcrumb/breadcrumb.component';
 import { PanelMenuComponent } from './website/components/panel-menu/panel-menu.component';
 import { NotFoundComponent } from './website/pages/not-found/not-found.component';
-import { MessageService } from 'primeng/api';
+import { FormProfesorComponent } from './website/pages/auth/registro/form-profesor/form-profesor.component';
+import { IngresoEstudianteComponent } from './website/pages/auth/inicio-sesion/ingreso-estudiante/ingreso-estudiante.component';
+import { IngresoGoogleComponent } from './website/pages/auth/registro/ingreso-google/ingreso-google.component';
+import { IngresoProfesorComponent } from './website/pages/auth/inicio-sesion/ingreso-profesor/ingreso-profesor.component';
+import { InicioSesionComponent } from './website/pages/auth/inicio-sesion/inicio-sesion.component';
+import { RegistroComponent } from './website/pages/auth/registro/registro.component';
+import { LayoutComponent } from './website/components/layout/layout.component';
+
 
 //Routing
 import { AppRoutingModule } from './app-routing.module';
-import { LayoutComponent } from './website/components/layout/layout.component';
+import { QuicklinkModule } from 'ngx-quicklink';
 
 @NgModule({
   declarations: [
@@ -45,6 +53,12 @@ import { LayoutComponent } from './website/components/layout/layout.component';
     BreadcrumbComponent,
     NotFoundComponent,
     LayoutComponent,
+    FormProfesorComponent,
+    IngresoEstudianteComponent,
+    IngresoGoogleComponent,
+    IngresoProfesorComponent,
+    InicioSesionComponent,
+    RegistroComponent,
   ],
   imports: [
     AccordionModule,
@@ -71,8 +85,10 @@ import { LayoutComponent } from './website/components/layout/layout.component';
     RippleModule,
     ReactiveFormsModule,
     SelectButtonModule,
-    ToastModule
+    ToastModule,
+    QuicklinkModule
   ],
+  
   providers: [MessageService],
   bootstrap: [AppComponent]
 })

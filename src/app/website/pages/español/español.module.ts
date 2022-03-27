@@ -1,8 +1,5 @@
-//Modulos Angular
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 //Primeng
 import { BreadcrumbModule } from 'primeng/breadcrumb';
@@ -23,20 +20,28 @@ import { PasswordModule } from 'primeng/password';
 import { RadioButtonModule } from 'primeng/radiobutton';
 import { SelectButtonModule } from 'primeng/selectbutton';
 
-//Componentes
-import { SobreNosotrosComponent } from './sobreNosotros/sobreNosotros.component';
-import { VistaActividadesComponent } from './vista-actividades/vista-actividades.component';
+//component
+import { AhorcadoComponent } from './ahorcado/ahorcado.component';
+import { MemoramaComponent } from './memorama/memorama.component';
+import { RompeLetrasComponent } from './rompe-letras/rompe-letras.component';
+import { SopLetrasComponent } from './sop-letras/sop-letras.component';
+import { VocabularioComponent } from './vocabulario/vocabulario.component';
 
-//Modulo routing
-import { WebsiteRoutingModule } from './website-routing.module';
+//routing
+import { EspañolRoutingModule } from './español-routing.module';
 import { QuicklinkModule } from 'ngx-quicklink';
 
 @NgModule({
   declarations: [
-    SobreNosotrosComponent,
-    VistaActividadesComponent
+    AhorcadoComponent,
+    MemoramaComponent,
+    RompeLetrasComponent,
+    SopLetrasComponent,
+    VocabularioComponent
   ],
   imports: [
+    CommonModule,
+    EspañolRoutingModule,
     BreadcrumbModule,
     ButtonModule,
     CardModule,
@@ -45,11 +50,8 @@ import { QuicklinkModule } from 'ngx-quicklink';
     DividerModule,
     DropdownModule,
     InputTextModule,
-    FormsModule,
-    WebsiteRoutingModule,
     PanelMenuModule,
     RatingModule,
-    ReactiveFormsModule,
     RippleModule,
     TableModule,
     TagModule,
@@ -59,9 +61,6 @@ import { QuicklinkModule } from 'ngx-quicklink';
     RadioButtonModule,
     SelectButtonModule,
     QuicklinkModule
-  ],
-  exports:[
-    VistaActividadesComponent
   ]
 })
-export class WebsiteModule { }
+export class EspañolModule { }

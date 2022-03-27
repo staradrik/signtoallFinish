@@ -13,10 +13,6 @@ export class RompecabezasComponent implements OnInit {
   constructor(private messageService: MessageService,
               private router: Router,
               private breadcrumbService: RutaBreadcrumService) { 
-                this.breadcrumbService.setItems([
-                  { label: 'Actividades', routerLink: ['/actividades']}, 
-                  { label: 'Rompecabezas' }
-                ]);
               }
 
   data = []=[
@@ -24,7 +20,6 @@ export class RompecabezasComponent implements OnInit {
   ]
   total: number= this.data.length
   
-
   imageUrl: string = `../assets/images/ActMatematicas/rompecabezas/${[Math.floor(Math.random() * this.data.length)] }.jpg`;
   imageSize: number = 500;
   gridsize: number = 2;
@@ -44,6 +39,10 @@ export class RompecabezasComponent implements OnInit {
   position: number[] = [];
   ngOnInit() {
     this.startGame();
+    this.breadcrumbService.setItems([
+      { label: 'Actividades', routerLink: ['/actividades']}, 
+      { label: 'Rompecabezas' }
+    ]);
   }
 
   isSorted(indexes:any): Boolean {

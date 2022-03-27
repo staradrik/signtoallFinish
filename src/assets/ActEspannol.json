@@ -7,7 +7,7 @@
 			"category": "Español",
 			"status": "REALIZADA",
 			"rating": 5,
-			"url": "/actividades/memoLetras"
+			"url": "/memoLetras"
 		},
 		{
 			"id": "1001",
@@ -16,7 +16,7 @@
 			"category": "Español",
 			"status": "REALIZADA",
 			"rating": 5,
-			"url": "/actividades/sopLetras"
+			"url": "/sopLetras"
 		},
         {
 			"id": "1002",
@@ -25,7 +25,7 @@
 			"category": "Español",
 			"status": "REALIZADA",
 			"rating": 5,
-			"url": "/actividades/vocavulario"
+			"url": "/vocavulario"
 		},
         {
 			"id": "1003",
@@ -42,7 +42,7 @@
 			"category": "Español",
 			"status": "REALIZADA",
 			"rating": 5,
-			"url": "/actividades/ahorcado"
+			"url": "/ahorcado"
 		}
 	]
 }

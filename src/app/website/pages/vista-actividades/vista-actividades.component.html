@@ -18,7 +18,7 @@
 					<div class="col-12">
 						<div class="product-list-item card">
 							<div class="container">
-								<img class="image" routerLink="{{activity.url}}" [src]="'assets/images/Act' + activity.category + '/' + activity.image"  [alt]="activity.name"/>
+								<img class="image" [routerLink]="activity.category + '/' + activity.url" [src]="'assets/images/Act' + activity.category + '/' + activity.image"  [alt]="activity.name"/>
 								<div class="middle">
 									<div class="text">{{activity.name}}</div>
 								</div>
@@ -47,7 +47,7 @@
 								<p-tag styleClass="mr-2" severity="success" >{{activity.status}}</p-tag>
 							</div>
 							<div class="product-grid-item-content">
-								<div routerLink="{{activity.url}}" class="container">
+								<div [routerLink]="activity.category + '/' + activity.url" class="container">
 									<img class="image" [src]="'assets/images/Act' + activity.category + '/' + activity.image"  [alt]="activity.name"/>
 									<div class="middle">
 										<div class="text">{{activity.name}}</div>

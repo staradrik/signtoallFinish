@@ -20,14 +20,15 @@ export class AhorcadoComponent implements OnInit {
            'V', 'W', 'X', 'Y', 'Z'];
 
   constructor(private breadcrumbService: RutaBreadcrumService) {
-    this.breadcrumbService.setItems([
-      { label: 'Actividades', routerLink: ['/actividades']}, 
-      { label: 'ahorcado' }
-    ]);
+    
    }
 
   ngOnInit(): void {
     this.palabraOculta = '___ '.repeat(this.palabra.length);
+    this.breadcrumbService.setItems([
+      { label: 'Actividades', routerLink: ['/actividades']}, 
+      { label: 'ahorcado' }
+    ]);
   }
 
   existeLetra( letra:string ) {

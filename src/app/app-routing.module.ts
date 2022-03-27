@@ -4,9 +4,11 @@ import { RouterModule, Routes } from '@angular/router';
 
 //Componentes
 import { NotFoundComponent } from './website/pages/not-found/not-found.component';
-import { LayoutComponent } from './website/components/layout/layout.component';
 import { InicioSesionComponent } from './website/pages/auth/inicio-sesion/inicio-sesion.component';
 import { RegistroComponent } from './website/pages/auth/registro/registro.component';
+
+//routing strategy
+import { QuicklinkStrategy } from 'ngx-quicklink';
 
 //Routing
 const routes: Routes = [ 
@@ -24,7 +26,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    preloadingStrategy: QuicklinkStrategy
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

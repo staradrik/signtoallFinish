@@ -33,15 +33,14 @@ public timerFlag:boolean = false;
               private messageService: MessageService,
               private router: Router) {
 
-              this.newGame();
-              this.breadcrumbService.setItems([
-                { label: 'Actividades', routerLink: ['/actividades']}, 
-                { label: 'Memorama' }
-              ]);
    }
 
   ngOnInit(): void {
-   
+    this.newGame();
+    this.breadcrumbService.setItems([
+      { label: 'Actividades', routerLink: ['/actividades']}, 
+      { label: 'Memorama' }
+    ]);
   }
 
   public newGame():void{

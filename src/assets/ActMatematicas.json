@@ -8,7 +8,7 @@
 			"category": "Matematicas",
 			"status": "REALIZADA",
 			"rating": 5,
-			"url": "/actividades/sopNumeros"
+			"url": "/sopNumeros"
 		},
 		{
 			"id": "1001",
@@ -25,7 +25,7 @@
 			"category": "Matematicas",
 			"status": "REALIZADA",
 			"rating": 5,
-			"url": "/actividades/memoMate"
+			"url": "/memoMate"
 		},
         {
 			"id": "1003",
@@ -34,7 +34,7 @@
 			"category": "Matematicas",
 			"status": "REALIZADA",
 			"rating": 5,
-			"url": "/actividades/rompeMate"
+			"url": "/rompeMate"
 		},
         {
 			"id": "1004",
