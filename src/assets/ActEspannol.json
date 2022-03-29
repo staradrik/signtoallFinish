@@ -4,34 +4,34 @@
 			"id": "1000",
 			"name": "Memorama",
 			"image": "memorama.jpg",
-			"category": "ActividadesE",
+			"category": "Español",
 			"status": "REALIZADA",
 			"rating": 5,
-			"url": "/actividades/memoLetras"
+			"url": "/memoLetras"
 		},
 		{
 			"id": "1001",
 			"name": "Sopa de letras",
 			"image": "sopaLetras.jpg",
-			"category": "ActividadesE",
+			"category": "Español",
 			"status": "REALIZADA",
 			"rating": 5,
-			"url": "/actividades/sopLetras"
+			"url": "/sopLetras"
 		},
         {
 			"id": "1002",
 			"name": "Vocabulario",
 			"image": "vocabulario.jpg",
-			"category": "ActividadesE",
+			"category": "Español",
 			"status": "REALIZADA",
 			"rating": 5,
-			"url": "/actividades/vocavulario"
+			"url": "/vocavulario"
 		},
         {
 			"id": "1003",
 			"name": "Rompecabezas",
 			"image": "rompecabezas.jpg",
-			"category": "ActividadesE",
+			"category": "Español",
 			"status": "REALIZADA",
 			"rating": 5
 		},
@@ -39,11 +39,10 @@
 			"id": "1004",
 			"name": "Ahorcado",
 			"image": "ahorcado.jpg",
-			"category": "ActividadesE",
+			"category": "Español",
 			"status": "REALIZADA",
 			"rating": 5,
-			"url": "/actividades/ahorcado"
-
+			"url": "/ahorcado"
 		}
 	]
 }
