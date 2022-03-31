@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 //Primeng
 import { BreadcrumbModule } from 'primeng/breadcrumb';
@@ -49,6 +50,7 @@ import { QuicklinkModule } from 'ngx-quicklink';
     DataViewModule,
     DividerModule,
     DropdownModule,
+    FormsModule,
     InputTextModule,
     PanelMenuModule,
     RatingModule,

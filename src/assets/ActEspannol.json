@@ -33,7 +33,8 @@
 			"image": "rompecabezas.jpg",
 			"category": "Español",
 			"status": "REALIZADA",
-			"rating": 5
+			"rating": 5,
+			"url": "/rompecabezas"
 		},
         {
 			"id": "1004",

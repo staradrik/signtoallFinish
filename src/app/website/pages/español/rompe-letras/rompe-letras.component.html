@@ -1,1 +1,39 @@
-<p>rompe-letras works!</p>
+<p-toast></p-toast>
+<div class="imagePuzzle">
+	<div class="unsolvedPuzzle">
+		<h1 style="text-align: center;color: black;">¡Realiza la actividad!</h1>
+		<ul class="puzzle" dropzone="true">
+			<li *ngFor="let img of Image" class="box" [draggable]="true" [id]="img.index" (dragstart)="onDragStart($event)"
+				(drop)="onDrop($event)" (dragover)="allowDrop($event)" [style.width.px]="boxSize" [style.height.px]="boxSize"
+				[ngStyle]="{'background-image':'url(' + imageUrl + ') ','background-repeat':'no-repeat', 'background-position': '' + img.x_pos + ' '  + img.y_pos + '','background-size':''+ (gridsize * 100) +'% '+ (gridsize * 100) +'%'}">
+			</li>
+		</ul>
+	</div>
+	<div class="scoreboard">
+		<h1 style="text-align: center;color: black;">{{nameImg}}</h1>
+		<h3 class="score-detail">
+			<span>  Pasos: {{steps}}</span>
+		</h3>
+		<div class="finalImage" [ngStyle]="{'background-image':'url(' + imageUrl + ') '}"></div>
+		
+
+		<h3 style="text-align: center;color: black;">Nivel de dificultad:</h3>
+		<div class="difficulty-levels">
+			<div class="input-group">
+				<p-radioButton name="difficulty" value="2" [(ngModel)]="difficulty" label="Baja"(onClick)="startGame()"></p-radioButton>
+			</div>
+			<div class="input-group">
+				<p-radioButton name="difficulty" value="3" [(ngModel)]="difficulty" label="Media"(onClick)="startGame()"></p-radioButton>	
+			</div>
+			<div class="input-group">
+				<p-radioButton name="difficulty" value="4" [(ngModel)]="difficulty" label="Alta"(onClick)="startGame()"></p-radioButton>	
+			</div>
+		</div>
+		<br>
+		<div class="score-detail">
+			<button pButton pRipple type="button" label="Reiniciar" class="p-button-outlined p-button-rounded p-button-help"  (click)="startGame()"></button>
+			<button pButton pRipple type="button" label="Desorganizar" class="p-button-outlined p-button-rounded p-button-success" (click)="reRandomize()"></button>
+		</div>
+
+	</div>
+</div>
