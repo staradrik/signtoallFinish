@@ -4,7 +4,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SelectItem } from "primeng/api";
 
-
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
@@ -27,7 +26,6 @@ export class RegistroComponent implements OnInit {
     confirm_contraseña: ['', [Validators.required]]}
   );
 
- 
 
   constructor(private router: Router,
               private fb: FormBuilder) { 

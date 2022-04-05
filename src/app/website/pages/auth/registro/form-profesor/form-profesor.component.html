@@ -1,53 +1,37 @@
 <form action="registro">
-    <!-- <div class="field col-12 md:col-4">
-        <div class="field-radiobutton">
-            <div class="col">
-                   <p-radioButton name="estudiante" value="estudiante" [(ngModel)]="selectedValue" inputId="estudiante"></p-radioButton>
-                <label for="estudiante">  Estudiante <i class="pi pi-palette"></i> </label>                  
-            </div>                   
-                    <p-radioButton name="profesor" value="profesor" [(ngModel)]="selectedValue" inputId="profesor"></p-radioButton>
-                <label for="profesor">Profesor <i class="pi pi-book"></i> </label>  
-        </div>
-    </div> -->
-    
-  <!-- <p-radioButton name="groupname" value="val1" label="Profesor"></p-radioButton>
-  <p-radioButton name="groupname" value="val1" label="Estudiante"></p-radioButton> -->
   
       <div class="field col-12 md:col-4">
           <span class="p-float-label p-input-icon-right">
               <i class="pi pi-credit-card"></i>
-              <input type="text" id="id" pInputText class="p-inputtext-sm"> 
-              <!-- <p-inputNumber ></p-inputNumber> -->
+              <input type="text" name="id_profesor" pInputText class="p-inputtext-sm" [(ngModel)]="registro.id_profesor"> 
               <label for="inputtext">Cédula</label>
           </span>
       </div>
       <div class="field col-12 md:col-4">
           <span class="p-float-label p-input-icon-right">
               <i class="pi pi-user"></i>
-              <input type="text" id="nombres" pInputText class="p-inputtext-sm"> 
+              <input type="text" name="nombres" pInputText class="p-inputtext-sm" [(ngModel)]="registro.nombres" > 
               <label for="inputtext">Nombres</label>
           </span>
       </div>
       <div class="field col-12 md:col-4">
           <span class="p-float-label p-input-icon-right">
               <i class="pi pi-user"></i>
-              <input type="text" id="apellidos" pInputText class="p-inputtext-sm"> 
+              <input type="text" name="apellidos" pInputText class="p-inputtext-sm" [(ngModel)]="registro.apellidos"> 
               <label for="inputtext">Apellidos</label>
           </span>
       </div>
       <div class="field col-12 md:col-4">
           <span class="p-float-label p-input-icon-right">
               <i class="pi pi-envelope"></i>
-              <input type="email" id="correo" pInputText class="p-inputtext-sm"> 
+              <input type="email" name="correo" pInputText class="p-inputtext-sm" [(ngModel)]="registro.correo"> 
               <label for="inputtext">Correo</label>
           </span>
       </div>
       <div class="field col-12 md:col-4">
           <span class="p-float-label p-input-icon-right">
               <i class="pi pi-key"></i>
-              <!-- <input type="password" id="password" pInputText class="p-inputtext-sm">  -->
-              <!-- <input type="password" pPassword /> -->
-              <p-password></p-password>
+              <p-password name="password" [(ngModel)]="registro.password"></p-password>
               <label for="inputtext">Contraseña</label>
           </span>
 
@@ -55,12 +39,11 @@
       <div class="field col-12 md:col-4">
           <span class="p-float-label p-input-icon-right">
               <i class="pi pi-key"></i>
-              <!-- <input type="password" id="c_password" pInputText class="p-inputtext-sm">  -->
               <p-password></p-password>
               <label for="inputtext">Confirmar Contraseña</label>
           </span>
       </div>
-      <p-button label="Registrarse"></p-button>
+      <p-button label="Registrarse" (click)="registrarProfesor()"></p-button>
       
   
     

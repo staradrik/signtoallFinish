@@ -3,8 +3,7 @@
     <div class="field col-12 md:col-4">
         <span class="p-float-label p-input-icon-right">
             <i class="pi pi-credit-card"></i>
-            <input type="text" id="id" pInputText class="p-inputtext-sm"> 
-            <!-- <p-inputNumber ></p-inputNumber> -->
+            <input type="text" name="id_profesor" pInputText class="p-inputtext-sm" [(ngModel)]="inicioSesion.id_profesor"> 
             <label for="inputtext">Cédula</label>
         </span>
     </div>
@@ -12,13 +11,11 @@
     <div class="field col-12 md:col-4">
         <span class="p-float-label p-input-icon-right">
             <i class="pi pi-key"></i>
-            <input type="password" id="password" pInputText class="p-inputtext-sm"> 
-            <!-- <input type="password" pPassword /> -->
-            <!-- <p-password></p-password> -->
+            <input type="password" name="password" pInputText class="p-inputtext-sm" [(ngModel)]="inicioSesion.password"> 
             <label for="inputtext">Contraseña</label>
         </span>
 
     </div>
-    <p-button routerLink="/actividades" label="Iniciar Sesión"></p-button>
+    <p-button routerLink="/actividades" label="Iniciar Sesión" (click)="iniciarSesionProfesor()" ></p-button>
     
 </form>
