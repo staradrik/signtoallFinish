@@ -8,7 +8,31 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-memorama-mat',
   templateUrl: './memorama-mat.component.html',
-  styles: [
+  styles: [`
+  .container{
+    width:100%;
+    border-radius: 15px;
+    background: #f0eeee;
+  }
+  .container-div{
+    margin-top:15px;
+    margin-bottom:15px;
+    margin-left:15px;
+    margin-right:15px;
+  }
+  .container-img{
+    margin-top:10px;
+    margin-bottom:10px;
+    margin-left:10px;
+    margin-right:10px;
+  }
+  img{
+    border-radius: 15px;
+    width: 100%;
+    object-position: 0px;
+    margin-top: 1%;
+    margin-bottom: -4px;
+  }`
   ]
 })
 export class MemoramaMatComponent implements OnInit {
@@ -35,12 +59,12 @@ public timerFlag:boolean = false;
 
    }
 
-  ngOnInit(): void {
-    this.newGame();
+  ngOnInit(): void {  
     this.breadcrumbService.setItems([
       { label: 'Actividades', routerLink: ['/actividades']}, 
       { label: 'Memorama' }
     ]);
+    this.newGame();
   }
 
   public newGame():void{
