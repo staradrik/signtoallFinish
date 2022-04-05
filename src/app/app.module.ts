@@ -41,6 +41,8 @@ import { InicioSesionComponent } from './website/pages/auth/inicio-sesion/inicio
 import { RegistroComponent } from './website/pages/auth/registro/registro.component';
 import { LayoutComponent } from './website/components/layout/layout.component';
 
+//services
+import {AuthService} from "./services/auth.service";
 
 //Routing
 import { AppRoutingModule } from './app-routing.module';
@@ -89,7 +91,7 @@ import { QuicklinkModule } from 'ngx-quicklink';
     QuicklinkModule
   ],
   
-  providers: [MessageService],
+  providers: [MessageService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
