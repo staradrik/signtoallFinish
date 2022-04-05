@@ -18,13 +18,13 @@
 			<h3 style="text-align: center;color: black;"> {{steps}} / Nivel de dificultad:</h3>
 			<div class="difficulty-levels">
 				<div class="input-group">
-					<p-radioButton style="color: green;" name="difficulty" value="2" [(ngModel)]="difficulty" label="Baja"(onClick)="startGame()"></p-radioButton>
+					<p-radioButton name="difficulty" value="2" [(ngModel)]="difficulty" label="Baja"(onClick)="startGame()"></p-radioButton>
 				</div>
 				<div class="input-group">
 					<p-radioButton name="difficulty" value="3" [(ngModel)]="difficulty" label="Media"(onClick)="startGame()"></p-radioButton>	
 				</div>
 				<div class="input-group">
-					<p-radioButton style="color: red;" name="difficulty" value="4" [(ngModel)]="difficulty" label="Alta"(onClick)="startGame()"></p-radioButton>	
+					<p-radioButton name="difficulty" value="4" [(ngModel)]="difficulty" label="Alta"(onClick)="startGame()"></p-radioButton>	
 				</div>
 			</div>
 			<br>
