@@ -74,3 +74,23 @@ li {
     background-color: lightgreen;
     padding: 5%;
 }
+
+.grid-container {
+    display: grid;
+    margin-top: 15px;
+    width: 100%;
+    
+    height: 67%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.grid-container1 {
+    display: grid;
+    margin-top: 15px;
+    margin-left: 20px;
+    width: 65%;
+    height: 77%;
+    background-color: #F0EEEE;
+    border-radius: 10px;
+}

@@ -120,10 +120,13 @@ export class RompeLetrasComponent implements OnInit {
     this.Image = this.randomize(this.Image);
   }
 
-  startGame(): void {
+  newGame(): void {
     this.numImg = Math.floor(Math.random() * this.total);
     this.imageUrl = `../assets/images/ActEspañol/rompecabezas/${this.numImg}.png`;
     this.nameImg = this.data[this.numImg + 1];
+    this.steps = 0;
+  }
+  startGame(): void {
     this.reset();
     this.initializeGame();
     this.breakImageParts();
