@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SwUpdate } from '@angular/service-worker';
+import { RutaBreadcrumService } from '../../../../services/ruta-breadcrum.service';
 
 @Component({
   selector: 'app-sudoku',
@@ -28,10 +29,14 @@ setDifficulty(difficulty:any):any{
   }
 }
 
-constructor(updates: SwUpdate) {
+constructor(updates: SwUpdate, private breadcrumbService: RutaBreadcrumService) {
   updates.available.subscribe(event => {
     updates.activateUpdate().then(() => document.location.reload());
-  })
+  });
+  this.breadcrumbService.setItems([
+    { label: 'Actividades', routerLink: ['/actividades']}, 
+    { label: 'Sudoku' }
+  ]);
 }
   ngOnInit(): void {
     this.setDifficulty
