@@ -1,0 +1,25 @@
+
+.enable{
+    background-color: rgb(51, 210, 250);
+    font-family:  Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: lighter; 
+  }
+  
+  
+  .square{
+    width: 5em;
+    height : 5em;
+    border-radius: 0.5em;
+    margin: 0.01em ;
+    font-weight: 900;
+    font-size: 40;
+  
+  }
+  .square-clear{
+    width: 15em;
+    height : 5em;
+    border-radius: 0.5em;
+    margin: 0.01em ;
+    font-size: 40;
+    font-weight: 900;
+  }

@@ -1,0 +1,157 @@
+
+h3 {
+    font-family: Lato;
+  }
+  
+  .ls-cover{
+    background-color: rgba(175, 67, 5, 0.884);
+  }
+  .mr-cover{
+    background-color: rgb(0, 0, 0);
+  }
+  
+  .difficulty {
+    margin: 2vh;
+    padding: 2vh;
+    margin-bottom: 11vh;
+  }
+  .submitBtn {
+    margin: 2vh;
+    margin-bottom: 2vh;
+    padding: 2vh;
+  }
+  
+  .levels{
+    margin-right: 0.5em;
+    border: none;
+    margin-left: 0.5em;
+    background-color: rgb(206, 228, 85);
+    border-radius: 0.4em;
+    padding: 0.1em 1.2em;
+  
+  }
+  
+  .winner{
+    color: green;
+    font-weight: 900;
+  }
+
+  .loser{
+    color: orangered;
+    font-weight: 900;
+  }
+
+  .submitButton{
+    background-color: rgba(175, 67, 5, 0.884);
+    border-color: rgba(175, 67, 5, 0.884);
+  }
+  
+  .lvl-Sel{
+    background-color: rgb(180, 180, 180);
+    border-color: rgb(180, 180, 180);
+    color: black;
+    font-weight: 600;
+  }
+
+  .cellPadRight{
+    padding-right: 0.4em;
+  }
+  .cellPadBottom{
+    padding-bottom: 0.4em;
+  }
+
+.cellWithZero{
+   opacity: 0;
+}
+
+.my-cont{
+  padding-top:0;
+}
+
+.wrapper-container {
+  margin: 2vh;
+  padding: 2vh;
+  margin-bottom: 11vh;
+}
+
+
+
+.imagePuzzle {
+  color: white;
+  width: 1000px;
+  height: 700px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+ 
+}
+
+.unsolvedPuzzle, .scoreboard {
+  width: 50%;
+  box-sizing: border-box;
+  padding: 0 5%;
+}
+
+.sectionName {
+  background-color: white;
+  color: black;
+  text-align: center;
+  width: 400px;
+  height: 50px;
+}
+
+.score-detail, .difficulty-levels {
+  color: rgb(58, 7, 199);
+  display: flex;
+  justify-content: space-around;
+}
+
+li {
+  width: 100px;
+  list-style-type: none;
+}
+
+.puzzle {
+  width: 500px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  flex-wrap: wrap;
+  box-sizing:border-box;
+  box-shadow: 10px 10px 8px #888888;
+}
+
+.box {
+  display: inline-block;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.finalImage {
+  width: 250px;
+  height: 250px;
+  margin: auto;
+  /*background-image: url("../../assets/images/taj.jpg");*/
+  background-size: 100% 100%;
+}
+
+.unsolved, .solved {
+  width: 50%;
+}
+
+.image-url {
+  margin-top: 5%;
+}
+
+.successMessage{
+  margin: 5%;
+  border: 1px solid green;
+  border-radius: 10px;
+  color: black;
+  background-color: lightgreen;
+  padding: 5%;
+}
+
+

@@ -1,0 +1,12 @@
+<div id="par" *ngFor='let nprow of numPicker; let i=index' class="d-flex justify-content-center">
+	<div *ngFor='let npcell of nprow; let j=index' class="d-flex justify-content-center">
+		<button class="square enable" (click)="valueFilled(npcell.v)">
+			{{npcell.v}}
+		</button>
+	</div>
+</div>
+
+<div class="text-center">
+  <button class="square-clear enable" (click)="valueFilled(0)">Clear</button>
+</div>
+

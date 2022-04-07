@@ -1,0 +1,67 @@
+<div class="imagePuzzle">
+    <div class="row d-flex justify-content-center">
+        <div *ngIf="!sudokuSubmitted" class="col-md-3">  
+            
+                <div class="btn-group " style="justify-content: right;">
+                    <button pButton pRipple type="button" label="Fácil" class="p-button-raised" style="margin-right: 4px;" (click)="changeDifficulty('easy')"></button>
+                    <button pButton pRipple type="button" label="Medio" class="p-button-raised p-button-info" style="margin-right: 4px;" (click)="changeDifficulty('medium')"></button>                 
+                    <button pButton pRipple type="button" label="Díficil" class="p-button-raised p-button-help" style="margin-right: 4px;" (click)="changeDifficulty('advanced')"></button>
+                </div>          
+                
+                <div class='container my-cont' style="margin-top: 8px;">
+                    <div *ngFor='let row of data; let i=index' class="d-flex justify-content-center">
+                        <div *ngFor='let cell of row; let j=index' class="d-flex justify-content-center">                          
+                            <div [ngClass]="(i===2 || i===5)?'cellPadBottom':''">
+                                <div [ngClass]="(j===2 || j===5)?'cellPadRight':''">
+                                    <button pButton pRipple type="button"   
+                                    [disabled]="!cell.s" id="{{i+1}}-{{j+1}}" class="square"
+                                    [ngClass]="cell.s ? 'enable':'disable' "
+                                    (click)="open(i,j,content, 'modal-picker')"   class="p-button-outlined p-button-info">
+                                    <span *ngIf="cell.v !== 0"> <b> {{cell.v}} </b></span>
+                                    <span *ngIf="cell.v === 0"
+                                        [ngClass]="(cell.v === 0)?'cellWithZero':''">{{cell.v}}</span>
+                                    <span></span></button>                      
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br>                   
+                </div>
+
+                <div class="submitBtn justify-content-center fixed-bottom">
+                    <button pButton pRipple type="button" label="Enviar" class="p-button-outlined p-button-rounded p-button-success" (click)="checkSolution()"></button>
+                </div>
+
+        </div>
+
+        <div *ngIf="sudokuSubmitted" >
+
+            <p-card header="Resultado"  [style]="{width: '360px'}" styleClass="p-card-shadow">
+                <ng-template pTemplate="header">
+                    <img *ngIf="isFinished" alt="Card" src="assets/images/ActMatematicas/sudoku/win.gif">
+                    <img *ngIf="!isFinished" alt="Card" src="assets/images/ActMatematicas/sudoku/lost.gif">
+                </ng-template>
+                <h3 *ngIf="isFinished" class="card-title winner">Felicitaciones, haz hecho unn gran trabajo!</h3>
+                <h3 *ngIf="!isFinished" class="card-title loser">Intentalo de nuevo!</h3>
+                
+                <ng-template pTemplate="footer">
+                    <p>¿Quieres jugar otra vez? escoge un nivel</p>
+                    <div class="btn-group " style="justify-content: right;">
+                        <button pButton pRipple type="button" label="Fácil" class="p-button-raised" style="margin-right: 4px;" (click)="changeDifficulty('easy')"></button>
+                        <button pButton pRipple type="button" label="Medio" class="p-button-raised p-button-info" style="margin-right: 4px;" (click)="changeDifficulty('medium')"></button>                 
+                        <button pButton pRipple type="button" label="Díficil" class="p-button-raised p-button-help" style="margin-right: 4px;" (click)="changeDifficulty('advanced')"></button>
+                    </div> 
+                </ng-template>
+            </p-card>
+
+        </div>
+    </div>
+</div>
+
+
+<ng-template #content let-modal modal-content>
+
+    <app-num-picker (click)="modal.dismiss('Cross click')" (messageEvent)="recieveValue($event)">
+    </app-num-picker>
+
+</ng-template>

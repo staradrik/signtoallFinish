@@ -30,6 +30,9 @@ import { SopaNumerosComponent } from './sopa-numeros/sopa-numeros.component';
 //routing
 import { MatematicasRoutingModule } from './matematicas-routing.module';
 import { QuicklinkModule } from 'ngx-quicklink';
+import { GridComponent } from './sudoku/grid/grid.component';
+import { NumPickerComponent } from './sudoku/num-picker/num-picker.component';
+import { SudokuComponent } from './sudoku/sudoku.component';
 
 
 @NgModule({
@@ -37,6 +40,9 @@ import { QuicklinkModule } from 'ngx-quicklink';
     MemoramaMatComponent,
     RompecabezasComponent,
     SopaNumerosComponent,
+    GridComponent,
+    NumPickerComponent,
+    SudokuComponent,
   ],
   imports: [
     CommonModule,

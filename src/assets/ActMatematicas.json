@@ -38,11 +38,12 @@
 		},
         {
 			"id": "1004",
-			"name": "Sumas y restas",
+			"name": "Sudoku",
 			"image": "sumasResta.jpg",
 			"category": "Matematicas",
 			"status": "REALIZADA",
-			"rating": 5
+			"rating": 5,
+			"url": "/sudoku"
 		},
         {
 			"id": "1005",

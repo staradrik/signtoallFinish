@@ -47,6 +47,10 @@ import {AuthService} from "./services/auth.service";
 //Routing
 import { AppRoutingModule } from './app-routing.module';
 import { QuicklinkModule } from 'ngx-quicklink';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
   declarations: [
@@ -60,7 +64,7 @@ import { QuicklinkModule } from 'ngx-quicklink';
     IngresoGoogleComponent,
     IngresoProfesorComponent,
     InicioSesionComponent,
-    RegistroComponent,
+    RegistroComponent
   ],
   imports: [
     AccordionModule,
@@ -88,7 +92,14 @@ import { QuicklinkModule } from 'ngx-quicklink';
     ReactiveFormsModule,
     SelectButtonModule,
     ToastModule,
-    QuicklinkModule
+    QuicklinkModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    }),
+    NgbModule,
   ],
   
   providers: [MessageService, AuthService],
