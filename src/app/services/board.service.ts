@@ -15,7 +15,7 @@ export class BoardServiceService {
   private initialContent: any [] = [];
   finished = false;
 
-  elapsedSeconds:any = 0;
+  elapsedSeconds:any = null;
 
   private timerSrc: any = null;
   private timerSub: any = null;

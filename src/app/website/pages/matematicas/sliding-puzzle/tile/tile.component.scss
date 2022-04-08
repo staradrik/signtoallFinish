@@ -1,13 +1,14 @@
 :host {
-    border: 1px dotted lightblue;
-    color: gray;
+    border: 1px dotted yellow;
+    background-color: #F8FEC1;
+    color: rgb(160, 220, 115);
     display: inline-block;
     width: 150px;
     height: 150px;
   }
   
   .container {
-    color: grey;
+    color: black;
     display: inline-block;
     font-family: sans-serif;
     font-size: 40px;

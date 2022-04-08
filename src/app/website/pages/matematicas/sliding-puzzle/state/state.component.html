@@ -2,23 +2,23 @@
     class="start"
     *ngIf="!boardServiceService.isInProgress()"
     (click)="boardServiceService.startGame()">
-  Start Game
+  Inicia!
 </button>
 
 <button
     class="stop"
     *ngIf="boardServiceService.isInProgress()"
     (click)="boardServiceService.initGame()">
-  Stop Game
+  Pausar
 </button>
 
 <div *ngIf="boardServiceService.isInProgress()">
-  <span>Moves: {{ boardServiceService.movesCount }}</span>
-  <span>Time elapsed: {{ boardServiceService.elapsedSeconds }}</span>
+  <span>Movimientos: {{ boardServiceService.movesCount }}</span>
+  <span>Tiempo: {{ boardServiceService.elapsedSeconds }}</span>
 </div>
 
 <div *ngIf="boardServiceService.finished">
-  <span>Congratulations! You did it in {{ boardServiceService.movesCount }} moves
-    and {{ boardServiceService.elapsedSeconds }} seconds!</span>
+  <span>Felicitaciones! Lo lograste en {{ boardServiceService.movesCount }} movimientos
+    y {{ boardServiceService.elapsedSeconds }} segundos!</span>
 </div>
 
