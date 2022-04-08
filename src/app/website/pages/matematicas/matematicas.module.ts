@@ -37,6 +37,7 @@ import { SlidingPuzzleComponent } from './sliding-puzzle/sliding-puzzle.componen
 
 
 
+
 @NgModule({
   declarations: [
     MemoramaMatComponent,

@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MemoramaMatComponent } from './memorama-mat/memorama-mat.component';
 import { SopaNumerosComponent } from './sopa-numeros/sopa-numeros.component';
 import { RompecabezasComponent } from './rompecabezas/rompecabezas.component';
+import { SlidingPuzzleComponent } from './sliding-puzzle/sliding-puzzle.component';
 
 const routes: Routes = [
   {
@@ -13,7 +14,7 @@ const routes: Routes = [
       {path: 'sopNumeros',component: SopaNumerosComponent},
       {path: 'memoMate', component: MemoramaMatComponent},
       {path: 'rompeMate', component: RompecabezasComponent},
-      //{path: 'slidin', component: }
+      {path: 'slidin', component: SlidingPuzzleComponent}
     ]
   }
 ];

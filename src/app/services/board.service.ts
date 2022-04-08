@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { timer } from 'rxjs';
-import { DIRECTION_DOWN,DIRECTION_UP,DIRECTION_LEFT,DIRECTION_RIGHT } from '../website/pages/matematicas/slidingPuzzle/defs';
+import { DIRECTION_DOWN,DIRECTION_UP,DIRECTION_LEFT,DIRECTION_RIGHT } from '../website/pages/matematicas/sliding-puzzle/defs';
 
 
 @Injectable({
@@ -40,7 +40,7 @@ export class BoardServiceService {
     this.setCompleted();
   }
 
-  startGame(initial: number[] = []) {
+  startGame(initial: number[] | null = null) {
     this.started = true;
     this.finished = false;
     this.elapsedSeconds = 0;

@@ -6,11 +6,9 @@ import { BoardServiceService } from 'src/app/services/board.service';
   templateUrl: './board.component.html',
   styleUrls: ['./board.component.scss']
 })
-export class BoardComponent implements OnInit {
+export class BoardComponent  {
 
   constructor(public boardServiceService: BoardServiceService) { }
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
-  }
+
 
 }

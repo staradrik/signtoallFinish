@@ -2,6 +2,8 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { BoardServiceService } from 'src/app/services/board.service';
 //import { fromEvent} from 'rxjs';
 import { keyToDirection} from './defs';
+import { BreadcrumbComponent } from '../../../components/breadcrumb/breadcrumb.component';
+import { RutaBreadcrumService } from 'src/app/services/ruta-breadcrum.service';
 
 @Component({
   selector: 'app-sliding-puzzle',
@@ -14,9 +16,14 @@ export class SlidingPuzzleComponent implements OnInit {
 
   constructor(
     public boardService: BoardServiceService,
+    private breadcrumbService: RutaBreadcrumService
   ) {}
 
   ngOnInit() {
+    this.breadcrumbService.setItems([
+      { label: 'Actividades', routerLink: ['/actividades']}, 
+      { label: 'Rompecabezas' }
+    ]);
     this.boardService.initGame();
   }
 
@@ -29,7 +36,7 @@ export class SlidingPuzzleComponent implements OnInit {
           return;
       }
 
-      const direction = keyToDirection[event.key];
+      const direction = this.tecla(event.key);
       
       if (direction) {
         this.boardService.move(direction);
@@ -50,7 +57,16 @@ export class SlidingPuzzleComponent implements OnInit {
       }
     }
   }
-
+  tecla(key:string):string{
+    switch(key){
+      case 'ArrowUp': return keyToDirection['ArrowUp'];
+        case 'ArrowDown': return keyToDirection['ArrowDown'];
+        case 'ArrowLeft': return keyToDirection['ArrowLeft'];
+        case 'ArrowRight': return keyToDirection['ArrowRight'];
+      default: 
+          return "up";
+  }
+  }
 }
 
 
