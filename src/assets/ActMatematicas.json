@@ -47,11 +47,12 @@
 		},
         {
 			"id": "1005",
-			"name": "Multiplicacion y división",
-			"image": "multiDiv.jpg",
+			"name": "Rompecabezas deslizantes",
+			"image": "sumasResta.jpg",
 			"category": "Matematicas",
 			"status": "REALIZADA",
-			"rating": 5
+			"rating": 5,
+			"url": "/slidin"
 		}
 	]
 }

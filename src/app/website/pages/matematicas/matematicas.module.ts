@@ -33,6 +33,10 @@ import { QuicklinkModule } from 'ngx-quicklink';
 import { GridComponent } from './sudoku/grid/grid.component';
 import { NumPickerComponent } from './sudoku/num-picker/num-picker.component';
 import { SudokuComponent } from './sudoku/sudoku.component';
+import { BoardComponent } from './sliding-puzzle/board/board.component';
+import { StateComponent } from './sliding-puzzle/state/state.component';
+import { TileComponent } from './sliding-puzzle/tile/tile.component';
+import { SlidingPuzzleComponent } from './sliding-puzzle/sliding-puzzle.component';
 
 
 @NgModule({
@@ -43,6 +47,10 @@ import { SudokuComponent } from './sudoku/sudoku.component';
     GridComponent,
     NumPickerComponent,
     SudokuComponent,
+    BoardComponent,
+    StateComponent,
+    TileComponent,
+    SlidingPuzzleComponent,
   ],
   imports: [
     CommonModule,
