@@ -6,7 +6,8 @@ import passportAuth from "./middlewares/passport";
 
 import authRoutes from "./routes/authRoutes";
 import profileRoutes from "./routes/profileRoutes";
-import frontRoutes from "./routes/frontRoutes";
+import crudRoutes from "./routes/crudRoutes";
+
 
 class Server {
   public app: Application;
@@ -34,7 +35,7 @@ class Server {
   routes(): void {
     this.app.use(authRoutes);
     this.app.use(profileRoutes);
-    this.app.use(frontRoutes);
+    this.app.use(crudRoutes);
   }
 
   //Empieza la aplicacion

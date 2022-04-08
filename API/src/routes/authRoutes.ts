@@ -1,7 +1,6 @@
 import { Router } from "express";
 
 import { authController } from "../controllers/authController";
-import { frontController } from "../controllers/frontController";
 
 class AuthRoutes {
   public router: Router = Router();
@@ -11,8 +10,12 @@ class AuthRoutes {
   }
 
   config(): void {
-    this.router.post("/registrar", authController.registrar);
-    this.router.post("/iniciarSesion", authController.iniciarSesion);
+    this.router.post("/registrarP", authController.registrarP);
+    this.router.post("/iniciarSesionP", authController.iniciarSesionP);
+
+    this.router.post("/registrarE", authController.registrarE);
+    this.router.post("/iniciarSesionE", authController.iniciarSesionE);
+
     this.router.post("/cerrarSesion", authController.cerrarSesion);
   }
 }

@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import {AuthService} from "../../../../../services/auth.service"
-import { InicioSesion } from 'src/app/models/auth';
+import { InicioSesionProfesor } from 'src/app/models/auth';
 
 @Component({
   selector: 'app-ingreso-profesor',
@@ -13,7 +13,7 @@ import { InicioSesion } from 'src/app/models/auth';
 })
 export class IngresoProfesorComponent {
 
-  inicioSesion: InicioSesion = {
+  inicioSesionProfesor: InicioSesionProfesor = {
     id_profesor: "",
     password:""
   }
@@ -28,7 +28,7 @@ export class IngresoProfesorComponent {
   }
 
   iniciarSesionProfesor(){
-    this.inicioSesionService.inicioSesion(this.inicioSesion).subscribe(
+    this.inicioSesionService.inicioSesionProfesor(this.inicioSesionProfesor).subscribe(
       res => {
         console.log(res);
       }, err =>{

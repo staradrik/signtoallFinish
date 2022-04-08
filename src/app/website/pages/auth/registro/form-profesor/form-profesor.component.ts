@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 import {AuthService} from "../../../../../services/auth.service"
-import { Registro } from 'src/app/models/auth';
+import { RegistroProfesor } from 'src/app/models/auth';
 
 @Component({
   selector: 'app-form-profesor',
@@ -13,7 +13,7 @@ import { Registro } from 'src/app/models/auth';
 })
 export class FormProfesorComponent {
 
-  registro: Registro = {
+  registroProfesor: RegistroProfesor = {
     id_profesor: "",
     nombres: "",
     apellidos:"",
@@ -38,7 +38,7 @@ export class FormProfesorComponent {
     }
 
     registrarProfesor(){
-      this.registroService.registro(this.registro).subscribe(
+      this.registroService.registroProfesor(this.registroProfesor).subscribe(
         res => {
           console.log(res);
         }, err =>{

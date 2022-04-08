@@ -1,4 +1,9 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+
+import {AuthService} from "../../../../../services/auth.service"
+import { InicioSesionEstudiante } from 'src/app/models/auth';
 
 @Component({
   selector: 'app-ingreso-estudiante',
@@ -8,6 +13,28 @@ import { Component } from '@angular/core';
 })
 export class IngresoEstudianteComponent {
 
-  constructor() { }
+  inicioSesionEstudiante: InicioSesionEstudiante = {
+    id_estudiante: "",
+    password:""
+  }
+  
+  miFormulario: FormGroup = this.fb.group({
+    numeroID:     [null, [ Validators.required ]],
+    contraseña: ['', [ Validators.required, Validators.minLength(6) ]]}
+  );
+
+  constructor(private router: Router,
+    private fb: FormBuilder, private inicioSesionService: AuthService) { 
+  }
+
+  iniciarSesionEstudiante(){
+    this.inicioSesionService.inicioSesionEstudiante(this.inicioSesionEstudiante).subscribe(
+      res => {
+        console.log(res);
+      }, err =>{
+        console.error(err);
+      }
+    );
+  }
 
 }

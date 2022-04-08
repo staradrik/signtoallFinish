@@ -10,8 +10,14 @@ function tokenProfesor(id_profesor: any, correo: any) {
   });
 }
 
+function tokenEstudiante(id_estudiante: any, correo: any) {
+  return jwt.sign({ id: id_estudiante, email: correo }, jwtSecret, {
+    expiresIn: 86400,
+  });
+}
+
 class AuthController {
-  public async registrar(req: Request, res: Response): Promise<void> {
+  public async registrarP(req: Request, res: Response): Promise<void> {
     if (
       !req.body.id_profesor ||
       !req.body.nombres ||
@@ -51,11 +57,10 @@ class AuthController {
     }
   }
 
-  public async iniciarSesion(req: Request, res: Response): Promise<void> {
+  public async iniciarSesionP(req: Request, res: Response): Promise<void> {
     if (!req.body.id_profesor || !req.body.password) {
       res.status(400).json({ msg: "Por favor ingresa todos los datos" });
-    } 
-    else {
+    } else {
       const conn = await connect();
 
       const rows = await conn.query(
@@ -79,10 +84,87 @@ class AuthController {
             ),
           });
         } else {
-          res.status(400).json({ message: "Contraseña Incorrecta" });
+          res.status(400).json({ message: "Contraseña incorrecta" });
         }
-      } 
-      else {
+      } else {
+        res.status(400).json({ message: "El usuario no existe" });
+      }
+    }
+  }
+
+  public async registrarE(req: Request, res: Response): Promise<void> {
+    if (
+      !req.body.id_estudiante ||
+      !req.body.nombres ||
+      !req.body.apellidos ||
+      !req.body.correo ||
+      !req.body.id_curso ||
+      !req.body.password
+    ) {
+      res.status(400).json({ msg: "Por favor ingresa todos los datos" });
+    } else {
+      const conn = await connect();
+
+      const rows = await conn.query(
+        `SELECT id_estudiante FROM estudiante WHERE id_estudiante = ${req.body.id_estudiante}`
+      );
+      const student = rows[0];
+
+      if (student.toString() !== "") {
+        res.json({ message: "El usuario ya existe" });
+      } else {
+        const { id_estudiante, nombres, apellidos, correo, id_curso, password } =
+          req.body;
+        const student = {
+          id_estudiante,
+          nombres,
+          apellidos,
+          correo,
+          id_curso,
+          password,
+        };
+
+        let passwordHash = md5(student.password + student.id_estudiante);
+
+        const result = await conn.query(
+          `INSERT INTO estudiante(id_estudiante, nombres, apellidos, correo, password, curso_id_curso) VALUES("${student.id_estudiante}","${student.nombres}","${student.apellidos}","${student.correo}","${passwordHash}","${student.id_curso}")`
+        );
+
+        res.json({ message: "Registro exitoso" });
+      }
+    }
+  }
+
+  public async iniciarSesionE(req: Request, res: Response): Promise<void> {
+    if (!req.body.id_estudiante || !req.body.password) {
+      res.status(400).json({ msg: "Por favor ingresa todos los datos" });
+    } else {
+      const conn = await connect();
+
+      const rows = await conn.query(
+        `SELECT id_estudiante FROM estudiante WHERE id_estudiante = ${req.body.id_estudiante}`
+      );
+      const studentId: any = rows[0];
+
+      if (studentId.toString() !== "") {
+        const compare = md5(req.body.password + req.body.id_estudiante);
+
+        const rows = await conn.query(
+          `SELECT * FROM estudiante WHERE id_estudiante = ${req.body.id_estudiante}`
+        );
+        const studentPass: any = rows[0];
+
+        if (studentPass[0].password === compare) {
+          res.status(200).json({
+            token: tokenEstudiante(
+              studentPass[0].id_estudiante,
+              studentPass[0].correo
+            ),
+          });
+        } else {
+          res.status(400).json({ message: "Contraseña incorrecta" });
+        }
+      } else {
         res.status(400).json({ message: "El usuario no existe" });
       }
     }

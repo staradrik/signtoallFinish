@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http"
-import { Registro, InicioSesion } from "../models/auth"
+import { RegistroProfesor, InicioSesionProfesor, RegistroEstudiante, InicioSesionEstudiante } from "../models/auth"
 import { Observable } from 'rxjs';
 
 
@@ -13,13 +13,21 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
   
-    registro(registro: Registro): Observable<Registro>{
-       return this.http.post(`${this.APi_URI}/registrar`, registro)
+    registroProfesor(registroProfesor: RegistroProfesor): Observable<RegistroProfesor>{
+       return this.http.post(`${this.APi_URI}/registrarP`, registroProfesor)
     }
 
-    inicioSesion(inicioSesion: InicioSesion): Observable<InicioSesion>{
-      return this.http.post(`${this.APi_URI}/iniciarSesion`, inicioSesion)
+    inicioSesionProfesor(inicioSesionProfesor: InicioSesionProfesor): Observable<InicioSesionProfesor>{
+      return this.http.post(`${this.APi_URI}/iniciarSesionP`, inicioSesionProfesor)
    }
+
+   registroEstudiante(registroEstudiante: RegistroEstudiante): Observable<RegistroEstudiante>{
+    return this.http.post(`${this.APi_URI}/registrarE`, registroEstudiante)
+   }
+
+   inicioSesionEstudiante(inicioSesionEstudiante: InicioSesionEstudiante): Observable<InicioSesionEstudiante>{
+    return this.http.post(`${this.APi_URI}/iniciarSesionE`, inicioSesionEstudiante)
+   } 
 
    
   

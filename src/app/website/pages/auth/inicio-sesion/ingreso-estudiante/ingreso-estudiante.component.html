@@ -3,22 +3,19 @@
     <div class="field col-12 md:col-4">
         <span class="p-float-label p-input-icon-right">
             <i class="pi pi-credit-card"></i>
-            <input type="text" id="id" pInputText class="p-inputtext-sm"> 
-            <!-- <p-inputNumber ></p-inputNumber> -->
-            <label for="inputtext">Cédula</label>
+            <input type="text" name="id_estudiante" pInputText class="p-inputtext-sm" [(ngModel)]="inicioSesionEstudiante.id_estudiante"> 
+            <label for="inputtext">Codigo o Tarjeta de Identidad</label>
         </span>
     </div>
     
     <div class="field col-12 md:col-4">
         <span class="p-float-label p-input-icon-right">
             <i class="pi pi-key"></i>
-            <input type="password" id="password" pInputText class="p-inputtext-sm"> 
-            <!-- <input type="password" pPassword /> -->
-            <!-- <p-password></p-password> -->
+            <input type="password" name="password" pInputText class="p-inputtext-sm" [(ngModel)]="inicioSesionEstudiante.password"> 
             <label for="inputtext">Contraseña</label>
         </span>
 
     </div>
-    <p-button routerLink="/actividades" label="Iniciar Sesión"></p-button>
+    <p-button routerLink="/actividades" label="Iniciar Sesión" (click)="iniciarSesionEstudiante()" ></p-button>
     
 </form>
