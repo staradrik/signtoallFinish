@@ -13,6 +13,7 @@ const routes: Routes = [
       {path: 'sopNumeros',component: SopaNumerosComponent},
       {path: 'memoMate', component: MemoramaMatComponent},
       {path: 'rompeMate', component: RompecabezasComponent},
+      //{path: 'slidin', component: }
     ]
   }
 ];

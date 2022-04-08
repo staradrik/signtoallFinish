@@ -30,6 +30,11 @@ import { SopaNumerosComponent } from './sopa-numeros/sopa-numeros.component';
 //routing
 import { MatematicasRoutingModule } from './matematicas-routing.module';
 import { QuicklinkModule } from 'ngx-quicklink';
+import { BoardComponent } from './sliding-puzzle/board/board.component';
+import { StateComponent } from './sliding-puzzle/state/state.component';
+import { TileComponent } from './sliding-puzzle/tile/tile.component';
+import { SlidingPuzzleComponent } from './sliding-puzzle/sliding-puzzle.component';
+
 
 
 @NgModule({
@@ -37,6 +42,11 @@ import { QuicklinkModule } from 'ngx-quicklink';
     MemoramaMatComponent,
     RompecabezasComponent,
     SopaNumerosComponent,
+    BoardComponent,
+    StateComponent,
+    TileComponent,
+    SlidingPuzzleComponent,
+    
   ],
   imports: [
     CommonModule,
