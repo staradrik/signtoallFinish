@@ -12,7 +12,7 @@
 		{
 			"id": "1001",
 			"name": "Sopa de letras",
-			"image": "sopaLetras.jpg",
+			"image": "vocabulario.jpg",
 			"category": "Español",
 			"status": "REALIZADA",
 			"rating": 5,
@@ -20,12 +20,12 @@
 		},
         {
 			"id": "1002",
-			"name": "Vocabulario",
-			"image": "vocabulario.jpg",
+			"name": "abecedario",
+			"image": "sopaLetras.jpg",
 			"category": "Español",
 			"status": "REALIZADA",
 			"rating": 5,
-			"url": "/vocavulario"
+			"url": "/abecedario"
 		},
         {
 			"id": "1003",

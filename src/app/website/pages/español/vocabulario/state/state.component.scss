@@ -1,0 +1,28 @@
+:host {
+    button {
+      border: 1px solid;
+      background: white;
+      display: inline-block;
+      padding: 1em;
+      margin-right: 2em;
+    }
+  
+    .start {
+      color: green;
+      border-color: darkseagreen;
+    }
+  
+    .stop {
+      color: darkred;
+      border-color: mistyrose;
+    }
+  
+    div {
+      display: inline-block;
+    }
+  
+    span {
+      display: inline-block;
+      margin-right: 2em;
+    }
+  }

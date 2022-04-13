@@ -31,6 +31,9 @@ import { VocabularioComponent } from './vocabulario/vocabulario.component';
 //routing
 import { EspañolRoutingModule } from './español-routing.module';
 import { QuicklinkModule } from 'ngx-quicklink';
+import { BoardComponent } from './vocabulario/board/board.component';
+import { StateComponent } from './vocabulario/state/state.component';
+import { TileComponent } from './vocabulario/tile/tile.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,10 @@ import { QuicklinkModule } from 'ngx-quicklink';
     MemoramaComponent,
     RompeLetrasComponent,
     SopLetrasComponent,
-    VocabularioComponent
+    VocabularioComponent,
+    BoardComponent,
+    StateComponent,
+    TileComponent
   ],
   imports: [
     CommonModule,

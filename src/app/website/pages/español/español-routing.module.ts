@@ -16,7 +16,7 @@ const routes: Routes = [
       {path: 'ahorcado', component: AhorcadoComponent},
       {path: 'rompecabezas', component: RompeLetrasComponent},
       {path: 'sopLetras', component: SopLetrasComponent},
-      {path: 'vocavulario', component: VocabularioComponent},
+      {path: 'abecedario', component: VocabularioComponent},
     ]
   }
 ];
