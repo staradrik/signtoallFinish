@@ -7,6 +7,8 @@ import { SopaNumerosComponent } from './sopa-numeros/sopa-numeros.component';
 import { RompecabezasComponent } from './rompecabezas/rompecabezas.component';
 import { SudokuComponent } from './sudoku/sudoku.component';
 import { SlidingPuzzleComponent } from './sliding-puzzle/sliding-puzzle.component';
+import {GameBoardComponent} from './snake/game-board/game-board.component'
+
 
 const routes: Routes = [
   {
@@ -16,7 +18,8 @@ const routes: Routes = [
       {path: 'memoMate', component: MemoramaMatComponent},
       {path: 'rompeMate', component: RompecabezasComponent},
       {path: 'sudoku', component:SudokuComponent},
-      {path: 'slidin', component: SlidingPuzzleComponent}
+      {path: 'slidin', component: SlidingPuzzleComponent},
+      {path: 'snake', component: GameBoardComponent}
     ]
   }
 ];

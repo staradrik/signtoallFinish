@@ -37,6 +37,8 @@ import { BoardComponent } from './sliding-puzzle/board/board.component';
 import { StateComponent } from './sliding-puzzle/state/state.component';
 import { TileComponent } from './sliding-puzzle/tile/tile.component';
 import { SlidingPuzzleComponent } from './sliding-puzzle/sliding-puzzle.component';
+import { GameBoardComponent } from './snake/game-board/game-board.component';
+
 
 
 @NgModule({
@@ -51,6 +53,7 @@ import { SlidingPuzzleComponent } from './sliding-puzzle/sliding-puzzle.componen
     StateComponent,
     TileComponent,
     SlidingPuzzleComponent,
+    GameBoardComponent
   ],
   imports: [
     CommonModule,

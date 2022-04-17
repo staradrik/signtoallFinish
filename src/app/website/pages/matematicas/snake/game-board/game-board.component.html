@@ -1,0 +1,35 @@
+<div class="container">
+
+    <div class="score-card">
+      <div class="score-board">
+        <h1>Puntos</h1>
+        <h3>{{food?.currentScore}}</h3>
+      </div>
+  
+      <div class="restart-button" (click)="restart()">
+          Restablecer
+      </div>
+    </div>
+  
+    <div class="game-board">
+  
+  
+    </div>
+  
+    <div class="game-over" *ngIf="gameOver">
+      <h1>Vuelve a intentarlo</h1>
+    </div>
+  
+    <div class="mobile-controls">
+      <nav class="o-pad">
+        <a class="up" (click)="dpadMovement('ArrowUp')"></a>
+        <a class="right" (click)="dpadMovement('ArrowRight')"></a>
+        <a class="down" (click)="dpadMovement('ArrowDown')"></a>
+        <a class="left" (click)="dpadMovement('ArrowLeft')"></a>
+      </nav>
+    </div>
+  
+  
+  
+  </div>
+  

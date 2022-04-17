@@ -12,11 +12,12 @@
 		},
 		{
 			"id": "1001",
-			"name": "Relacion de numeros",
-			"image": "relacionNum.jpg",
+			"name": "Snake",
+			"image": "snake.png",
 			"category": "Matematicas",
 			"status": "REALIZADA",
-			"rating": 5
+			"rating": 5,
+			"url": "/snake"
 		},
         {
 			"id": "1002",

@@ -107,7 +107,6 @@ public timerFlag:boolean = false;
  
        //si no se hizo clic en ninguna foto
        if(this.firstImg === undefined || !this.firstImg.clicked){
-         console.log("primera imagen acaba de hacer clic "+ image.serialNumber);
          this.firstImg = image;
          this.firstImg.id = image.id;
          this.firstImg.clicked = true;
@@ -115,14 +114,11 @@ public timerFlag:boolean = false;
        
        //si ya se hizo clic en la primera foto
        else  if(this.firstImg !== undefined && this.firstImg.clicked && this.firstImg.serialNumber !== image.serialNumber)
-       {
-         console.log("segunda imagen acaba de hacer clic "+ image.serialNumber);
+       {      
          this.secImg = image;
          this.secImg.id = image.id;
          this.secImg.clicked = true;
-         this.disableFuncFlag = true;
-         console.log("id primera img "+this.firstImg.id);
-         console.log("id segunda img "+this.secImg.id);
+         this.disableFuncFlag = true;     
          this.steps +=1;
          setTimeout(()=>{this.checkEquality(this.firstImg,this.secImg);},1000);
        }
@@ -131,9 +127,7 @@ public timerFlag:boolean = false;
      return;
    
    }
-   public checkEquality(first:Image,sec:Image):void{
-     console.log("comprobar la igualdad() "+ first.id);
- 
+   public checkEquality(first:Image,sec:Image):void{   
      if(first.id === sec.id){
        first.paired = true;
        sec.paired = true;
@@ -141,7 +135,7 @@ public timerFlag:boolean = false;
        if(this.pairs === 6){
          this.pauseTimer();
          this.messageService.add({severity:'success', summary:'¡Excelente!', detail:'Has completado la actividad'});
-         setTimeout( ()=> { this.router.navigate(['/'])}, 1100);
+         setTimeout( ()=> { this.router.navigate(['/actividades'])}, 1100);
 
        }
          

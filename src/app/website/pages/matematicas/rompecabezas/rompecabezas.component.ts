@@ -105,7 +105,7 @@ export class RompecabezasComponent implements OnInit {
     this.gameComplete = this.isSorted(this.position);
     if (this.gameComplete) {
       this.messageService.add({severity:'success', summary:'¡Excelente!', detail:'Has completado la actividad'});
-      setTimeout( ()=> { this.router.navigate(['/'])}, 1100);
+      setTimeout( ()=> { this.router.navigate(['/actividades'])}, 1100);
      
     }
 
@@ -154,8 +154,7 @@ export class RompecabezasComponent implements OnInit {
 
   initializeGame(): void {
 
-    this.gridsize = Number(this.difficulty);
-    console.log(this.gridsize);
+    this.gridsize = Number(this.difficulty);  
     this.boxSize = 100 / (this.gridsize - 1);
     this.index = 0;
     this.totalBoxes = this.gridsize * this.gridsize;
