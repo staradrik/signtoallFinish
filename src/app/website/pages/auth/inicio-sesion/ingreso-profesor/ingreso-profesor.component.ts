@@ -28,12 +28,14 @@ export class IngresoProfesorComponent {
   }
 
   iniciarSesionProfesor(){
-    this.inicioSesionService.inicioSesionProfesor(this.inicioSesionProfesor).subscribe(
-      res => {
-        console.log(res);
-      }, err =>{
-        console.error(err);
-      }
-    );
+    this.router.navigate(['/docente/crud'])
+    // this.inicioSesionService.inicioSesionProfesor(this.inicioSesionProfesor).subscribe(
+    //   res => {
+    //     console.log(res);
+    //     this.router.navigate(['/docente/crud'])
+    //   }, err =>{
+    //     console.error(err);
+    //   }
+    // );
   }
 }

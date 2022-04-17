@@ -3,6 +3,7 @@ import {Snake} from '../game-engine/snake';
 import { Food } from '../game-engine/food';
 import { outsideGrid } from '../game-engine/gameboard-grid.util';
 import { RutaBreadcrumService } from '../../../../../services/ruta-breadcrum.service';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-game-board',
@@ -13,12 +14,16 @@ export class GameBoardComponent implements OnInit {
 
   
   lastRenderTime = 0
-  gameOver = false
+  gameOver = false;
+  gameWinner = false;
   gameBoard: any;
   SNAKE_SPEED = 1;
   snake = new Snake();
   food = new Food(this.snake);
-  constructor(private breadcrumbService: RutaBreadcrumService) { }
+ // mensaje = this.messageService.add({severity:'success', summary:'¡Excelente!', detail:'Has completado la actividad'});
+
+  constructor(private breadcrumbService: RutaBreadcrumService,
+              private messageService: MessageService) { }
 
   ngOnInit(): void {
     this.snake.listenToInputs();
@@ -34,9 +39,16 @@ export class GameBoardComponent implements OnInit {
     window.requestAnimationFrame(this.start.bind(this));
   }
 
-
   start(currentTime: any) {
-    if(this.gameOver) return console.log('Game Over');
+
+    
+    const score = this.food.currentScore;
+    if(score === 3){
+      this.gameWinner = true
+    }
+
+    if(this.gameOver || this.gameWinner) return  console.log('rf')
+    
 
     window.requestAnimationFrame(this.start.bind(this));
     const secondsSinceLastRender = (currentTime - this.lastRenderTime) / 1000;
@@ -55,6 +67,7 @@ export class GameBoardComponent implements OnInit {
     if(score > 15 && score < 20 ) return 6;
     return 7;
   }
+
 
   dpadMovement(direction: string) {
     this.snake.input.setDirection(direction);

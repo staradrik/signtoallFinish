@@ -19,6 +19,10 @@ const routes: Routes = [
     path:'actividades',
     loadChildren: () => import('./website/pages/website.module').then(m => m.WebsiteModule),        
   },
+  { 
+    path: 'docente',
+    loadChildren: () => import('./website/pages/docente/docente.module').then(m => m.DocenteModule),
+  },
   {
     path: '**',
     component: NotFoundComponent

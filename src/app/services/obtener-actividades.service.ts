@@ -69,24 +69,27 @@ export class ObtenerActividadesService {
       items: [
         {
           label: 'Sopa de numeros',
-          routerLink: ['actividades/sopNumeros']
+          routerLink: ['Matematicas/sopNumeros']
         },
         {
-          label: 'Relacion de numeros'
+          label: 'Snake',
+          routerLink: ['Matematicas/snake']
         },
         {
           label: 'Memorama',
-          routerLink: ['actividades/memoMate']
+          routerLink: ['Matematicas/memoMate']
         },
         {
           label: 'Rompecabezas',
-          routerLink: ['actividades/rompeMate']
+          routerLink: ['Matematicas/rompeMate']
         },
         {
-          label: 'Sumas y restas'
+          label: 'Sudoku',
+          routerLink: ['Matematicas/sudoku']
         },
         {
-          label: 'Multiplicacion y división'
+          label: 'Rompecabezas deslizantes',
+          routerLink: ['Matematicas/slidin']
         },
       ]
     }

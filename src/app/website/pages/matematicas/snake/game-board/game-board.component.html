@@ -1,9 +1,15 @@
 <div class="container">
 
+  <p-toast></p-toast>
+
     <div class="score-card">
       <div class="score-board">
         <h1>Puntos</h1>
         <h3>{{food?.currentScore}}</h3>
+
+        <h1>Objetivo</h1>
+        <h3>15</h3>
+
       </div>
   
       <div class="restart-button" (click)="restart()">
@@ -18,6 +24,10 @@
   
     <div class="game-over" *ngIf="gameOver">
       <h1>Vuelve a intentarlo</h1>
+    </div>
+
+    <div class="game-over" *ngIf="gameWinner">
+      <h1>¡Buen trabajo!</h1>
     </div>
   
     <div class="mobile-controls">

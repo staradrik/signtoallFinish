@@ -18,7 +18,7 @@ const routes: Routes = [
       {
         path:'Matematicas',
         loadChildren: () => import('./matematicas/matematicas.module').then(m => m.MatematicasModule),        
-      },
+      },     
       {path: 'sobreNosotros', component: SobreNosotrosComponent},   
     ]
   }
