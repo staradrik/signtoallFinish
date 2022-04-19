@@ -126,11 +126,21 @@ class AuthController {
 
         let passwordHash = md5(student.password + student.id_estudiante);
 
-        const result = await conn.query(
-          `INSERT INTO estudiante(id_estudiante, nombres, apellidos, correo, password, curso_id_curso) VALUES("${student.id_estudiante}","${student.nombres}","${student.apellidos}","${student.correo}","${passwordHash}","${student.id_curso}")`
+        const rows = await conn.query(
+          `SELECT * FROM curso WHERE id_curso = ${req.body.id_curso}`
         );
 
-        res.json({ message: "Registro exitoso" });
+        const courseId: any = rows[0];
+
+        if (courseId.toString() === '') {
+          res.status(400).json({ msg: 'El curso no existe' });
+        } else {
+          const result = await conn.query(
+            `INSERT INTO estudiante(id_estudiante, nombres, apellidos, correo, password, curso_id_curso) VALUES("${student.id_estudiante}","${student.nombres}","${student.apellidos}","${student.correo}","${passwordHash}","${student.id_curso}")`
+          );
+
+          res.json({ message: 'Registro Exitoso' });
+        }
       }
     }
   }

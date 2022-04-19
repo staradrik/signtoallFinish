@@ -11,10 +11,10 @@ class FrontRoutes {
 
   config(): void {
     this.router.get("/lista", crudController.list);
-    // this.router.get("/:id", gamesController.getOne);
+    this.router.get("/listaEstudiante/:id", crudController.listStudent);
     this.router.post("/crear", crudController.create);
-    this.router.put("/actualizar:id", crudController.update);
-    this.router.delete("/eliminar:id", crudController.delete);
+    this.router.put("/actualizar/:id", crudController.update);
+    this.router.delete("/eliminar/:id", crudController.delete);
   }
 }
 
