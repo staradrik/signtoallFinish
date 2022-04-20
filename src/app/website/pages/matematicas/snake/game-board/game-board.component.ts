@@ -43,7 +43,7 @@ export class GameBoardComponent implements OnInit {
 
     
     const score = this.food.currentScore;
-    if(score === 3){
+    if(score === 10){
       this.gameWinner = true
     }
 
