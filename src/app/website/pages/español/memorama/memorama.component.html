@@ -18,7 +18,7 @@
                     
                         <!-- si ambas imagenes son iguales, se muestra un trofeo -->
                     <div *ngIf = "photosArr[randArr[x + i]] !== undefined && photosArr[randArr[x + i]].paired ">
-                        <img  src="/assets/images/ActEspañol/memorama/Win.jpg" />
+                        <img  [src]="photosArr[randArr[x + i]].avatar" />
                     </div>
                     </div>
                 </td>
