@@ -8,19 +8,12 @@
 				[ngStyle]="{'background-image':'url(' + imageUrl + ') ','background-repeat':'no-repeat', 'background-position': '' + img.x_pos + ' '  + img.y_pos + '','background-size':''+ (gridsize * 100) +'% '+ (gridsize * 100) +'%'}">
 
 			</li>
-		</ul>
-		
-
+		</ul>		
 	</div>
 	<div class="scoreboard">
 		<h1 style="text-align: center;color: black;">Guíate</h1>
-		<h3 class="score-detail">
-			
-			<span>  Pasos : {{steps}}</span>
-		</h3>
-		<div class="finalImage" [ngStyle]="{'background-image':'url(' + imageUrl + ') '}"></div>
-		
-
+		<h3 class="score-detail"><span>  Pasos : {{steps}}</span></h3>	
+		<div class="finalImage" [ngStyle]="{'background-image':'url(' + imageUrl + ') '}"></div>		
 		<h3 style="text-align: center;color: black;">Nivel de dificultad:</h3>
 		<div class="difficulty-levels">
 			<div class="input-group">

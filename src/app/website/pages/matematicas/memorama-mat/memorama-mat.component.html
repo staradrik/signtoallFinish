@@ -5,16 +5,13 @@
         <div class="container-div">
             <tr *ngFor="let r of rows; let x of [0,1,2]">
                 <td  *ngFor="let c of cols; let i of [0,3,6,9]">
-                    <div class="container-img">
-                        <!-- if image is  clicked show image -->
+                    <div class="container-img">                    
                         <div *ngIf = "photosArr[randArr[x + i]].paired === undefined || !photosArr[randArr[x + i]].paired ">
                             <img (click)="imageClicked(photosArr[randArr[x + i]])" [src]="photosArr[randArr[x + i]].avatar" *ngIf = "photosArr[randArr[x + i]].clicked"/>
-                        </div>   
-                        <!--  show other background -->
+                        </div>                    
                         <div *ngIf = "photosArr[randArr[x + i]] !== undefined && !photosArr[randArr[x + i]].paired ">
                             <img (click)="imageClicked(photosArr[randArr[x + i]])" src="/assets/images/ActMatematicas/pregunta.png" *ngIf = "!photosArr[randArr[x + i]].clicked"/>
-                        </div>
-                        <!--Si la actividad de realizó-->
+                        </div>                    
                         <div *ngIf = "photosArr[randArr[x + i]] !== undefined && photosArr[randArr[x + i]].paired ">
                             <img  src="/assets/images/ActMatematicas/Hecho.png" />
                         </div>
@@ -26,5 +23,6 @@
 </div>
 <br/>
 <div>
-    <button pButton pRipple type="button" label="Nueva partida" class="p-button-outlined p-button-rounded p-button-help" (click)="newGame()"></button>
+    <button pButton pRipple type="button" label="Nueva partida" class="p-button-outlined p-button-rounded p-button-help" (click)="newGame()">     
+    </button>
 </div>
