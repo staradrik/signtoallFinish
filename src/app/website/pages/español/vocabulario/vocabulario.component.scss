@@ -1,9 +1,11 @@
-:host {
-    display: block;
-    width: 620px;
-    margin: 0 auto;
-  
-    hr {
-      border: none;
+.grid-container {
+    display: grid;
+    margin-top: 15px;
+    width: 100%;
+    background-color: #F0EEEE;
+    border-radius: 10px;
+    img{
+        width: 100px;
+        height: 100px;
     }
-  }
+}
