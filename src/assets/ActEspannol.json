@@ -11,12 +11,12 @@
 		},
 		{
 			"id": "1001",
-			"name": "Sopa de letras",
+			"name": "Vocabulario",
 			"image": "vocabulario.jpg",
 			"category": "Español",
 			"status": "REALIZADA",
 			"rating": 5,
-			"url": "/sopLetras"
+			"url": "/vocabulario"
 		},
         {
 			"id": "1002",
