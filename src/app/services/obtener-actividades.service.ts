@@ -30,20 +30,23 @@ export class ObtenerActividadesService {
       items: [
         {
           label: 'Memorama',
-          routerLink: ['actividades/memoLetras']
+          routerLink: ['Español/memoLetras']
         },
         {
-          label: 'Sopa de letras'
+          label: 'Abecedario',
+          routerLink: ['Español/abecedario']
         },
         {
-          label: 'Vocabulario'
+          label: 'Vocabulario',
+          routerLink: ['Español/vocabulario']
         },
         {
-          label: 'Rompecabezas'
+          label: 'Rompecabezas',
+          routerLink: ['Español/rompecabezas']
         },
         {
           label: 'Ahorcado',
-          routerLink: ['actividades/ahorcado']
+          routerLink: ['Español/ahorcado']
         }
       ]
     }
