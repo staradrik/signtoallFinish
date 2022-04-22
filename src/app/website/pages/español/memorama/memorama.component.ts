@@ -9,6 +9,10 @@ import { Router } from '@angular/router';
   selector: 'app-memorama',
   templateUrl: './memorama.component.html',
   styles: [`
+  h2{
+    margin-top: -15px;
+    margin-bottom: -15px;
+  }
   .container{
     width:100%;
     border-radius: 15px;
@@ -25,6 +29,12 @@ import { Router } from '@angular/router';
     margin-bottom:10px;
     margin-left:10px;
     margin-right:10px;
+  }
+  .boton{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin-bottom: 10px;
   }
   img{
     border-radius: 15px;

@@ -1,4 +1,6 @@
 <div class="card">
+    <h2>Memorama</h2>
+    <p-divider></p-divider>
     <h3 style="text-align: center;">Movimientos: {{steps}}  Tiempo: {{timer}}</h3>
     <p-toast></p-toast>
     <table class="container">
@@ -24,6 +26,8 @@
                 </td>
             </tr>
         </div>
-        <button pButton pRipple type="button" label="Nueva partida" class="p-button-outlined p-button-rounded p-button-help" (click)="newGame()"></button>
+        <div class="boton">
+            <button pButton pRipple type="button" icon="pi pi-undo" iconPos="left" label="Nueva partida" class="p-button-rounded p-button-help" (click)="newGame()"></button>
+        </div>
     </table>
 </div>

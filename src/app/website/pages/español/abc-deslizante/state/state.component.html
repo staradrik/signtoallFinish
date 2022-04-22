@@ -1,23 +1,29 @@
 <button
-    class="start"
+    pButton type="button" icon="pi pi-arrow-right" iconPos="left"
+    label="Inicia!"
     *ngIf="!boardGame.isInProgress()"
     (click)="boardGame.startGame()">
-  Inicia!
-</button>
-
-<button
-    class="stop"
-    *ngIf="boardGame.isInProgress()"
-    (click)="boardGame.initGame()">
-  Pausar
 </button>
 
 <div *ngIf="boardGame.isInProgress()">
   <span>Movimientos: {{ boardGame.movesCount }}</span>
+  <br>
   <span>Tiempo: {{ boardGame.elapsedSeconds }}</span>
 </div>
+<button
+    pButton type="button" icon="pi pi-times" iconPos="left"
+    class="p-button-secondary"
+    label="Pausar!"
+    *ngIf="boardGame.isInProgress() && boardGame.finished === false"
+    (click)="boardGame.initGame()">
+</button>
 
 <div *ngIf="boardGame.finished">
-  <span>Felicitaciones! Lo lograste en {{ boardGame.movesCount }} movimientos
-    y {{ boardGame.elapsedSeconds }} segundos!</span>
+  <button *ngIf="boardGame.isInProgress()"
+  (click)="ganar()"
+  pButton type="button" icon="pi pi-sign-out" iconPos="left"
+  class="p-button-success"
+  label="Salir!"
+  ></button>
 </div>
+<p-toast></p-toast>

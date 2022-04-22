@@ -3,6 +3,7 @@ img{
     width: 200px;
     height: 300px;
     object-position: 0px;
+    box-shadow: 0px 0px 10.5px transparent;
 }
 .espacio{height: 55px; 
     margin: 3px;

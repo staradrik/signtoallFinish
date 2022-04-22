@@ -1,9 +1,15 @@
-:host {
-    display: block;
-    width: 620px;
-    margin: 0 auto;
-  
-    hr {
-      border: none;
-    }
-  }
+.grid-container {
+  display: relative;
+  margin-top: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 78vmax;
+  background-color: #f4f2f2;
+  border-radius: 10px;
+}
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  margin-bottom: 10px;
+}
