@@ -27,5 +27,4 @@ export interface ImgVocavulario{
     id: number;
     name: string;
     src: string;
-    select: boolean;
 }

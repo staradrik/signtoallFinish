@@ -4,20 +4,29 @@
     <div class="marcador">
         <p>{{intento}}/5</p>
     </div>
+    <p-divider></p-divider>
     <div class="image-container">
-        <img class="imagen"  [src]="imagen.src">
+        <img [src]="imagen.src">
     </div>
     <div class="field-radiobutton">
-        <p-radioButton name="option" [value]="n1" [(ngModel)]="option" inputId="option1"></p-radioButton>
-        <label for="option1">{{n1}}</label>
-        <p-radioButton name="option" [value]="n2" [(ngModel)]="option" inputId="option2"></p-radioButton>
-        <label for="option2">{{n2}}</label>
-        <p-radioButton name="option" [value]="n3" [(ngModel)]="option" inputId="option3"></p-radioButton>
-        <label for="option3">{{n3}}</label>
-        <p-radioButton name="option" [value]="n4" [(ngModel)]="option" inputId="option4"></p-radioButton>
-        <label for="option4">{{n4}}</label>
+        <span>
+            <p-radioButton name="option" [value]="n1" [(ngModel)]="option" inputId="option1"></p-radioButton>
+            <label for="option1">{{n1}}</label>
+        </span>
+        <span>
+            <p-radioButton name="option" [value]="n2" [(ngModel)]="option" inputId="option2"></p-radioButton>
+            <label for="option2">{{n2}}</label>
+        </span>
+        <span>
+            <p-radioButton name="option" [value]="n3" [(ngModel)]="option" inputId="option3"></p-radioButton>
+            <label for="option3">{{n3}}</label>
+        </span>
+        <span>
+            <p-radioButton name="option" [value]="n4" [(ngModel)]="option" inputId="option4"></p-radioButton>
+            <label for="option4">{{n4}}</label>
+        </span>
     </div>
     <div class="boton">
-        <button  pButton type="button" icon="pi pi-arrow-right" iconPos="left" (click)="generate()" label="continuar"></button>
+        <button  pButton type="button" icon="pi pi-arrow-right" iconPos="left" (click)="seleccion()" label="continuar"></button>
     </div>
 </div>

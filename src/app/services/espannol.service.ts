@@ -212,92 +212,77 @@ export class EspannolService {
     {
       "id":0,
       "name": "borrador",
-      "src":"/assets/images/ActEspañol/vocabulario/borrador.png",
-      "select": false 
+      "src":"/assets/images/ActEspañol/vocabulario/borrador.png"
     },
     {
       "id":1,
       "name": "cinta",
-      "src":"/assets/images/ActEspañol/vocabulario/cinta.jpg",
-      "select": false 
+      "src":"/assets/images/ActEspañol/vocabulario/cinta.jpg"
     },
     {
       "id":2,
       "name": "colbon",
-      "src":"/assets/images/ActEspañol/vocabulario/colbon.jpg",
-      "select": false 
+      "src":"/assets/images/ActEspañol/vocabulario/colbon.jpg"
     },
     {
       "id":3,
       "name": "colores",
-      "src":"/assets/images/ActEspañol/vocabulario/colores.jpg",
-      "select": false 
+      "src":"/assets/images/ActEspañol/vocabulario/colores.jpg"
     },
     {
       "id":4,
       "name": "cuaderno",
-      "src":"/assets/images/ActEspañol/vocabulario/cuaderno.png",
-      "select": false 
+      "src":"/assets/images/ActEspañol/vocabulario/cuaderno.png"
     },
     {
       "id":5,
       "name": "engrapadora",
-      "src":"/assets/images/ActEspañol/vocabulario/engrapadora.png",
-      "select": false 
+      "src":"/assets/images/ActEspañol/vocabulario/engrapadora.png"
     },
     {
       "id":6,
       "name": "escuadra",
-      "src":"/assets/images/ActEspañol/vocabulario/escuadra.png",
-      "select": false 
+      "src":"/assets/images/ActEspañol/vocabulario/escuadra.png"
     },
     {
       "id":7,
       "name": "esfero",
-      "src":"/assets/images/ActEspañol/vocabulario/esfero.jpg",
-      "select": false 
+      "src":"/assets/images/ActEspañol/vocabulario/esfero.jpg"
     },
     {
       "id":8,
       "name": "lapiz",
-      "src":"/assets/images/ActEspañol/vocabulario/lapiz.png",
-      "select": false 
+      "src":"/assets/images/ActEspañol/vocabulario/lapiz.png"
     },
     {
       "id":9,
       "name": "pegante",
-      "src":"/assets/images/ActEspañol/vocabulario/pegante.jpg",
-      "select": false 
+      "src":"/assets/images/ActEspañol/vocabulario/pegante.jpg"
     },
     {
       "id":10,
       "name": "plastilina",
-      "src":"/assets/images/ActEspañol/vocabulario/plastilina.jpg",
-      "select": false 
+      "src":"/assets/images/ActEspañol/vocabulario/plastilina.jpg"
     },
     {
       "id":11,
       "name": "regla",
-      "src":"/assets/images/ActEspañol/vocabulario/regla.png",
-      "select": false 
+      "src":"/assets/images/ActEspañol/vocabulario/regla.png"
     },
     {
       "id":12,
       "name": "tajalapiz",
-      "src":"/assets/images/ActEspañol/vocabulario/tajalapiz.jpg",
-      "select": false 
+      "src":"/assets/images/ActEspañol/vocabulario/tajalapiz.jpg"
     },
     {
       "id":13,
       "name": "temperas",
-      "src":"/assets/images/ActEspañol/vocabulario/temperas.jpg",
-      "select": false 
+      "src":"/assets/images/ActEspañol/vocabulario/temperas.jpg"
     },
     {
       "id":14,
       "name": "tijeras",
-      "src":"/assets/images/ActEspañol/vocabulario/tijeras.jpg",
-      "select": false 
+      "src":"/assets/images/ActEspañol/vocabulario/tijeras.jpg"
     },
   ];
   public get getImageArray():ImgVocavulario[]{
