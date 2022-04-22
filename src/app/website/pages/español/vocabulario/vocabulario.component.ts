@@ -14,8 +14,7 @@ export class VocabularioComponent implements OnInit {
   imagen: ImgVocavulario = {
     id: 0,
     name: "",
-    src: "",
-    select: false
+    src: ""
   }
   ImagenesVistas: number[] = [];
   n1: string = "";
