@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RutaBreadcrumService } from 'src/app/services/ruta-breadcrum.service';
 import { EspannolService } from '../../../../services/espannol.service';
 import { ImgVocavulario } from '../../../../models/Actividades';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-vocabulario',
@@ -22,6 +23,7 @@ export class VocabularioComponent implements OnInit {
   n4: string = "";
   option:string = "";
   imagenArray: ImgVocavulario[] = [this.imagen];
+  intento: number = 0;
 
   constructor(
     public boardGame: EspannolService,

@@ -1,22 +1,23 @@
 <div class="row grid-container">
-    <h2 style="margin-left: 10px;">Ahorcado</h2>
-    <!-- <p-divider style="margin-top: -30px;"></p-divider> -->
-    <img [src]="imagen.src">
+    <p-toast></p-toast>
+    <h2 style="margin-left: 10px;">vocabulario</h2>
+    <div class="marcador">
+        <p>{{intento}}/5</p>
+    </div>
+    <div class="image-container">
+        <img class="imagen"  [src]="imagen.src">
+    </div>
     <div class="field-radiobutton">
         <p-radioButton name="option" [value]="n1" [(ngModel)]="option" inputId="option1"></p-radioButton>
         <label for="option1">{{n1}}</label>
-    </div>
-    <div class="field-radiobutton">
         <p-radioButton name="option" [value]="n2" [(ngModel)]="option" inputId="option2"></p-radioButton>
         <label for="option2">{{n2}}</label>
-    </div>
-    <div class="field-radiobutton">
         <p-radioButton name="option" [value]="n3" [(ngModel)]="option" inputId="option3"></p-radioButton>
         <label for="option3">{{n3}}</label>
-    </div>
-    <div class="field-radiobutton">
         <p-radioButton name="option" [value]="n4" [(ngModel)]="option" inputId="option4"></p-radioButton>
         <label for="option4">{{n4}}</label>
     </div>
-    <button (click)="generate()">reintentar</button>
+    <div class="boton">
+        <button  pButton type="button" icon="pi pi-arrow-right" iconPos="left" (click)="generate()" label="continuar"></button>
+    </div>
 </div>
