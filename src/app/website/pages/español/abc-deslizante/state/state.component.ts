@@ -16,12 +16,13 @@ export class StateComponent{
     private router: Router
   ) { }
 
-  ganarfalso(){
-    this.boardGame.finished = true
-  }
-
   ganar(){
     this.messageService.add({severity:'success', summary:'Felicitaciones!', detail:`Felicitaciones! Lo lograste en ${this.boardGame.movesCount} movimientos y ${this.boardGame.elapsedSeconds}  segundos!`});
       setTimeout( ()=> { this.router.navigate(['/actividades'])}, 2100);
+      this.clear();
   }
+
+  clear() {
+    this.messageService.clear();
+}
 }

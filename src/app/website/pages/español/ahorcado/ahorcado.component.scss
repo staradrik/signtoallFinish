@@ -16,22 +16,39 @@ img{
     width: 100%;
     background-color: #F0EEEE;
     border-radius: 10px;
+    h2{
+        margin-bottom: -10px;
+        font-weight: bold;
+        
+    }
 }
 .grid-container2 {
     display: grid;
-    margin-top: 2%;
-    margin-left: 2%;
-    margin-right: 2%;
-    margin-bottom: 2%;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
     background-color: #FFFFFF;
     border-radius: 10px;
 }
 .img-container {
-    display: grid;
-    margin-top: 2%;
-    margin-left: 2%;
-    margin-right: 2%;
-    margin-bottom: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
     background-color: #FEEDAF;
     border-radius: 10px;
+    .fruta{
+        width: 300px;
+        height: 300px;
+    }
+}
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin-bottom: 10px;
 }

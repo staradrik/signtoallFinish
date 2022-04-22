@@ -288,4 +288,41 @@ export class EspannolService {
   public get getImageArray():ImgVocavulario[]{
     return this.imagenes;
   }
+  //Actividades
+  //Memorama
+  frutas : ImgVocavulario[] = [
+    {
+      "id":0,
+      "name": "AGUACATE",
+      "src": "aguacate.jpg"
+    },
+    {
+      "id":1,
+      "name": "BANANO",
+      "src": "banano.jpg"
+    },
+    {
+      "id":2,
+      "name": "DURAZNO",
+      "src": "aguacate.jpg"
+    },
+    {
+      "id":3,
+      "name": "FRESAS",
+      "src": "fresas.jpg"
+    },
+    {
+      "id":4,
+      "name": "GUANABANA",
+      "src": "Guanabana.jpg"
+    },
+    {
+      "id":6,
+      "name": "SANDIA",
+      "src": "sandia.jpg"
+    },
+  ]
+  public get getFrutas():ImgVocavulario[]{
+    return this.frutas;
+  }
 }

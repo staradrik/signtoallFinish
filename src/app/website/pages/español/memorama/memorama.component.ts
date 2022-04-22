@@ -153,7 +153,7 @@ export class MemoramaComponent implements OnInit {
       if(this.pairs === 6){
         this.pauseTimer();
         this.messageService.add({severity:'success', summary:'¡Excelente!', detail:'Has completado la actividad'});
-        setTimeout( ()=> { this.router.navigate(['/'])}, 1100);
+        setTimeout( ()=> { this.router.navigate(['/actividades'])}, 2100);
       }  
     }
     first.clicked= false;

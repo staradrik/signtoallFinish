@@ -1,34 +1,60 @@
 import { Component, OnInit } from '@angular/core';
 import { RutaBreadcrumService } from '../../../../services/ruta-breadcrum.service';
+import { EspannolService } from '../../../../services/espannol.service';
+import { ImgVocavulario } from 'src/app/models/Actividades';
+import { MessageService } from 'primeng/api';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ahorcado',
   templateUrl: './ahorcado.component.html',
-  styleUrls: ['./ahorcado.component.css']
+  styleUrls: ['./ahorcado.component.scss']
 })
 export class AhorcadoComponent implements OnInit {
 
-  palabra:string = 'AGUACATE';
+  constructor(
+    private messageService: MessageService,
+    private router: Router,
+    private breadcrumbService: RutaBreadcrumService,
+    private frutaService: EspannolService
+    ) {
+   }
+  res: number = 0;
+  palabra:string = '';
   palabraOculta:string = '';
   intentos:number = 0;
   gano:boolean = false;
   perdio:boolean = false;
   letra:string = "";
+  frutaSrc:string = "";
+  frutaArray: ImgVocavulario[] = [];
 
-  letras = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K',
+  letras: string[] = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K',
            'L', 'M', 'N', 'Ñ', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 
            'V', 'W', 'X', 'Y', 'Z'];
 
-  constructor(private breadcrumbService: RutaBreadcrumService) {
-    
-   }
-
   ngOnInit(): void {
-    this.palabraOculta = '___ '.repeat(this.palabra.length);
+    this.frutaArray = this.frutaService.getFrutas;
+    this.generarFruta();
     this.breadcrumbService.setItems([
       { label: 'Actividades', routerLink: ['/actividades']}, 
       { label: 'ahorcado' }
     ]);
+  }
+
+  generarFruta(){
+    let tempRes = this.randomInt(6,-1);
+    while (tempRes === this.res){
+      tempRes = this.randomInt(6,-1);
+    }
+    this.perdio = false;
+    this.gano = false;
+    this.intentos = 0;
+    this.res = tempRes;
+    console.log("fruta", this.res)
+    this.frutaSrc = this.frutaArray[this.res].src;
+    this.palabra = this.frutaArray[this.res].name;
+    this.palabraOculta = '___ '.repeat(this.palabra.length);
   }
 
   existeLetra( letra:string ) {
@@ -42,22 +68,33 @@ export class AhorcadoComponent implements OnInit {
     const palabraEvaluar = palabraArr.join('');
     if ( palabraEvaluar === this.palabra ) {
       this.gano = true;
+      this.messageService.clear();
+      this.messageService.add({severity:'success', summary:'¡Felicitaciones! :)', detail:`Terminaste :0`});
+      setTimeout( ()=> { this.router.navigate(['/actividades'])}, 3100);
     }
     if ( this.intentos >= 9 ){
       this.perdio = true;
+      this.messageService.clear();
+      this.messageService.add({severity:'error', summary:'0 Intentos :(', detail:`Intentalo de nuevo :)`});
+      setTimeout( ()=> { this.generarFruta(); }, 2100);
     }
   }
 
   comprobar( letra:string ) {
-    this.existeLetra(letra);
-    const palabraOcultaArr = this.palabraOculta.split(' ');
-    for (let i = 0; i < this.palabra.length; i++) {
-      if ( this.palabra[i] === letra ) {
-        palabraOcultaArr[i] = letra;
+    if (!this.gano && !this.perdio){
+      this.existeLetra(letra);
+      const palabraOcultaArr = this.palabraOculta.split(' ');
+      for (let i = 0; i < this.palabra.length; i++) {
+        if ( this.palabra[i] === letra ) {
+          palabraOcultaArr[i] = letra;
+        }
+        this.palabraOculta = palabraOcultaArr.join(' ');
+        this.verificaGanar();
       }
-      this.palabraOculta = palabraOcultaArr.join(' ');
-      this.verificaGanar();
     }
   }
 
+  randomInt(min: number, max: number) { // seleccionar un numero aleatorio
+    return Math.floor(Math.random() * (max - min + 1) + min)
+  }
 }

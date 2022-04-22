@@ -95,6 +95,7 @@ export class VocabularioComponent implements OnInit {
       //console.log("loop:", i);
     }
   }
+  
   randomInt(min: number, max: number) { // seleccionar un numero aleatorio
     return Math.floor(Math.random() * (max - min + 1) + min)
   }

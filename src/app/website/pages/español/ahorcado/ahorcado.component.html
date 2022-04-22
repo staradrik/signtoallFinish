@@ -1,10 +1,17 @@
-<div class="row grid-container">
+<div class="grid-container">
+    <p-toast></p-toast>
     <h2 style="margin-left: 10px;">Ahorcado</h2>
-    <p-divider style="margin-top: -30px;"></p-divider>
-    <div class="col text-center grid-container2">
+    <p-divider></p-divider>
+    <div class="grid-container2">
         <div class="img-container">
-            <div class="col">
-                <img src="../../../../../assets/images/ActEspañol/ahorcado/{{ intentos }}.png" class="ahorcado-img">
+            <div class="flex">
+                <div>
+                    <img src="../../../../../assets/images/ActEspañol/ahorcado/{{ intentos }}.png" class="ahorcado-img">
+                </div>
+                <p-divider type="dashed" layout="vertical"></p-divider>
+                <div>
+                    <img  class="fruta" src="../../../../../assets/images/ActEspañol/ahorcado/frutas/{{frutaSrc}}" alt="">
+                </div>
             </div>
         </div>
         <h3>Intentos <small> {{ intentos }} / 9</small></h3>
@@ -12,22 +19,13 @@
             <h2>{{palabraOculta}}</h2>
         </div>
     </div>
-    <div *ngIf="gano" class="row">
-        <div class="col text-center">
-            <h1> ¡FELICIDADES HAS GANADO! </h1>
-        </div>
-    </div>
-    
-    <div *ngIf="perdio" class="row">
-        <div class="col text-center">
-            <h1> HAS PERDIDO :( </h1>
-            <h4> {{ palabra }} </h4>
-        </div>
-    </div>
     
     <div class="row" *ngIf="!gano && !perdio">
         <div class="col text-center">
             <button pButton (click)="comprobar( letra )" *ngFor="let letra of letras" class="p-button-warning espacio">{{letra}}</button>
         </div>
+    </div>
+    <div class="center">
+        <button pButton (click)="generarFruta()" type="button" label="nuevo" icon="pi pi-spin pi-spinner" iconPos="left"  class="p-button-info"></button>
     </div>
 </div>
