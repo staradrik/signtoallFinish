@@ -1,0 +1,23 @@
+<button
+    class="start"
+    *ngIf="!boardGame.isInProgress()"
+    (click)="boardGame.startGame()">
+  Inicia!
+</button>
+
+<button
+    class="stop"
+    *ngIf="boardGame.isInProgress()"
+    (click)="boardGame.initGame()">
+  Pausar
+</button>
+
+<div *ngIf="boardGame.isInProgress()">
+  <span>Movimientos: {{ boardGame.movesCount }}</span>
+  <span>Tiempo: {{ boardGame.elapsedSeconds }}</span>
+</div>
+
+<div *ngIf="boardGame.finished">
+  <span>Felicitaciones! Lo lograste en {{ boardGame.movesCount }} movimientos
+    y {{ boardGame.elapsedSeconds }} segundos!</span>
+</div>

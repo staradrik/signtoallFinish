@@ -25,20 +25,26 @@ import { SelectButtonModule } from 'primeng/selectbutton';
 import { AhorcadoComponent } from './ahorcado/ahorcado.component';
 import { MemoramaComponent } from './memorama/memorama.component';
 import { RompeLetrasComponent } from './rompe-letras/rompe-letras.component';
-import { SopLetrasComponent } from './sop-letras/sop-letras.component';
 import { VocabularioComponent } from './vocabulario/vocabulario.component';
 
 //routing
 import { EspañolRoutingModule } from './español-routing.module';
 import { QuicklinkModule } from 'ngx-quicklink';
+import { BoardComponent } from './abc-deslizante/board/board.component';
+import { StateComponent } from './abc-deslizante/state/state.component';
+import { TileComponent } from './abc-deslizante/tile/tile.component';
+import { AbcDeslizanteComponent } from './abc-deslizante/abc-deslizante.component';
 
 @NgModule({
   declarations: [
     AhorcadoComponent,
     MemoramaComponent,
     RompeLetrasComponent,
-    SopLetrasComponent,
-    VocabularioComponent
+    VocabularioComponent,
+    BoardComponent,
+    StateComponent,
+    TileComponent,
+    AbcDeslizanteComponent
   ],
   imports: [
     CommonModule,

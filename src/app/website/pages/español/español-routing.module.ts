@@ -5,8 +5,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AhorcadoComponent } from './ahorcado/ahorcado.component';
 import { MemoramaComponent } from './memorama/memorama.component';
 import { RompeLetrasComponent } from './rompe-letras/rompe-letras.component';
-import { SopLetrasComponent } from './sop-letras/sop-letras.component';
 import { VocabularioComponent } from './vocabulario/vocabulario.component';
+import { AbcDeslizanteComponent } from './abc-deslizante/abc-deslizante.component';
 
 const routes: Routes = [
   {
@@ -15,8 +15,8 @@ const routes: Routes = [
       {path: 'memoLetras', component: MemoramaComponent},        
       {path: 'ahorcado', component: AhorcadoComponent},
       {path: 'rompecabezas', component: RompeLetrasComponent},
-      {path: 'sopLetras', component: SopLetrasComponent},
-      {path: 'vocavulario', component: VocabularioComponent},
+      {path: 'vocabulario', component: VocabularioComponent},
+      {path: 'abecedario', component: AbcDeslizanteComponent},
     ]
   }
 ];

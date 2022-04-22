@@ -11,21 +11,21 @@
 		},
 		{
 			"id": "1001",
-			"name": "Sopa de letras",
-			"image": "sopaLetras.jpg",
-			"category": "Español",
-			"status": "REALIZADA",
-			"rating": 5,
-			"url": "/sopLetras"
-		},
-        {
-			"id": "1002",
 			"name": "Vocabulario",
 			"image": "vocabulario.jpg",
 			"category": "Español",
 			"status": "REALIZADA",
 			"rating": 5,
-			"url": "/vocavulario"
+			"url": "/vocabulario"
+		},
+        {
+			"id": "1002",
+			"name": "abecedario",
+			"image": "sopaLetras.jpg",
+			"category": "Español",
+			"status": "REALIZADA",
+			"rating": 5,
+			"url": "/abecedario"
 		},
         {
 			"id": "1003",

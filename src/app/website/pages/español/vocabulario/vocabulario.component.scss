@@ -1,0 +1,58 @@
+.grid-container {
+    display: relative;
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 78vmax;
+    background-color: #F0EEEE;
+    border-radius: 10px;
+    h2{
+        font-weight: bold;
+        margin-bottom: -30px;
+    }
+    .field-radiobutton{
+        display: flex;
+        margin-top: 15px;
+        justify-content: center;
+        align-items: center; 
+        span + span {
+            margin-left: 15%;
+        }
+        label{
+            font-weight: bold;
+        }
+    }
+}
+.marcador{
+    font-weight:bolder;
+    font-size:xx-large;
+    margin-top: -10px;
+    text-align: right;
+    margin-bottom: -30px;
+}
+.image-container{
+    display: block;
+    margin-top: -15px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 22vmax;
+    height: 22vmax;
+    background-color: white;
+    border-radius: 10px;
+    img{
+        display: block;
+        margin-top: 1vmax;
+        margin-bottom: 1vmax;
+        margin-left: auto;
+        margin-right: auto;
+        width: 20vmax;
+        height: 20vmax;
+        box-shadow: 0px 0px 10.5px transparent;
+    }
+}
+.boton{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin-bottom: 10px;
+}

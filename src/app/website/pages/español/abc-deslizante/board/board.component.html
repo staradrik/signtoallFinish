@@ -1,0 +1,7 @@
+<app-tile
+    *ngFor="let value of boardGame.content; let i = index"
+    [value]="value"
+    [index]="i"
+    (click)="boardGame.moveTile(i)"
+>
+</app-tile>

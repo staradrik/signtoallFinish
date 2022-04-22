@@ -23,4 +23,8 @@ export interface Image extends Partial<Omit<ImgMemo, "name">> {
 export class RootObject {
     data: ImgMemo[]=[];
 }
-
+export interface ImgVocavulario{
+    id: number;
+    name: string;
+    src: string;
+}
