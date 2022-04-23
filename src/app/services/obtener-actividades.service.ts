@@ -17,7 +17,7 @@ export class ObtenerActividadesService {
       items: [
         {
           label: 'Sobre Nosotros',
-          routerLink: ['actividades/sobreNosotros']
+          routerLink: ['sobreNosotros']
         },
         {
           label: 'Salir'
@@ -59,7 +59,7 @@ export class ObtenerActividadesService {
       items: [
         {
           label: 'Sobre Nosotros',
-          routerLink: ['actividades/sobreNosotros']
+          routerLink: ['sobreNosotros']
         },
         {
           label: 'Salir'
