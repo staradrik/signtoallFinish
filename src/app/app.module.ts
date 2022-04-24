@@ -50,7 +50,7 @@ import { QuicklinkModule } from 'ngx-quicklink';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import {ConfirmationService} from 'primeng/api';
 
 @NgModule({
   declarations: [
@@ -101,8 +101,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     }),
     NgbModule,
   ],
+  exports:[PanelMenuComponent],
   
-  providers: [MessageService, AuthService],
+  providers: [MessageService, AuthService, ConfirmationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

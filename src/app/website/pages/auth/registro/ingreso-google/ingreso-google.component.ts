@@ -18,7 +18,7 @@ export class IngresoGoogleComponent {
     apellidos:"",
     correo:"",
     password:"",
-    id_curso:""
+    id_curso:"1"
   }
 
   cursos :any[]= [1,2,3,4,5];

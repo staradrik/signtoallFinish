@@ -18,8 +18,16 @@ export interface RegistroEstudiante {
     correo?:string;
     password?:string;
     id_curso?:string;
-
 }
+
+export interface EstudianteDTO {
+    id_estudiante?: string;
+    nombres?: string;
+    apellidos?:string;
+    correo?:string;
+    id_curso?:string;
+}
+
 
 export interface InicioSesionEstudiante {
     id_estudiante?: string;

@@ -4,11 +4,10 @@
 			<p-dataView #dv [value]="activity" [paginator]="true" [rows]="9" filterBy="name"
 						[sortField]="sortField" [sortOrder]="sortOrder" layout="grid">
 				<ng-template pTemplate="header">
-					<div class="flex flex-column md:flex-row md:justify-content-between">
-						<p-dropdown [options]="sortOptions" placeholder="Ordenar actividades" (onChange)="onSortChange($event)" styleClass="mb-2 md:mb-0"></p-dropdown>
+					<div class="flex flex-column md:flex-row md:justify-content-between">	
 						<span class="p-input-icon-left mb-2 md:mb-0">
                     <i class="pi pi-search"></i>
-                    <input type="search" pInputText placeholder="Buscar" >
+                    <input type="search" pInputText placeholder="Buscar" (input)="dv.filter($any($event.target).value, 'contains')" >
                 </span>
 						<p-dataViewLayoutOptions></p-dataViewLayoutOptions>
 					</div>
@@ -16,22 +15,23 @@
 
 				<ng-template let-activity pTemplate="listItem">
 					<div class="col-12">
-						<div class="product-list-item card">
+						<div class="product-list-item ">
 							<div class="container">
 								<img class="image" [routerLink]="activity.category + '/' + activity.url" [src]="'assets/images/Act' + activity.category + '/' + activity.image"  [alt]="activity.name"/>
-								<div class="middle">
-									<div class="text">{{activity.name}}</div>
+								<div class="midd">
+									<div class="text2">{{activity.name}}</div>
 								</div>
 							</div>
 							<div class="product-list-detail">
-								<div class="product-name">{{activity.name}}</div>
-								<p-rating [ngModel]="activity.rating" [readonly]="true" [cancel]="false"></p-rating>
+								<div class="product-name">Puntuación
+								</div>
+								<p-rating [ngModel]="activity.rating" [cancel]="false"></p-rating>
 								
 							</div>
 							<div class="product-list-action">
 								<span class="product-price">
                                     <br>
-                                    <p-tag styleClass="mr-2" severity="success">{{activity.status}}</p-tag>
+                                    <p-tag styleClass="mr-2" severity="danger">{{activity.status}}</p-tag>
                                 </span>
 								
 								<span></span>
@@ -41,10 +41,10 @@
 				</ng-template>
 
 				<ng-template let-activity pTemplate="gridItem">
-					<div class="col-12 md:col-4">
-						<div class="product-grid-item card">
+					<div class="col-12 md:col-6" >
+						<div class="product-grid-item card" >
 							<div class="product-grid-item-top">
-								<p-tag styleClass="mr-2" severity="success" >{{activity.status}}</p-tag>
+								<p-tag styleClass="mr-2" severity="danger" >{{activity.status}}</p-tag>
 							</div>
 							<div class="product-grid-item-content">
 								<div [routerLink]="activity.category + '/' + activity.url" class="container">
@@ -53,8 +53,8 @@
 										<div class="text">{{activity.name}}</div>
 									</div>
 								</div>
-								<div class="product-name">{{activity.name}}</div>
-								<p-rating [ngModel]="activity.rating" [readonly]="true" [cancel]="false"></p-rating>
+								<div class="product-name">Puntuación</div>
+								<p-rating [ngModel]="activity.rating" [cancel]="false"></p-rating>
 							</div>
 						</div>
 					</div>

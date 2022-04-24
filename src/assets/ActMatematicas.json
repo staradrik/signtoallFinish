@@ -1,22 +1,13 @@
 
 {
-	"data": [
-		{
-			"id": "1000",
-			"name": "Sopa de numeros",
-			"image": "numerosSopa.jpg",
-			"category": "Matematicas",
-			"status": "REALIZADA",
-			"rating": 5,
-			"url": "/sopNumeros"
-		},
+	"data": [		
 		{
 			"id": "1001",
 			"name": "Snake",
 			"image": "snake.png",
 			"category": "Matematicas",
-			"status": "REALIZADA",
-			"rating": 5,
+			"status": "SIN HACER",
+			"rating": 0,
 			"url": "/snake"
 		},
         {
@@ -24,8 +15,8 @@
 			"name": "Memorama",
 			"image": "memorama.jpg",
 			"category": "Matematicas",
-			"status": "REALIZADA",
-			"rating": 5,
+			"status": "SIN HACER",
+			"rating": 0,
 			"url": "/memoMate"
 		},
         {
@@ -33,8 +24,8 @@
 			"name": "Rompecabezas",
 			"image": "rompecabezas.jpg",
 			"category": "Matematicas",
-			"status": "REALIZADA",
-			"rating": 5,
+			"status": "SIN HACER",
+			"rating": 0,
 			"url": "/rompeMate"
 		},
         {
@@ -42,17 +33,17 @@
 			"name": "Sudoku",
 			"image": "sudoku.jpg",
 			"category": "Matematicas",
-			"status": "REALIZADA",
-			"rating": 5,
+			"status": "SIN HACER",
+			"rating": 0,
 			"url": "/sudoku"
 		},
         {
-			"id": "1005",
-			"name": "Rompecabezas deslizantes",
+			"id": "1000",
+			"name": "Puzzle deslizable",
 			"image": "sumasResta.jpg",
 			"category": "Matematicas",
-			"status": "REALIZADA",
-			"rating": 5,
+			"status": "SIN HACER",
+			"rating": 0,
 			"url": "/slidin"
 		}
 	]

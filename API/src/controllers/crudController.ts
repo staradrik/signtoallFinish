@@ -82,7 +82,7 @@ class CrudController {
           res.status(400).json({ msg: 'El curso no existe' });
         } else {
           const result = await conn.query(
-            `INSERT INTO estudiante(id_estudiante, nombres, apellidos, correo, password, curso_id_curso) VALUES("${student.id_estudiante}","${student.nombres}","${student.apellidos}","${student.correo}","${passwordHash}","${student.id_curso}")`
+            `INSERT INTO estudiante(id_estudiante, nombres, apellidos, correo, password, id_curso) VALUES("${student.id_estudiante}","${student.nombres}","${student.apellidos}","${student.correo}","${passwordHash}","${student.id_curso}")`
           );
 
           res.json({ message: 'Estudiante añadido con exito' });
@@ -115,7 +115,7 @@ class CrudController {
     };
     
     const result = await conn.query(
-      `UPDATE estudiante SET nombres = "${student.nombres}", apellidos = "${student.apellidos}", correo = "${student.correo}", curso_id_curso = "${student.id_curso}" WHERE id_estudiante = ${id}`
+      `UPDATE estudiante SET nombres = "${student.nombres}", apellidos = "${student.apellidos}", correo = "${student.correo}", id_curso = "${student.id_curso}" WHERE id_estudiante = ${id}`
     );
 
     res.json({ message: 'Los datos han sido actualizados' });

@@ -31,7 +31,8 @@ export class RompecabezasComponent implements OnInit {
   difficulty: string = '2';
   steps: number = 0;
   
- 
+  numImg: number =  Math.floor(Math.random() * this.total);
+  nameImg: string = this.data[this.numImg + 1];
 
   gameComplete: Boolean = false;
 
@@ -104,8 +105,8 @@ export class RompecabezasComponent implements OnInit {
     this.steps++;
     this.gameComplete = this.isSorted(this.position);
     if (this.gameComplete) {
-      this.messageService.add({severity:'success', summary:'¡Excelente!', detail:'Has completado la actividad'});
-      setTimeout( ()=> { this.router.navigate(['/actividades'])}, 1100);
+      this.messageService.add({severity:'success', summary: 'Bien hecho', detail: 'Actividad realizada'});
+      setTimeout( ()=> { this.router.navigate(['/actividades'])}, 3000);
      
     }
 
@@ -128,6 +129,12 @@ export class RompecabezasComponent implements OnInit {
   reRandomize(): void {
     this.gameComplete = false;
     this.Image = this.randomize(this.Image);
+  }
+  newGame(): void {
+    this.numImg = Math.floor(Math.random() * this.total);
+    this.imageUrl = `../assets/images/ActMatematicas/rompecabezas/${this.numImg}.jpg`;
+    this.nameImg = this.data[this.numImg + 1];
+    this.steps = 0;
   }
 
   startGame(): void {

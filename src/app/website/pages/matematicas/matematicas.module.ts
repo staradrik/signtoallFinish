@@ -25,7 +25,6 @@ import { SelectButtonModule } from 'primeng/selectbutton';
 //components
 import { MemoramaMatComponent } from './memorama-mat/memorama-mat.component';
 import { RompecabezasComponent } from './rompecabezas/rompecabezas.component';
-import { SopaNumerosComponent } from './sopa-numeros/sopa-numeros.component';
 
 //routing
 import { MatematicasRoutingModule } from './matematicas-routing.module';
@@ -45,7 +44,6 @@ import { GameBoardComponent } from './snake/game-board/game-board.component';
   declarations: [
     MemoramaMatComponent,
     RompecabezasComponent,
-    SopaNumerosComponent,
     GridComponent,
     NumPickerComponent,
     SudokuComponent,
