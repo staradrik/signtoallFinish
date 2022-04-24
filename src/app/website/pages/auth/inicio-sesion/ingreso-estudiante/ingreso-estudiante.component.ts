@@ -8,8 +8,7 @@ import {MessageService} from 'primeng/api';
 @Component({
   selector: 'app-ingreso-estudiante',
   templateUrl: './ingreso-estudiante.component.html',
-  styles: [
-  ]
+  styleUrls: ['./ingreso-estudiante.component.scss']
 })
 export class IngresoEstudianteComponent {
 

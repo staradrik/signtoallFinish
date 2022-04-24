@@ -1,0 +1,57 @@
+.contenedor{
+    margin-top: -60px;
+    margin-bottom:  -60px;
+    margin-left: -60px;
+    margin-right: -60px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(2rem, 3fr));
+}
+
+.subContenedor{
+    height: 43vmax;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    background-color: #f4f2f2;
+    .boton{
+        display: flex;
+        justify-content: right;
+        align-items: center; 
+        margin-right: 10px;
+        margin-top: -10px;
+    }
+    p{
+        text-align: center;
+        font-weight: bold;
+        margin-left: 2vmin;
+    }
+    .rol{
+        text-align: left;
+        margin-bottom: -2px;
+    }
+}
+
+.img{
+    margin: 0;
+    width: 50vmax;
+    height: 44vmax;
+    border-radius: 0.4rem 0 0 0.4rem;
+    box-shadow: 0px 0px 10.5px rgb(255, 255, 255)
+}
+
+.form{
+    width: 50vmax;
+    height: 44vmax;
+    padding: .8rem;
+    border-radius: 0 0.4rem 0.4rem 0;
+    background-color: white;
+}
+
+.logo{
+    margin: 0 auto;
+    width: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
