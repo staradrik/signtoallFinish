@@ -7,15 +7,13 @@ import { SelectItem } from "primeng/api";
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
-  styleUrls: ['./registro.component.css']
+  styleUrls: ['./registro.component.scss']
 })
 export class RegistroComponent implements OnInit {
 
   //opciones del selecItem [estudiante e profesor]
   types: SelectItem[] = [];
-  typeName: string = "";
-
-  selectedValue: string = 'val1';
+  typeName: string = "Estudiante";
 
   miFormulario: FormGroup = this.fb.group({
     nombre:     ['', [ Validators.required ]],
@@ -26,10 +24,8 @@ export class RegistroComponent implements OnInit {
     confirm_contraseña: ['', [Validators.required]]}
   );
 
-
   constructor(private router: Router,
               private fb: FormBuilder) { 
- 
               }
 
   ngOnInit(): void {

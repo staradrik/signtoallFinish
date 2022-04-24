@@ -8,8 +8,7 @@ import { RegistroEstudiante } from 'src/app/models/auth';
 @Component({
   selector: 'app-ingreso-google',
   templateUrl: './ingreso-google.component.html',
-  styles: [
-  ]
+  styleUrls: ['./ingreso-google.component.scss']
 })
 export class IngresoGoogleComponent {
 
@@ -21,6 +20,8 @@ export class IngresoGoogleComponent {
     password:"",
     id_curso:""
   }
+
+  cursos :any[]= [1,2,3,4,5];
 
   tipoDoc: [{name: string}];
   
@@ -47,6 +48,5 @@ export class IngresoGoogleComponent {
         }
       );
     }
-
 }
 

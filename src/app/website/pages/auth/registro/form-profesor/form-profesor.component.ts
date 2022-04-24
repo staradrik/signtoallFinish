@@ -8,8 +8,7 @@ import { RegistroProfesor } from 'src/app/models/auth';
 @Component({
   selector: 'app-form-profesor',
   templateUrl: './form-profesor.component.html',
-  styles: [
-  ]
+  styleUrls: ['./form-profesor.component.scss']
 })
 export class FormProfesorComponent {
 
