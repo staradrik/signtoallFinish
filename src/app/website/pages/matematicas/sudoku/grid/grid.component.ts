@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { MessageService } from 'primeng/api';
 import { MatematicasService } from 'src/app/services/matematicas.service';
 
 
@@ -33,7 +35,8 @@ export class GridComponent implements OnInit, OnChanges  {
 
 
   constructor(private modalService: NgbModal,
-      private sudokuService:MatematicasService) {
+      private sudokuService:MatematicasService,
+      private messageService: MessageService, private router: Router) {
 
   }
   ngOnInit() {
@@ -43,9 +46,12 @@ export class GridComponent implements OnInit, OnChanges  {
 
   checkSolution() {
 
-      console.log('in chcek solo')
+     
       if (this.isSolved() == true) {
           this.isFinished = true
+
+          this.messageService.add({severity:'success', summary: 'Bien hecho', detail: 'Actividad realizada'});
+          setTimeout( ()=> { this.router.navigate(['/actividades'])}, 3000);
       } else {
           this.isFinished = false
       }
@@ -57,7 +63,7 @@ export class GridComponent implements OnInit, OnChanges  {
       this.sudokuSubmitted = false
      // this.isFinished = null
 
-      console.log(difficultyType)
+      
       this.difficulty.emit(difficultyType)
   }
 
@@ -70,7 +76,7 @@ export class GridComponent implements OnInit, OnChanges  {
               }
               else {
                   // this.isFinished = false
-                  console.log('in chcek solo::False')
+                  
                   return false;
               }
           }
@@ -93,9 +99,7 @@ export class GridComponent implements OnInit, OnChanges  {
               this.SolData[j][i].v = this.data[j][i].v
           }
       }
-      console.log('solData:', this.SolData)
-      console.log('solData:', this.data)
-
+     
       for (var j = 0; j < 9; j++) {
           for (var i = 0; i < 9; i++) {
               this.data[j][i].s = true

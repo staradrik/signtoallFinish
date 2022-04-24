@@ -14,17 +14,16 @@ difficultyCells = 35;
 
 setDifficulty(difficulty:any):any{
 
-  console.log("from parent:"+difficulty)
   switch (difficulty)
   {
     case "easy":
-      this.difficultyCells = 42;
+      this.difficultyCells = 65;
         break;
     case "medium":
-      this.difficultyCells = 35;
+      this.difficultyCells = 50;
         break;
     case "advanced": 
-      this.difficultyCells = 20;
+      this.difficultyCells = 30;
         break;
   }
 }
@@ -41,6 +40,8 @@ constructor(updates: SwUpdate, private breadcrumbService: RutaBreadcrumService) 
   ngOnInit(): void {
     this.setDifficulty
   }
+
+  
 
 
 

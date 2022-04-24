@@ -25,13 +25,17 @@ import { SelectButtonModule } from 'primeng/selectbutton';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { QuicklinkModule } from 'ngx-quicklink';
 import {ToolbarModule} from 'primeng/toolbar';
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
 
 
 import {DialogModule} from 'primeng/dialog';
+import { PanelDocenteComponent } from './panel-docente/panel-docente.component';
 
 @NgModule({
   declarations: [
-    CrudDocenteComponent
+    CrudDocenteComponent,
+    PanelDocenteComponent
+    
   ],
   imports: [
     CommonModule,
@@ -57,7 +61,8 @@ import {DialogModule} from 'primeng/dialog';
     RadioButtonModule,
     SelectButtonModule,
     QuicklinkModule,
-    ToolbarModule
+    ToolbarModule,
+    ConfirmDialogModule
   ]
 })
 export class DocenteModule { }

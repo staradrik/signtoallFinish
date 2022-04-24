@@ -1,16 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import {Snake} from '../game-engine/snake';
 import { Food } from '../game-engine/food';
 import { outsideGrid } from '../game-engine/gameboard-grid.util';
 import { RutaBreadcrumService } from '../../../../../services/ruta-breadcrum.service';
 import { MessageService } from 'primeng/api';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-game-board',
   templateUrl: './game-board.component.html',
   styleUrls: ['./game-board.component.scss']
 })
-export class GameBoardComponent implements OnInit {
+export class GameBoardComponent implements OnInit, AfterViewInit {
 
   
   lastRenderTime = 0
@@ -20,10 +21,9 @@ export class GameBoardComponent implements OnInit {
   SNAKE_SPEED = 1;
   snake = new Snake();
   food = new Food(this.snake);
- // mensaje = this.messageService.add({severity:'success', summary:'¡Excelente!', detail:'Has completado la actividad'});
 
   constructor(private breadcrumbService: RutaBreadcrumService,
-              private messageService: MessageService) { }
+              private messageService: MessageService, private router: Router) { }
 
   ngOnInit(): void {
     this.snake.listenToInputs();
@@ -43,8 +43,10 @@ export class GameBoardComponent implements OnInit {
 
     
     const score = this.food.currentScore;
-    if(score === 10){
+    if(score === 25){
       this.gameWinner = true
+      this.messageService.add({severity:'success', summary: 'Bien hecho', detail: 'Actividad realizada'});
+      setTimeout( ()=> { this.router.navigate(['/actividades'])}, 3000);
     }
 
     if(this.gameOver || this.gameWinner) return  console.log('rf')

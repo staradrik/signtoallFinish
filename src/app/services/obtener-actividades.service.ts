@@ -68,10 +68,6 @@ export class ObtenerActividadesService {
       icon: 'pi pi-search',
       items: [
         {
-          label: 'Sopa de numeros',
-          routerLink: ['Matematicas/sopNumeros']
-        },
-        {
           label: 'Snake',
           routerLink: ['Matematicas/snake']
         },

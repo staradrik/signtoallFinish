@@ -19,7 +19,7 @@ export class IngresoGoogleComponent {
     apellidos:"",
     correo:"",
     password:"",
-    id_curso:""
+    id_curso:"1"
   }
 
   tipoDoc: [{name: string}];
