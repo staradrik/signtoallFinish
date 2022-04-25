@@ -1,52 +1,49 @@
-
 <main class="contenedor">
     <img
       [src]="'assets/images/authImagenes/MonoCohete.jpeg'"
       alt="MonoCohete Mono"
       class="img"
     />
-  
     <div class="form">
-        
-        <p-card>
-            <div class="col-4">
-               <button pButton type="button" label="Iniciar Sesión" (click)="iraLogin()"
-        class="p-button-info"></button>  
+        <div class="subContenedor">
+            <br>
+            <div class="boton">
+                <button 
+                (click)="iraLogin()"
+                pButton type="button" 
+                label="Iniciar Sesión" 
+                class="p-button-primary"
+                icon="pi pi-sign-in" 
+                iconPos="left"
+                ></button> 
             </div>
         
-          <img
-          [src]="'assets/images/authImagenes/Logo.png'"
-          alt="MonoCohete Mono"
-          class="logo"
-        />
-        <p>Bienvenid@, por favor registra tus datos personales</p>
-        <p>Selecciona tu rol:</p>
-        
-        <div class="field col-12 form-element">
+            <img
+            [src]="'assets/images/authImagenes/Logo.png'"
+            alt="MonoCohete Mono"
+            class="logo"
+            />
 
-            <p-selectButton 
-                [options]="types"
-                (onOptionClick)="changeType($event)">   
-            </p-selectButton>
-        
-        </div>
+            <p>Bienvenid@, por favor registra tus datos personales</p>
+            <p class="rol">Selecciona tu rol:</p>
+            
+            <div class="field col-12 form-element">
+                <p-selectButton 
+                    [(ngModel)]="typeName"
+                    [options]="types"
+                    (onOptionClick)="changeType($event)">   
+                </p-selectButton>
+            </div>
 
-        <!--Formulario de estudiante-->
-        <div class=" field col-12  form-element" >
-            <span *ngIf="typeName === 'Estudiante'" >
+            <!--Formulario de estudiante-->
+            <div *ngIf="typeName === 'Estudiante'" class=" field col-12  form-element" >
                 <app-ingreso-google></app-ingreso-google>
-            </span>
-        </div>
+            </div>
 
-        <!--Formulario de profesor-->
-        <div class=" field col-12  form-element" >
-            <span *ngIf="typeName === 'Profesor'" >
+            <!--Formulario de profesor-->
+            <div *ngIf="typeName === 'Profesor'" class=" field col-12  form-element" >
                 <app-form-profesor></app-form-profesor>
-            </span>
+            </div>
         </div>
-
-
-        
-      </p-card>
     </div>
-  </main>
+</main>

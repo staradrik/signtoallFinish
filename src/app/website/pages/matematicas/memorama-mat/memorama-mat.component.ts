@@ -134,8 +134,8 @@ public timerFlag:boolean = false;
        this.pairs++;
        if(this.pairs === 6){
          this.pauseTimer();
-         this.messageService.add({severity:'success', summary:'¡Excelente!', detail:'Has completado la actividad'});
-         setTimeout( ()=> { this.router.navigate(['/actividades'])}, 1100);
+         this.messageService.add({severity:'success', summary: 'Bien hecho', detail: 'Actividad realizada'});
+      setTimeout( ()=> { this.router.navigate(['/actividades'])}, 3000);
 
        }
          

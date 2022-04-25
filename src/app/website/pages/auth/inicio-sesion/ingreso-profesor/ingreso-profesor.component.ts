@@ -8,8 +8,7 @@ import { InicioSesionProfesor } from 'src/app/models/auth';
 @Component({
   selector: 'app-ingreso-profesor',
   templateUrl: './ingreso-profesor.component.html',
-  styles: [
-  ]
+  styleUrls: ['./ingreso-profesor.component.scss']
 })
 export class IngresoProfesorComponent {
 
@@ -28,7 +27,7 @@ export class IngresoProfesorComponent {
   }
 
   iniciarSesionProfesor(){
-    this.router.navigate(['/docente/crud'])
+    
     this.inicioSesionService.inicioSesionProfesor(this.inicioSesionProfesor).subscribe(
       res => {
         console.log(res);

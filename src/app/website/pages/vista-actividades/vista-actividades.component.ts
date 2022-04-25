@@ -9,7 +9,7 @@ import { Actividades } from 'src/app/models/Actividades';
 @Component({
   selector: 'app-vista-actividades',
   templateUrl: './vista-actividades.component.html',
-  styleUrls: ['./vista-actividades.component.css']
+  styleUrls: ['./vista-actividades.component.scss']
 })
 export class VistaActividadesComponent implements OnInit {
 
@@ -18,6 +18,8 @@ export class VistaActividadesComponent implements OnInit {
   sortOrder: number = 0;
   sortField: string = "";
   curso:number = 0;
+
+  val: number = 0;
 
   constructor(private Estudiante: EstudianteService,
       private breadcrumbService: RutaBreadcrumService,

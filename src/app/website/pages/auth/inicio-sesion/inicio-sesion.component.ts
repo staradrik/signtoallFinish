@@ -4,13 +4,13 @@ import { SelectItem } from "primeng/api";
 @Component({
   selector: 'app-inicio-sesion',
   templateUrl: './inicio-sesion.component.html',
-  styleUrls: ['./inicio-sesion.component.css']
+  styleUrls: ['./inicio-sesion.component.scss']
 })
 export class InicioSesionComponent implements OnInit {
 
     //opciones del selecItem [estudiante e profesor]
     types: SelectItem[] = [];
-    typeName: string = "";
+    typeName: string = "Estudiante";
 
   constructor() { 
     
