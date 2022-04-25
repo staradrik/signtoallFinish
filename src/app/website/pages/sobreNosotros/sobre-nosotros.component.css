@@ -1,0 +1,32 @@
+h1 {
+    font-family: Impact, sans-serif;
+    color: rgb(237, 237, 23);
+    
+    }
+h5{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color:black;
+    
+}
+    div.noticia {
+        width: 70%;
+        margin: 20px auto;
+        background-color: rgb(149, 106, 184);
+        color: #fff;
+        padding: 15px;
+        border-radius: 10px;
+      }
+      
+      div.noticia img.izquierda {
+        float: left;
+        margin-left: 15px;
+      }
+      
+      div.noticia img.derecha {
+        float: right;
+        margin-left: 15px;
+      }
+      
+      div.reset {
+        clear: both;
+      }
