@@ -31,6 +31,7 @@ export class IngresoEstudianteComponent {
     this.inicioSesionService.inicioSesionEstudiante(this.inicioSesionEstudiante).subscribe(
       res => {
         this.messageService.add({severity:'success', summary:'Service Message', detail:'Via MessageService'});
+        localStorage.setItem("token_estudiante", res.token)
         console.log(res);
       }, err =>{
         console.error(err);

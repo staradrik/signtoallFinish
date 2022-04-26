@@ -44,6 +44,10 @@ import { LayoutComponent } from './website/components/layout/layout.component';
 //services
 import {AuthService} from "./services/auth.service";
 
+//guard
+import { AuthProfesorGuard } from "./guard/authProfesor.guard";
+import { AuthEstudianteGuard } from "./guard/authEstudiante.guard";
+
 //Routing
 import { AppRoutingModule } from './app-routing.module';
 import { QuicklinkModule } from 'ngx-quicklink';
@@ -103,7 +107,7 @@ import {ConfirmationService} from 'primeng/api';
   ],
   exports:[PanelMenuComponent],
   
-  providers: [MessageService, AuthService, ConfirmationService],
+  providers: [MessageService, AuthService, ConfirmationService, AuthProfesorGuard, AuthEstudianteGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

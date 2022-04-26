@@ -9,6 +9,7 @@ export interface RegistroProfesor {
 export interface InicioSesionProfesor {
     id_profesor?: string;
     password?:string;
+    token?: any;
 }
 
 export interface RegistroEstudiante {
@@ -32,4 +33,5 @@ export interface EstudianteDTO {
 export interface InicioSesionEstudiante {
     id_estudiante?: string;
     password?:string;
+    token?: any;
 }

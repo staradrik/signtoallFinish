@@ -116,7 +116,10 @@ router.put("/actualizar/:id", async (req, res) => {
 router.delete("/eliminar/:id", async (req, res) => {
   const { id } = req.params;
 
+  await pool.query(`DELETE FROM estudiante_actividad WHERE id_estudiante = ${id}`);
+
   await pool.query(`DELETE FROM estudiante WHERE id_estudiante = ${id}`);
+
 
   res.json({ message: "El estudiante ha sido eliminado de la lista" });
 });

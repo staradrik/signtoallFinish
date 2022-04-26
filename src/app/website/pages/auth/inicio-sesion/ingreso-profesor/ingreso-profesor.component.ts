@@ -31,6 +31,7 @@ export class IngresoProfesorComponent {
     this.inicioSesionService.inicioSesionProfesor(this.inicioSesionProfesor).subscribe(
       res => {
         console.log(res);
+        localStorage.setItem("token_profesor", res.token)
         this.router.navigate(['/docente/crud'])
       }, err =>{
         console.error(err);

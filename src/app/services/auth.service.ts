@@ -29,6 +29,12 @@ export class AuthService {
     return this.http.post(`${this.APi_URI}/iniciarSesionE`, inicioSesionEstudiante)
    } 
 
-   
+   loggedInProfesor(){
+     return !!localStorage.getItem("token_profesor")
+   }
+
+   loggedInEstudiante(){
+    return !!localStorage.getItem("token_estudiante")
+  }
   
 }
