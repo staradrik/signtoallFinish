@@ -3,6 +3,7 @@ import { HttpClient } from "@angular/common/http"
 import { RegistroProfesor, InicioSesionProfesor, RegistroEstudiante, InicioSesionEstudiante } from "../models/auth"
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class AuthService {
 
   private APi_URI: string = environment.API;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
   
     registroProfesor(registroProfesor: RegistroProfesor): Observable<RegistroProfesor>{
        return this.http.post(`${this.APi_URI}/registrarP`, registroProfesor)
@@ -35,6 +36,12 @@ export class AuthService {
 
    loggedInEstudiante(){
     return !!localStorage.getItem("token_estudiante")
+  }
+
+  logout(){
+    localStorage.removeItem("token_profesor")
+    localStorage.removeItem("token_estudiante")
+    this.router.navigate(["/login"])
   }
   
 }
