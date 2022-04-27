@@ -28,3 +28,7 @@ export interface ImgVocavulario{
     name: string;
     src: string;
 }
+
+export interface CursoElegido {
+    id_curso: string
+}

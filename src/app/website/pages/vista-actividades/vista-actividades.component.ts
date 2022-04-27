@@ -30,6 +30,9 @@ export class VistaActividadesComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    this.curso = this.Estudiante.obtenerCurso();
+    
     this.breadcrumbService.setItems([
       { label: 'Actividades', routerLink: ['/actividades']}
     ]);
@@ -37,7 +40,7 @@ export class VistaActividadesComponent implements OnInit {
       {label: 'Reciente', value: '!rating'},
         {label: 'Antigua', value: 'rating'}
       ];
-    this.curso = this.Estudiante.obtenerCurso();
+    
     this.actividadesService.getActivity().then(data => this.activity = data);
   }
 

@@ -5,7 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class EstudianteService {
 
-  private curso:number = 4;
+  private cursoS: any = (localStorage.getItem("idCurso"));
+  private curso: number = parseInt(this.cursoS)
 
   constructor() { }
 

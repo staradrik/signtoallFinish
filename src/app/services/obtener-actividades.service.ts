@@ -93,18 +93,19 @@ export class ObtenerActividadesService {
       ]
     }
   ];
-  curso = 0;
+  cursoS: any = (localStorage.getItem("idCurso"));
+  curso:  number = parseInt(this.cursoS)
   cursoList: 'ActEspannol' | 'ActMatematicas' = 'ActEspannol';
 
   constructor(private http: HttpClient,
     private Estudiante:EstudianteService) {
-    this.curso = this.Estudiante.obtenerCurso();
+   // this.curso = this.Estudiante.obtenerCurso();
    }
 
   getActivity(){
-    if (this.curso > 3){
+    if (this.curso >2){
       this.cursoList = 'ActMatematicas';
-    }else{
+    }else if(this.curso <= 2){
       this.cursoList = 'ActEspannol';
     }
     return this.http.get<any>(`assets/${this.cursoList}.json`)

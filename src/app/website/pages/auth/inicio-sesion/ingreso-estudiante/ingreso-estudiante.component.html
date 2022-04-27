@@ -1,4 +1,12 @@
 <form action="registro">
+
+    <div class="field col-12 md:col-4">
+        <span>
+              <p-dropdown name="id_curso" placeholder="Cursos" [options]="cursos" 
+              (onChange)="isPosition($event.value)"
+              [style]="{'width':'44vmax'}"></p-dropdown>
+        </span>
+    </div>
        
     <div class="field col-12 md:col-4">
         <span class="p-float-label p-input-icon-right">
@@ -14,11 +22,9 @@
             <input type="password" name="password" pInputText [(ngModel)]="inicioSesionEstudiante.password"> 
             <label for="inputtext">Contraseña</label>
         </span>
-
     </div>
     <div class="boton">
         <p-button 
-            routerLink="/actividades" 
             label="Iniciar Sesión" 
             (click)="iniciarSesionEstudiante()"
             icon="pi pi-sign-in" 
