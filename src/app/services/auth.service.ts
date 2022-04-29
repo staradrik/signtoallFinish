@@ -38,6 +38,14 @@ export class AuthService {
     return !!localStorage.getItem("token_estudiante")
   }
 
+  getTokenProfesor(){
+    return localStorage.getItem("token_profesor")
+  }
+
+  getTokenEstudiante(){
+    return localStorage.getItem("token_estudiante")
+  }
+
   logout(){
     localStorage.removeItem("token_profesor")
     localStorage.removeItem("token_estudiante")

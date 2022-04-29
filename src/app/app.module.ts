@@ -2,7 +2,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
 //Primeng
@@ -43,6 +43,7 @@ import { LayoutComponent } from './website/components/layout/layout.component';
 
 //services
 import {AuthService} from "./services/auth.service";
+import {TokenService} from "./services/token.service";
 
 //guard
 import { AuthProfesorGuard } from "./guard/authProfesor.guard";
@@ -107,7 +108,12 @@ import {ConfirmationService} from 'primeng/api';
   ],
   exports:[PanelMenuComponent],
   
-  providers: [MessageService, AuthService, ConfirmationService, AuthProfesorGuard, AuthEstudianteGuard],
+  providers: [MessageService, AuthService, ConfirmationService, AuthProfesorGuard, AuthEstudianteGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenService,
+      multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
