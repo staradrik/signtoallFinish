@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component} from '@angular/core';
 import { Router } from '@angular/router';
 
 import {AuthService} from "../../../../../services/auth.service"
 import { RegistroEstudiante } from 'src/app/models/auth';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-ingreso-google',
@@ -25,25 +25,20 @@ export class IngresoGoogleComponent {
 
   tipoDoc: [{name: string}];
   
-  miFormulario: FormGroup = this.fb.group({
-    nombre:     ['', [ Validators.required ]],
-    apellido:     ['', [ Validators.required ]],
-    numeroID:     [null, [ Validators.required ]],
-    correo:    ['', [ Validators.required, Validators.email ]],
-    contraseña: ['', [ Validators.required, Validators.minLength(6) ]],
-    confirm_contraseña: ['', [Validators.required]]}
-  );
 
-  constructor(private router: Router,
-    private fb: FormBuilder, private registroService: AuthService) { 
+
+  constructor(private router: Router, private registroService: AuthService, private messageService: MessageService) { 
       this.tipoDoc = [{name: 'T.I'}];
     }
 
     registrarEstudiante(){
       this.registroService.registroEstudiante(this.registroEstudiante).subscribe(
         res => {
+          this.messageService.add({severity:'success', summary:'Registro exitoso', detail:'Puedes ingresar'});
+          setTimeout( ()=> { this.router.navigate(['/login'])}, 4000);
           console.log(res);
         }, err =>{
+          this.messageService.add({severity:'error', summary:'error', detail:'Por favor ingresa todos los datos'});
           console.error(err);
         }
       );

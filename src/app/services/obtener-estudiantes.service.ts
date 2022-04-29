@@ -15,9 +15,6 @@ export class ObtenerEstudiantesService {
         {
           label: 'Sobre Nosotros',
           routerLink: ['actividades/sobreNosotros']
-        },
-        {
-          label: 'Salir'
         }
       ]
     },

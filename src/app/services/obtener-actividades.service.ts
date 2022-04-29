@@ -18,9 +18,6 @@ export class ObtenerActividadesService {
         {
           label: 'Sobre Nosotros',
           routerLink: ['sobreNosotros']
-        },
-        {
-          label: 'Salir'
         }
       ]
     },
@@ -60,9 +57,6 @@ export class ObtenerActividadesService {
         {
           label: 'Sobre Nosotros',
           routerLink: ['sobreNosotros']
-        },
-        {
-          label: 'Salir'
         }
       ]
     },

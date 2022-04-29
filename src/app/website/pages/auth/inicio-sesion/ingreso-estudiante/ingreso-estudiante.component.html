@@ -1,35 +1,34 @@
-<form action="registro">
+<p-toast></p-toast>
+<form action="registro"  #loginForm="ngForm">
 
     <div class="field col-12 md:col-4">
         <span>
-              <p-dropdown name="id_curso" placeholder="Cursos" [options]="cursos" 
-              (onChange)="isPosition($event.value)"
-              [style]="{'width':'44vmax'}"></p-dropdown>
+            <p-dropdown [required]="true"  name="id_curso" placeholder="Cursos" [options]="cursos" 
+                (onChange)="isPosition($event.value)"[style]="{'width':'44vmax'}" >
+            </p-dropdown>
         </span>
     </div>
        
     <div class="field col-12 md:col-4">
         <span class="p-float-label p-input-icon-right">
             <i class="pi pi-credit-card"></i>
-            <input type="text" name="id_estudiante" pInputText [(ngModel)]="inicioSesionEstudiante.id_estudiante"> 
-            <label for="inputtext">Tarjeta de Identidad</label>
+            <input type="text" name="id_estudiante" pInputText [(ngModel)]="inicioSesionEstudiante.id_estudiante" required> 
+            <label for="inputtext">Número asignado</label>
         </span>
     </div>
     
     <div class="field col-12 md:col-4">
         <span class="p-float-label p-input-icon-right">
             <i class="pi pi-key"></i>
-            <input type="password" name="password" pInputText [(ngModel)]="inicioSesionEstudiante.password"> 
+            <input type="password" name="password" pInputText [(ngModel)]="inicioSesionEstudiante.password" required> 
             <label for="inputtext">Contraseña</label>
         </span>
     </div>
+
     <div class="boton">
-        <p-button 
-            label="Iniciar Sesión" 
-            (click)="iniciarSesionEstudiante()"
-            icon="pi pi-sign-in" 
-            iconPos="left"
-        ></p-button>
+        <button type="button" label="Iniciar Sesión" icon="pi pi-sign-in" iconPos="left"
+        (click)="iniciarSesionEstudiante()"
+        pButton [disabled]="loginForm.form.invalid" ></button>   
     </div>
     
 </form>

@@ -1,54 +1,46 @@
-<form action="registro">
+<p-toast></p-toast>
+<form action="registro" #loginForm="ngForm">
   
       <div class="field col-12 md:col-4">
           <span class="p-float-label p-input-icon-right">
               <i class="pi pi-credit-card"></i>
-              <input type="text" name="id_profesor" pInputText [(ngModel)]="registroProfesor.id_profesor"> 
+              <input type="number" name="id_profesor" pInputText [(ngModel)]="registroProfesor.id_profesor" required> 
               <label for="inputtext">Cédula</label>
           </span>
       </div>
       <div class="field col-12 md:col-4">
           <span class="p-float-label p-input-icon-right">
               <i class="pi pi-user"></i>
-              <input type="text" name="nombres" pInputText [(ngModel)]="registroProfesor.nombres" > 
+              <input type="text" name="nombres" pInputText [(ngModel)]="registroProfesor.nombres" required> 
               <label for="inputtext">Nombres</label>
           </span>
       </div>
       <div class="field col-12 md:col-4">
           <span class="p-float-label p-input-icon-right">
               <i class="pi pi-user"></i>
-              <input type="text" name="apellidos" pInputText [(ngModel)]="registroProfesor.apellidos"> 
+              <input type="text" name="apellidos" pInputText [(ngModel)]="registroProfesor.apellidos" required> 
               <label for="inputtext">Apellidos</label>
           </span>
       </div>
       <div class="field col-12 md:col-4">
           <span class="p-float-label p-input-icon-right">
               <i class="pi pi-envelope"></i>
-              <input type="email" name="correo" pInputText [(ngModel)]="registroProfesor.correo"> 
+              <input type="email" name="correo" pInputText [(ngModel)]="registroProfesor.correo" required> 
               <label for="inputtext">Correo</label>
           </span>
       </div>
       <div class="field col-12 md:col-4">
           <span class="p-float-label p-input-icon-right">
               <i class="pi pi-key"></i>
-              <input type="password" pPassword name="password" [(ngModel)]="registroProfesor.password" />
+              <input type="password" pPassword name="password" [(ngModel)]="registroProfesor.password" required/>
               <label for="inputtext">Contraseña</label>
           </span>
 
       </div>
-      <div class="field col-12 md:col-4">
-          <span class="p-float-label p-input-icon-right">
-              <i class="pi pi-key"></i>
-              <input type="password" pPassword />
-              <label for="inputtext">Confirmar Contraseña</label>
-          </span>
-      </div>
+    
       <div class="boton">
-        <p-button  
-            label="Registrarse"
-            (click)="registrarProfesor()"
-            icon="pi pi-send" 
-            iconPos="left"
-        ></p-button>
+        <button type="button" label="Registrarse"  icon="pi pi-send"  iconPos="left"
+        (click)="registrarProfesor()"
+        pButton [disabled]="loginForm.form.invalid" ></button>      
       </div>
 </form>

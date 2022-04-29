@@ -19,21 +19,58 @@ export class DocenteServiceService {
       items: [
         {
           label: 'Sobre Nosotros',
-          routerLink: ['actividades/sobreNosotros']
-        },
-        {
-          label: 'Salir'
+          routerLink: ['/actividades/sobreNosotros']
         }
       ]
     },
     {
-      label: 'Estudiantes', 
-      icon: 'pi pi-search',
+      label: 'Actividades de español', 
       items: [
         {
           label: 'Memorama',
-          routerLink: ['actividades/memoLetras']
-        }      
+          routerLink: ['/actividades/Español/memoLetras']
+        },
+        {
+          label: 'Abecedario',
+          routerLink: ['/actividades/Español/abecedario']
+        },
+        {
+          label: 'Vocabulario',
+          routerLink: ['/actividades/Español/vocabulario']
+        },
+        {
+          label: 'Rompecabezas',
+          routerLink: ['/actividades/Español/rompecabezas']
+        },
+        {
+          label: 'Ahorcado',
+          routerLink: ['/actividades/Español/ahorcado']
+        }
+      ]
+    },
+    {
+      label: 'Actividades de matemáticas',
+      items: [
+        {
+          label: 'Snake',
+          routerLink: ['/actividades/Matematicas/snake']
+        },
+        {
+          label: 'Memorama',
+          routerLink: ['/actividades/Matematicas/memoMate']
+        },
+        {
+          label: 'Rompecabezas',
+          routerLink: ['/actividades/Matematicas/rompeMate']
+        },
+        {
+          label: 'Sudoku',
+          routerLink: ['/actividades/Matematicas/sudoku']
+        },
+        {
+          label: 'Rompecabezas deslizantes',
+          routerLink: ['/actividades/Matematicas/slidin']
+        },
       ]
     }
   ];

@@ -1,9 +1,9 @@
-<form action="registro">
+<form action="registro"  #loginForm="ngForm">
        
     <div class="field col-12 md:col-4">
         <span class="p-float-label p-input-icon-right">
             <i class="pi pi-credit-card"></i>
-            <input type="text" name="id_profesor" pInputText [(ngModel)]="inicioSesionProfesor.id_profesor"> 
+            <input type="text" name="id_profesor" pInputText [(ngModel)]="inicioSesionProfesor.id_profesor" required> 
             <label for="inputtext">Cédula</label>
         </span>
     </div>
@@ -11,19 +11,15 @@
     <div class="field col-12 md:col-4">
         <span class="p-float-label p-input-icon-right">
             <i class="pi pi-key"></i>
-            <input type="password" name="password" pInputText [(ngModel)]="inicioSesionProfesor.password"> 
+            <input type="password" name="password" pInputText [(ngModel)]="inicioSesionProfesor.password" required> 
             <label for="inputtext">Contraseña</label>
         </span>
     </div>
 
     <div class="boton">
-        <p-button 
-            routerLink="/actividades" 
-            label="Iniciar Sesión" 
-            (click)="iniciarSesionProfesor()"
-            icon="pi pi-sign-in" 
-            iconPos="left"
-        ></p-button>
+        <button type="button" label="Iniciar Sesión" icon="pi pi-sign-in" iconPos="left"
+        (click)="iniciarSesionProfesor()"
+        pButton [disabled]="loginForm.form.invalid" ></button>   
     </div>
     
 </form>

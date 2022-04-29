@@ -1,62 +1,54 @@
-<form action="registro">
+<p-toast></p-toast>
+<form action="registro" #loginForm="ngForm">
   
     <div class="field col-12 md:col-4">
         <span class="p-float-label p-input-icon-right">
             <i class="pi pi-credit-card"></i>
-            <input type="text" name="id_estudiante" pInputText [(ngModel)]="registroEstudiante.id_estudiante"> 
-            <label for="inputtext">Tarjeta de Identidad</label>
+            <input type="text" name="id_estudiante" pInputText [(ngModel)]="registroEstudiante.id_estudiante"  required> 
+            <label for="inputtext">Número asignado</label>
         </span>
     </div>
     <div class="field col-12 md:col-4">
         <span class="p-float-label p-input-icon-right">
             <i class="pi pi-user"></i>
-            <input type="text" name="nombres" pInputText [(ngModel)]="registroEstudiante.nombres" > 
+            <input type="text" name="nombres" pInputText [(ngModel)]="registroEstudiante.nombres"  required> 
             <label for="inputtext">Nombres</label>
         </span>
     </div>
     <div class="field col-12 md:col-4">
         <span class="p-float-label p-input-icon-right">
             <i class="pi pi-user"></i>
-            <input type="text" name="apellidos" pInputText [(ngModel)]="registroEstudiante.apellidos"> 
+            <input type="text" name="apellidos" pInputText [(ngModel)]="registroEstudiante.apellidos"  required> 
             <label for="inputtext">Apellidos</label>
         </span>
     </div>
     <div class="field col-12 md:col-4">
         <span class="p-float-label p-input-icon-right">
             <i class="pi pi-envelope"></i>
-            <input type="email" name="correo" pInputText [(ngModel)]="registroEstudiante.correo"> 
+            <input type="email" name="correo" pInputText [(ngModel)]="registroEstudiante.correo"  required> 
             <label for="inputtext">Correo</label>
         </span>
     </div>
 
     <div class="field col-12 md:col-4">
         <span>
-              <p-dropdown name="id_curso" placeholder="Cursos" [options]="cursos" [(ngModel)]="registroEstudiante.id_curso"
+              <p-dropdown name="id_curso" placeholder="Curso" [options]="cursos" [(ngModel)]="registroEstudiante.id_curso"
               [style]="{'width':'44vmax'}"></p-dropdown>
         </span>
     </div>
     <div class="field col-12 md:col-4">
         <span class="p-float-label p-input-icon-right">
             <i class="pi pi-key"></i>
-            <input type="password" pPassword name="password" [(ngModel)]="registroEstudiante.password" />
+            <input type="password" pPassword name="password" [(ngModel)]="registroEstudiante.password"   />
             <label for="inputtext">Contraseña</label>
         </span>
 
     </div>
-    <div class="field col-12 md:col-4">
-        <span class="p-float-label p-input-icon-right">
-            <i class="pi pi-key"></i>
-            <input type="password" pPassword />
-            <label for="inputtext">Confirmar Contraseña</label>
-        </span>
-    </div>
+    
     <div class="boton">
-        <p-button  
-            label="Registrarse" 
-            (click)="registrarEstudiante()"
-            icon="pi pi-send" 
-            iconPos="left"
-        ></p-button>
+        <button type="button" label="Registrarse"  icon="pi pi-send"  iconPos="left"
+        (click)="registrarEstudiante()"
+        pButton [disabled]="loginForm.form.invalid" ></button>      
     </div>
     
 

@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 
 import {AuthService} from "../../../../../services/auth.service"
 import { RegistroProfesor } from 'src/app/models/auth';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-form-profesor',
@@ -22,23 +23,16 @@ export class FormProfesorComponent {
 
   tipoDoc: [{name: string}];
   
-  miFormulario: FormGroup = this.fb.group({
-    nombre:     ['', [ Validators.required ]],
-    apellido:     ['', [ Validators.required ]],
-    numeroID:     [null, [ Validators.required ]],
-    correo:    ['', [ Validators.required, Validators.email ]],
-    contraseña: ['', [ Validators.required, Validators.minLength(6) ]],
-    confirm_contraseña: ['', [Validators.required]]}
-  );
 
-  constructor(private router: Router,
-    private fb: FormBuilder, private registroService: AuthService) { 
-      this.tipoDoc = [{name: 'C.C'}];
-    }
+
+  constructor(private router: Router, private registroService: AuthService, private messageService: MessageService) { 
+              this.tipoDoc = [{name: 'C.C'}];}
 
     registrarProfesor(){
       this.registroService.registroProfesor(this.registroProfesor).subscribe(
         res => {
+          this.messageService.add({severity:'success', summary:'Registro exitoso', detail:'Puedes ingresar'});
+          setTimeout( ()=> { this.router.navigate(['/login'])}, 4000);
           console.log(res);
         }, err =>{
           console.error(err);
