@@ -4,7 +4,8 @@
         <div class="container-fluid">
           <!-- Links -->
           <ul class="navbar-nav">
-            <button pButton pRipple type="button" label="Cerrar sesión" class="p-button-raised p-button-info p-button-text"></button>
+            <button pButton pRipple type="button" label="Cerrar sesión" 
+            class="p-button-raised p-button-info p-button-text" (click)="authService.logout()" ></button>
             
           </ul>
           <img style="width: 15rem; margin-left: 5%;border-radius: 5%;" src="../../../../assets/images/ui/Escudo-colegio.png">

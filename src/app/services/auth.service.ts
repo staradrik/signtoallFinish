@@ -48,6 +48,7 @@ export class AuthService {
 
   logout(){
     localStorage.removeItem("token_profesor")
+    localStorage.removeItem("id_curso")
     localStorage.removeItem("token_estudiante")
     this.router.navigate(["/login"])
   }

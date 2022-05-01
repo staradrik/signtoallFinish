@@ -13,10 +13,8 @@ export interface InicioSesionProfesor {
 }
 
 export interface RegistroEstudiante {
-    id_estudiante?: string;
     nombres?: string;
     apellidos?:string;
-    correo?:string;
     password?:string;
     id_curso?:string;
 }
@@ -31,7 +29,7 @@ export interface EstudianteDTO {
 
 
 export interface InicioSesionEstudiante {
-    id_estudiante?: string;
+    id_curso?: string;
     password?:string;
     token?: any;
 }

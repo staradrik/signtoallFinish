@@ -13,10 +13,8 @@ import { MessageService } from 'primeng/api';
 export class IngresoGoogleComponent {
 
   registroEstudiante: RegistroEstudiante = {
-    id_estudiante: "",
     nombres: "",
     apellidos:"",
-    correo:"",
     password:"",
     id_curso:""
   }

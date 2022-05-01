@@ -13,7 +13,7 @@ import { CursoElegido } from 'src/app/models/Actividades';
 export class IngresoEstudianteComponent {
 
   inicioSesionEstudiante: InicioSesionEstudiante = {
-    id_estudiante: "",
+    id_curso: "",
     password:""
   }
   
