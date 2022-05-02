@@ -304,7 +304,7 @@ export class EspannolService {
     {
       "id":2,
       "name": "DURAZNO",
-      "src": "aguacate.jpg"
+      "src": "durazno.jpg"
     },
     {
       "id":3,
