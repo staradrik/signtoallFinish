@@ -5,6 +5,8 @@ import { outsideGrid } from '../game-engine/gameboard-grid.util';
 import { RutaBreadcrumService } from '../../../../../services/ruta-breadcrum.service';
 import { MessageService } from 'primeng/api';
 import { Router } from '@angular/router';
+import { ActividadPutService } from 'src/app/services/actividad-put.service';
+import { actividadEstudiante } from 'src/app/models/Actividades';
 
 @Component({
   selector: 'app-game-board',
@@ -23,7 +25,7 @@ export class GameBoardComponent implements OnInit, AfterViewInit {
   food = new Food(this.snake);
 
   constructor(private breadcrumbService: RutaBreadcrumService,
-              private messageService: MessageService, private router: Router) { }
+              private messageService: MessageService, private router: Router, private actividadPut: ActividadPutService) { }
 
   ngOnInit(): void {
     this.snake.listenToInputs();
@@ -39,14 +41,22 @@ export class GameBoardComponent implements OnInit, AfterViewInit {
     window.requestAnimationFrame(this.start.bind(this));
   }
 
-  start(currentTime: any) {
-
-    
+  start(currentTime: any) {  
     const score = this.food.currentScore;
-    if(score === 25){
+    if(score === 2){
+      let idA : string ="6";
       this.gameWinner = true
-      this.messageService.add({severity:'success', summary: 'Bien hecho', detail: 'Actividad realizada'});
-      setTimeout( ()=> { this.router.navigate(['/actividades'])}, 3000);
+      let actividadHecha: actividadEstudiante = {
+        actividad_realizada:true,
+        nota_actividad:5
+      }
+      this.actividadPut.editActivity(idA ,actividadHecha ).subscribe(edit =>{
+        actividadHecha = edit
+        this.actividadPut.actRealizada = true;
+        this.actividadPut.actNota =5;
+          this.messageService.add({severity:'success', summary: 'Bien hecho', detail: 'Actividad realizada'});
+          setTimeout( ()=> { this.router.navigate(['/actividades'])}, 3000);
+      })
     }
 
     if(this.gameOver || this.gameWinner) return  console.log('rf')

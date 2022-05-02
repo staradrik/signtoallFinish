@@ -2,47 +2,47 @@
 {
 	"data": [		
 		{
-			"id": "1001",
+			"id": "6",
 			"name": "Snake",
 			"image": "snake.png",
 			"category": "Matematicas",
-			"status": "SIN HACER",
+			"status": false,
 			"rating": 0,
 			"url": "/snake"
 		},
         {
-			"id": "1002",
+			"id": "7",
 			"name": "Memorama",
 			"image": "memorama.jpg",
 			"category": "Matematicas",
-			"status": "SIN HACER",
+			"status": false,
 			"rating": 0,
 			"url": "/memoMate"
 		},
         {
-			"id": "1003",
+			"id": "8",
 			"name": "Rompecabezas",
 			"image": "rompecabezas.jpg",
 			"category": "Matematicas",
-			"status": "SIN HACER",
+			"status": false,
 			"rating": 0,
 			"url": "/rompeMate"
 		},
         {
-			"id": "1004",
+			"id": "9",
 			"name": "Sudoku",
 			"image": "sudoku.jpg",
 			"category": "Matematicas",
-			"status": "SIN HACER",
+			"status": false,
 			"rating": 0,
 			"url": "/sudoku"
 		},
         {
-			"id": "1000",
+			"id": "10",
 			"name": "Puzzle deslizable",
 			"image": "sumasResta.jpg",
 			"category": "Matematicas",
-			"status": "SIN HACER",
+			"status": false,
 			"rating": 0,
 			"url": "/slidin"
 		}
