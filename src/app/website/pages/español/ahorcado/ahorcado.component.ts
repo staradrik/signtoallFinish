@@ -12,6 +12,8 @@ import { Router } from '@angular/router';
 })
 export class AhorcadoComponent implements OnInit {
 
+  video: string = "https://www.youtube.com/embed/x_mDIDo0CV0";
+  indicaciones: string[]= ["Ver el vídeo tutorial", "Poner atención","Intenta adivinar la palabra"];
   constructor(
     private messageService: MessageService,
     private router: Router,

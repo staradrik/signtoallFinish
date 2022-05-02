@@ -1,0 +1,11 @@
+<div class="contenedor">
+    <div>
+        <p>Indicaciones:</p>
+        <ul class="number">
+            <li *ngFor="let indicacion of indicaciones">{{indicacion}}</li>
+        </ul>
+    </div>
+    <div class="video">
+        <iframe id="myIframe" width="300" height="180" [src]="urlSafe" title="YouTube video player" frameborder="0" allow=" autoplay; encrypted-media;"></iframe>
+    </div>
+</div>

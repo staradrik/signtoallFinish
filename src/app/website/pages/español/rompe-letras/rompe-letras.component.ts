@@ -11,6 +11,8 @@ import { RutaBreadcrumService } from '../../../../services/ruta-breadcrum.servic
 
 export class RompeLetrasComponent implements OnInit {
 
+  video: string = "https://www.youtube.com/embed/EK4AthRIkPU";
+  indicaciones: string[]= ["Ver el vídeo tutorial", "Poner atención","Ordena la imagen"];
   constructor(private messageService: MessageService,
     private router: Router,
     private breadcrumbService: RutaBreadcrumService) { }

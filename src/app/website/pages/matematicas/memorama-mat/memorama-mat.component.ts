@@ -52,6 +52,8 @@ public _timer: number = 0;
 public interval:any; //buu
 public timerFlag:boolean = false;
 
+  video: string = "https://www.youtube.com/embed/-p6psebiTR8";
+  indicaciones: string[]= ["Ver el vídeo tutorial", "Poner atención","Encuentra la pareja de cada imagen.","Enviar tu intento"];
   constructor(private memoService:MatematicasService,
               private breadcrumbService: RutaBreadcrumService,
               private messageService: MessageService,

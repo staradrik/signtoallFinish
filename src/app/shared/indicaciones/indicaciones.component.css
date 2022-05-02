@@ -1,0 +1,19 @@
+ul.number{
+    list-style-type:decimal;
+    font-weight: bold;
+}
+p{
+    font-weight: bold; 
+}
+.contenedor{
+    display: grid;
+    width: 76vmax;
+    grid-template-columns: repeat(2, minmax(2rem, 3fr));
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: -10px;
+}
+.video{
+    display: flex;
+  justify-content: right;
+}

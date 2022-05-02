@@ -1,5 +1,12 @@
-<h1>Rompecabezas deslizante</h1>
-<hr>
-<app-state></app-state>
-<hr>
-<app-board></app-board>
+<div class="grid-container">
+    <h1>Rompecabezas deslizante</h1>
+    <p-divider></p-divider>
+    <app-indicaciones [video]="video" [indicaciones]="indicaciones"></app-indicaciones>
+    <div class="center">
+        <app-state></app-state>
+    </div>
+    <div class="center">
+        <app-board></app-board>
+    </div>
+</div>
+

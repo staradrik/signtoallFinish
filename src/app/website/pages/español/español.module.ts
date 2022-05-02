@@ -34,6 +34,7 @@ import { BoardComponent } from './abc-deslizante/board/board.component';
 import { StateComponent } from './abc-deslizante/state/state.component';
 import { TileComponent } from './abc-deslizante/tile/tile.component';
 import { AbcDeslizanteComponent } from './abc-deslizante/abc-deslizante.component';
+import { sharedModule } from '../../../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,6 @@ import { AbcDeslizanteComponent } from './abc-deslizante/abc-deslizante.componen
     AbcDeslizanteComponent
   ],
   imports: [
-    CommonModule,
     EspañolRoutingModule,
     BreadcrumbModule,
     ButtonModule,
@@ -68,6 +68,7 @@ import { AbcDeslizanteComponent } from './abc-deslizante/abc-deslizante.componen
     PasswordModule,
     RadioButtonModule,
     SelectButtonModule,
+    sharedModule,
     QuicklinkModule
   ]
 })

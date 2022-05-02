@@ -13,7 +13,8 @@ import { Router } from '@angular/router';
 })
 export class GameBoardComponent implements OnInit, AfterViewInit {
 
-  
+  video: string = "https://www.youtube.com/embed/esxgDsxrfog";
+  indicaciones: string[]= ["Ver el vídeo tutorial", "Poner atención","Comer sin chocar con las pared."];
   lastRenderTime = 0
   gameOver = false;
   gameWinner = false;

@@ -1,10 +1,11 @@
 <div class="row grid-container">
     <p-toast></p-toast>
-    <h2 style="margin-left: 10px;">vocabulario</h2>
+    <h2 style="margin-left: 10px;">Vocabulario</h2>
     <div class="marcador">
         <p>{{intento}}/5</p>
     </div>
     <p-divider></p-divider>
+    <app-indicaciones [video]="video" [indicaciones]="indicaciones"></app-indicaciones>
     <div class="image-container">
         <img [src]="imagen.src">
     </div>

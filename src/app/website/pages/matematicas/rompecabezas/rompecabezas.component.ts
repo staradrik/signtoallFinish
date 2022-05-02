@@ -10,6 +10,8 @@ import { RutaBreadcrumService } from '../../../../services/ruta-breadcrum.servic
 })
 export class RompecabezasComponent implements OnInit {
 
+  video: string = "https://www.youtube.com/embed/bkKF7YpnBIE";
+  indicaciones: string[]= ["Ver el vídeo tutorial", "Poner atención","Resolver el rompezabezas","Enviar tu intento"];
   constructor(private messageService: MessageService,
               private router: Router,
               private breadcrumbService: RutaBreadcrumService) { 

@@ -47,6 +47,8 @@ import { Router } from '@angular/router';
 })
 export class MemoramaComponent implements OnInit {
 
+  video: string = "https://www.youtube.com/embed/D-q1azI31bc";
+  indicaciones: string[]= ["Ver el vídeo tutorial", "Poner atención","Encuentra todas las parejas"];
   myRootObject?: RootObject;
   rows:number[] = [1,2,3];
   cols:number[] = [1,2,3,4];

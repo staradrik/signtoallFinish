@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./vocabulario.component.scss']
 })
 export class VocabularioComponent implements OnInit {
+  video: string = "https://www.youtube.com/embed/A7SM7vhta3s";
+  indicaciones: string[]= ["Ver el vídeo tutorial", "Poner atención","Selecciona el nombre del objeto"];
   imagen: ImgVocavulario = {
     id: 0,
     name: "",

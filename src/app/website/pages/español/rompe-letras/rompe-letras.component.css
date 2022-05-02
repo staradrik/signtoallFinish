@@ -78,7 +78,7 @@ li {
 .grid-container {
     display: grid;
     margin-top: 15px;
-    width: 100%;
+    width: 79vmax;
     
     height: 67%;
     background-color: white;
