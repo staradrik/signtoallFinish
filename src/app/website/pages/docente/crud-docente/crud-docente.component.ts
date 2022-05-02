@@ -26,6 +26,7 @@ export class CrudDocenteComponent implements OnInit {
 
  
   registroEstudiante: RegistroEstudiante = {
+    id_estudiante: "",
     nombres: "",
     apellidos:"",
     password:"",
@@ -34,7 +35,7 @@ export class CrudDocenteComponent implements OnInit {
   
   constructor(private crud: DocenteServiceService ,private  messageService: MessageService,
               private confirmationService: ConfirmationService, 
-              private registroService: AuthService) {
+              private registroService: AuthService, public authService:AuthService) {
                }
 
   ngOnInit(): void {
@@ -68,7 +69,7 @@ export class CrudDocenteComponent implements OnInit {
   }
   
   deleteStudent(nino: RegistroEstudiante) {
-    //this.idE = nino.id_estudiante
+    this.idE = nino.id_estudiante
     parseInt(this.idE)
       this.confirmationService.confirm({
           message: '¿Está segur@ de eliminar a ' + nino.nombres + '?',
@@ -88,16 +89,16 @@ export class CrudDocenteComponent implements OnInit {
   }
 
   onRowEditInit(listaE: RegistroEstudiante) {
-    //this.idE = listaE.id_estudiante
+    this.idE = listaE.id_estudiante
     parseInt(this.idE)
     this.clonedStudents[this.idE] = {...listaE};
   }
   
   onRowEditSave(regis: RegistroEstudiante) {
-    //this.idE = regis.id_estudiante
+    this.idE = regis.id_estudiante
     parseInt(this.idE)
     let registro: RegistroEstudiante = {
-      //id_estudiante: regis.id_estudiante,
+      id_estudiante: regis.id_estudiante,
       nombres: regis.nombres,
       apellidos: regis.apellidos,
       id_curso: regis.id_curso
@@ -115,7 +116,7 @@ export class CrudDocenteComponent implements OnInit {
   }
 
   onRowEditCancel(listaE: RegistroEstudiante, index: number) {
-    //this.idE = listaE.id_estudiante
+    this.idE = listaE.id_estudiante
     parseInt(this.idE)
     this.estudianteC[index] = this.clonedStudents[this.idE];
     delete this.clonedStudents[this.idE];
