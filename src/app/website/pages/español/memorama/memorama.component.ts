@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
     margin-bottom: -15px;
   }
   .container{
-    width:100%;
+    width:74vmax;
     border-radius: 15px;
     background: #f0eeee;
   }
