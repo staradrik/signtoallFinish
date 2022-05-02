@@ -3,7 +3,8 @@ import { PrimeNGConfig, SelectItem } from 'primeng/api';
 import { RutaBreadcrumService } from '../../../services/ruta-breadcrum.service';
 import { EstudianteService } from '../../../services/estudiante.service';
 import { ObtenerActividadesService } from '../../../services/obtener-actividades.service';
-import { Actividades } from 'src/app/models/Actividades';
+import { Actividades, actividadEstudiante } from 'src/app/models/Actividades';
+import { ActividadPutService } from 'src/app/services/actividad-put.service';
 
 
 @Component({
@@ -14,6 +15,8 @@ import { Actividades } from 'src/app/models/Actividades';
 export class VistaActividadesComponent implements OnInit {
 
   activity: Actividades[]=[];
+  actividadE: actividadEstudiante[] =[];
+  actividadE1: actividadEstudiante = {}  as actividadEstudiante;
   sortOptions: SelectItem[] =[];
   sortOrder: number = 0;
   sortField: string = "";
@@ -24,7 +27,7 @@ export class VistaActividadesComponent implements OnInit {
   constructor(private Estudiante: EstudianteService,
       private breadcrumbService: RutaBreadcrumService,
       private primengConfig: PrimeNGConfig,
-      private actividadesService: ObtenerActividadesService) {
+      private actividadesService: ObtenerActividadesService,  public actividadPut: ActividadPutService) {
     this.primengConfig.ripple = true;
     
   }
@@ -32,16 +35,23 @@ export class VistaActividadesComponent implements OnInit {
   ngOnInit(): void {
 
     this.curso = this.Estudiante.obtenerCurso();
+
+    this.actividadPut.actRealizada;
+    this.actividadPut.actNota;
     
     this.breadcrumbService.setItems([
       { label: 'Actividades', routerLink: ['/actividades']}
     ]);
-    this.sortOptions = [
-      {label: 'Reciente', value: '!rating'},
-        {label: 'Antigua', value: 'rating'}
-      ];
+    
     
     this.actividadesService.getActivity().then(data => this.activity = data);
+  }
+
+  evalueAct( status: boolean): string{
+    if(this.actividadPut.actRealizada == true){
+        return 'success';
+    }
+    return 'danger';
   }
 
   onSortChange(event: any) {
