@@ -18,6 +18,10 @@ export class ObtenerActividadesService {
         {
           label: 'Sobre Nosotros',
           routerLink: ['sobreNosotros']
+        },
+        {
+          label: 'Cerrar sesión',
+          routerLink: ['logout']
         }
       ]
     },
@@ -57,6 +61,10 @@ export class ObtenerActividadesService {
         {
           label: 'Sobre Nosotros',
           routerLink: ['sobreNosotros']
+        },
+        {
+          label: 'Cerrar sesión',
+          routerLink: ['logout']
         }
       ]
     },

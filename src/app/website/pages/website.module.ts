@@ -26,6 +26,7 @@ import { SelectButtonModule } from 'primeng/selectbutton';
 //Componentes
 import { SobreNosotrosComponent } from './sobreNosotros/sobre-nosotros.component';
 import { VistaActividadesComponent } from './vista-actividades/vista-actividades.component';
+import { LogoutComponent } from '../components/logout/logout.component';
 
 //Modulo routing
 import { WebsiteRoutingModule } from './website-routing.module';
@@ -34,7 +35,8 @@ import { QuicklinkModule } from 'ngx-quicklink';
 @NgModule({
   declarations: [
     SobreNosotrosComponent,
-    VistaActividadesComponent
+    VistaActividadesComponent,
+    LogoutComponent
   ],
   imports: [
     BreadcrumbModule,
