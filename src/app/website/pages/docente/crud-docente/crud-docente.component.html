@@ -7,7 +7,7 @@
         <div class="container-fluid">
           <!-- Links -->
           <ul class="navbar-nav">
-            <button pButton pRipple type="button" label="Cerrar sesión" class="p-button-raised p-button-info p-button-text"></button>
+            <button pButton pRipple type="button" label="Cerrar sesión" class="p-button-raised p-button-info p-button-text" (click)="authService.logout()"></button>
             
           </ul>
           <img style="width: 15rem; margin-left: 5%;border-radius: 5%;" src="../../../../assets/images/ui/Escudo-colegio.png">
@@ -50,11 +50,11 @@
                 <!-- <th style="width: 3rem">
                     <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
                 </th> -->
-                <th pSortableColumn="curso">Curso</th>   
+                <th pSortableColumn="documento">Identificación </th>
                 <th pSortableColumn="nombre">Nombres </th>           
                 <th pSortableColumn="apellido">Apellidos</th>
-                <th pSortableColumn="documento">Identificación </th>
-                <th pSortableColumn="correo">Correo </th>         
+                <th pSortableColumn="curso">Curso</th>   
+                <!-- <th pSortableColumn="correo">Correo </th>          -->
                 <th pSortableColumn="acciones">Acciones</th>
             </tr>
         </ng-template>
@@ -66,13 +66,14 @@
                 <td>
                     <p-cellEditor>
                         <ng-template pTemplate="input">
-                            <input pInputText type="text" [(ngModel)]="lista.id_curso">
+                            <input pInputText type="number" [(ngModel)]="lista.id_estudiante">
                         </ng-template>
                         <ng-template pTemplate="output">
-                            {{lista.id_curso}}
+                            {{lista.id_estudiante}}
                         </ng-template>
-                    </p-cellEditor>               
+                    </p-cellEditor>                 
                 </td>
+                
                 <td>
                     <p-cellEditor>
                         <ng-template pTemplate="input">
@@ -93,17 +94,19 @@
                         </ng-template>
                     </p-cellEditor>
                 </td>
+
                 <td>
                     <p-cellEditor>
                         <ng-template pTemplate="input">
-                            <input pInputText type="number" [(ngModel)]="lista.id_estudiante">
+                            <input pInputText type="text" [(ngModel)]="lista.id_curso">
                         </ng-template>
                         <ng-template pTemplate="output">
-                            {{lista.id_estudiante}}
+                            {{lista.id_curso}}
                         </ng-template>
-                    </p-cellEditor>                 
-                </td> 
-                <td>
+                    </p-cellEditor>               
+                </td>
+                 
+                <!-- <td>
                     <p-cellEditor>
                         <ng-template pTemplate="input">
                             <input pInputText type="text" [(ngModel)]="lista.correo">
@@ -112,7 +115,7 @@
                             {{lista.correo}}
                         </ng-template>
                     </p-cellEditor>   
-                </td>                                   
+                </td>                                    -->
                 <td>
                     <button *ngIf="!editing" pButton pRipple type="button" pInitEditableRow icon="pi pi-pencil" (click)="onRowEditInit(lista)" class="p-button-rounded p-button-text"></button>
                     <button *ngIf="editing" pButton pRipple type="button" pSaveEditableRow icon="pi pi-check" (click)="onRowEditSave(lista)" class="p-button-rounded p-button-text p-button-success mr-2"></button>

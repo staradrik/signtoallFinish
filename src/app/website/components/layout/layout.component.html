@@ -12,7 +12,13 @@
     </nav>
   </div>
     <div class="flex">
+      <div *ngIf="esPro!=='1'">
         <app-panel-menu></app-panel-menu>
+      </div>
+      <div *ngIf="esPro==='1'">
+        <button pButton pRipple type="button" icon="pi pi-bookmark" class="p-button-rounded p-button-secondary" routerLink="/docente/crud"></button>
+      </div>
+        
         <p-divider layout="vertical"></p-divider>
         <div>
             <app-breadcrumb></app-breadcrumb>

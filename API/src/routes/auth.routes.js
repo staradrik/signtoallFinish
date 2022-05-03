@@ -111,7 +111,6 @@ router.post("/registrarE", async (req, res) => {
   ) {
     res.status(400).json({ msg: "Por favor ingresa todos los datos" });
   } else {
-
     const { nombres, apellidos, id_curso, password } = req.body;
     const student = {
       nombres,
@@ -141,12 +140,26 @@ router.post("/registrarE", async (req, res) => {
       const rows = await pool.query(`SELECT id_actividad FROM actividad`);
       const activity = rows[0];
 
-      for (let item = 0; item < activity.length; item++) {
-        await pool.query(
-          `INSERT INTO estudiante_actividad(id_estudiante, id_actividad, actividad_realizada, nota_actividad) VALUES("${
-            id[0].id_estudiante
-          }","${activity[item].id_actividad}",${0},"${0}")`
-        );
+      if (courseId[0].id_curso > 0 && courseId[0].id_curso < 3) {
+        for (let item = 0; item < activity.length; item++) {
+          await pool.query(
+            `INSERT INTO estudiante_actividad(id_estudiante, id_actividad, actividad_realizada, nota_actividad) VALUES("${
+              id[0].id_estudiante
+            }","${activity[item].id_actividad}",${0},"${0}")`
+          );
+
+          if (activity[item].id_actividad >= 5) {
+            break;
+          }
+        }
+      } else {
+        for (let item = 5; item < activity.length; item++) {
+          await pool.query(
+            `INSERT INTO estudiante_actividad(id_estudiante, id_actividad, actividad_realizada, nota_actividad) VALUES("${
+              id[0].id_estudiante
+            }","${activity[item].id_actividad}",${0},"${0}")`
+          );
+        }
       }
 
       res.json({ message: "Registro Exitoso" });
@@ -167,18 +180,15 @@ router.post("/iniciarSesionE", async (req, res) => {
     );
     const student = rows[0];
 
-      if (student[0] !== undefined) { 
-          res.status(200).json({
-            token: tokenEstudiante(
-              student[0].id_estudiante,
-              student[0].nombres
-            ),
-          });
-
-      }else{
-      res.status(400).json({ message: "El usuario no existe o la contraseña es incorrecta" });
-
-      }
+    if (student[0] !== undefined) {
+      res.status(200).json({
+        token: tokenEstudiante(student[0].id_estudiante, student[0].nombres),
+      });
+    } else {
+      res.status(400).json({
+        message: "El usuario no existe o la contraseña es incorrecta",
+      });
+    }
   }
 });
 

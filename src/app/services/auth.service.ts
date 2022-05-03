@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from "@angular/common/http"
 import { RegistroProfesor, InicioSesionProfesor, RegistroEstudiante, InicioSesionEstudiante } from "../models/auth"
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
-
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
@@ -12,7 +11,13 @@ export class AuthService {
 
   private APi_URI: string = environment.API;
 
+  private _usuario!: RegistroEstudiante;
+
   constructor(private http: HttpClient, private router: Router) { }
+
+  get usuario() {
+    return { ...this._usuario };
+  }
   
     registroProfesor(registroProfesor: RegistroProfesor): Observable<RegistroProfesor>{
        return this.http.post(`${this.APi_URI}/registrarP`, registroProfesor)
@@ -46,11 +51,10 @@ export class AuthService {
     return localStorage.getItem("token_estudiante")
   }
 
+ 
   logout(){
-    localStorage.removeItem("token_profesor")
-    localStorage.removeItem("id_curso")
-    localStorage.removeItem("token_estudiante")
-    this.router.navigate(["/login"])
+    localStorage.clear();
+    this.router.navigate(["/login"]);
   }
   
 }

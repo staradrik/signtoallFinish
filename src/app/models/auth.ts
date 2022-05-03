@@ -13,6 +13,7 @@ export interface InicioSesionProfesor {
 }
 
 export interface RegistroEstudiante {
+    id_estudiante?: string;
     nombres?: string;
     apellidos?:string;
     password?:string;

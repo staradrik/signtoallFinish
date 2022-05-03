@@ -8,6 +8,13 @@ export interface Actividades {
     rating?:number
 }
 
+export interface actividadEstudiante{
+    id_estudiante?:string;
+    id_Actividad?:string;
+    actividad_realizada?:number;
+    nota?:number
+}
+
 export interface ImgMemo {
     id: number,
     name?: string,

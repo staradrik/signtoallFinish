@@ -5,6 +5,8 @@ import { outsideGrid } from '../game-engine/gameboard-grid.util';
 import { RutaBreadcrumService } from '../../../../../services/ruta-breadcrum.service';
 import { MessageService } from 'primeng/api';
 import { Router } from '@angular/router';
+import { ActividadPutService } from 'src/app/services/actividad-put.service';
+import { actividadEstudiante } from 'src/app/models/Actividades';
 
 @Component({
   selector: 'app-game-board',
@@ -24,7 +26,7 @@ export class GameBoardComponent implements OnInit, AfterViewInit {
   food = new Food(this.snake);
 
   constructor(private breadcrumbService: RutaBreadcrumService,
-              private messageService: MessageService, private router: Router) { }
+              private messageService: MessageService, private router: Router, private actividadPut: ActividadPutService) { }
 
   ngOnInit(): void {
     this.snake.listenToInputs();
@@ -40,14 +42,31 @@ export class GameBoardComponent implements OnInit, AfterViewInit {
     window.requestAnimationFrame(this.start.bind(this));
   }
 
-  start(currentTime: any) {
-
-    
+  start(currentTime: any) {  
     const score = this.food.currentScore;
-    if(score === 25){
-      this.gameWinner = true
-      this.messageService.add({severity:'success', summary: 'Bien hecho', detail: 'Actividad realizada'});
-      setTimeout( ()=> { this.router.navigate(['/actividades'])}, 3000);
+    let existeCurso: any = localStorage.getItem("idCurso");
+    if(score === 1){
+      if(existeCurso != null || undefined){
+        let idE: any = localStorage.getItem("idEst");
+        let idA : string ="6";
+        this.gameWinner = true
+        let actividadHecha: actividadEstudiante = {
+          actividad_realizada:1,
+          nota:5
+        }
+        this.actividadPut.editActivity(idE, idA ,actividadHecha ).subscribe(edit =>{
+          console.log(edit)
+          actividadHecha = edit
+          this.actividadPut.actRealizada = true;
+          this.actividadPut.actNota = 5;
+          this.messageService.add({severity:'success', summary: 'Bien hecho', detail: 'Actividad realizada'});
+          setTimeout( ()=> { this.router.navigate(['/actividades'])}, 3000);
+        });
+      }else if (existeCurso == null || undefined){
+        this.gameWinner = true
+        this.messageService.add({severity:'success', summary: 'Bien hecho', detail: 'Actividad realizada'});
+      }
+      
     }
 
     if(this.gameOver || this.gameWinner) return  console.log('rf')

@@ -1,22 +1,14 @@
 <p-toast></p-toast>
+
 <form action="registro"  #loginForm="ngForm">
 
     <div class="field col-12 md:col-4">
         <span>
-            <p-dropdown [required]="true"  name="id_curso" placeholder="Cursos" [options]="cursos" 
-                (onChange)="isPosition($event.value)"[style]="{'width':'44vmax'}" >
-            </p-dropdown>
+              <p-dropdown name="id_curso" placeholder="Curso" [options]="cursos" [(ngModel)]="inicioSesionEstudiante.id_curso"
+              [style]="{'width':'44vmax'}"></p-dropdown>
         </span>
     </div>
-       
-    <div class="field col-12 md:col-4">
-        <span class="p-float-label p-input-icon-right">
-            <i class="pi pi-credit-card"></i>
-            <input type="text" name="id_estudiante" pInputText [(ngModel)]="inicioSesionEstudiante.id_curso" required> 
-            <label for="inputtext">Número asignado</label>
-        </span>
-    </div>
-    
+
     <div class="field col-12 md:col-4">
         <span class="p-float-label p-input-icon-right">
             <i class="pi pi-key"></i>

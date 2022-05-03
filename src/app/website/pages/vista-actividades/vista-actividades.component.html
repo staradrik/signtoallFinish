@@ -23,7 +23,7 @@
 								</div>
 							</div>
 							<div class="product-list-detail">
-								<div class="product-name">Puntuación
+								<div class="product-name">{{activity.name}}
 								</div>
 								<p-rating [ngModel]="activity.rating" [cancel]="false"></p-rating>
 								
@@ -31,7 +31,7 @@
 							<div class="product-list-action">
 								<span class="product-price">
                                     <br>
-                                    <p-tag styleClass="mr-2" severity="danger">{{activity.status}}</p-tag>
+                                    <p-tag  styleClass="mr-4" [severity]="evalueAct(activity.status)"> {{activity.status ? "REALIZADA" : "SIN HACER"}}</p-tag>   
                                 </span>
 								
 								<span></span>
@@ -44,7 +44,7 @@
 					<div class="col-12 md:col-6" >
 						<div class="product-grid-item card" >
 							<div class="product-grid-item-top">
-								<p-tag styleClass="mr-2" severity="danger" >{{activity.status}}</p-tag>
+								<p-tag  styleClass="mr-4" [severity]="evalueAct(activity.status)"> {{actividadPut.actRealizada ? "REALIZADA" : "SIN HACER"}}</p-tag>   
 							</div>
 							<div class="product-grid-item-content">
 								<div [routerLink]="activity.category + '/' + activity.url" class="container">
@@ -53,8 +53,8 @@
 										<div class="text">{{activity.name}}</div>
 									</div>
 								</div>
-								<div class="product-name">Puntuación</div>
-								<p-rating [ngModel]="activity.rating" [cancel]="false"></p-rating>
+								<div class="product-name">{{activity.name}}</div>
+								<p-rating [ngModel]="actividadPut.actNota" [cancel]="false"></p-rating>
 							</div>
 						</div>
 					</div>

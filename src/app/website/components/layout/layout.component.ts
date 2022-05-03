@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ObtenerActividadesService } from 'src/app/services/obtener-actividades.service';
 import { AuthService } from '../../../services/auth.service';
 
 @Component({
@@ -21,9 +22,15 @@ import { AuthService } from '../../../services/auth.service';
     }`
   ]
 })
-export class LayoutComponent {
+export class LayoutComponent implements OnInit {
 
-  constructor(public authService:AuthService) { }
+  esPro: string = "";
+
+  constructor(public authService:AuthService, private actividadesService: ObtenerActividadesService) { }
+  
+  ngOnInit(): void {
+    this.esPro = this.actividadesService.esProfe;
+  }
 
   logout(){}
 
