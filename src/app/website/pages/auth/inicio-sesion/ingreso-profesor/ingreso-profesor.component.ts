@@ -1,9 +1,8 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-
 import {AuthService} from "../../../../../services/auth.service"
+import { Component } from '@angular/core';
 import { InicioSesionProfesor } from 'src/app/models/auth';
+import { MessageService } from 'primeng/api';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ingreso-profesor',
@@ -17,24 +16,21 @@ export class IngresoProfesorComponent {
     password:""
   }
   
-  miFormulario: FormGroup = this.fb.group({
-    numeroID:     [null, [ Validators.required ]],
-    contraseña: ['', [ Validators.required, Validators.minLength(6) ]]}
-  );
+  esProfesor: string = "1";
 
-  constructor(private router: Router,
-    private fb: FormBuilder, private inicioSesionService: AuthService) { 
+  constructor(private router: Router,private messageService: MessageService,
+              private inicioSesionService: AuthService) { 
   }
 
-  iniciarSesionProfesor(){
-    
+  iniciarSesionProfesor(){ 
     this.inicioSesionService.inicioSesionProfesor(this.inicioSesionProfesor).subscribe(
       res => {
-        console.log(res);
-        localStorage.setItem("token_profesor", res.token)
-        this.router.navigate(['/docente/crud'])
+        localStorage.setItem("token_profesor", res.token);
+        localStorage.setItem("es_profesor", this.esProfesor);
+        this.messageService.add({severity:'success', summary:'Ingreso exitoso', detail:'Bienvenid@'});
+        setTimeout( ()=> { this.router.navigate(['/docente/crud'])}, 4000);
       }, err =>{
-        console.error(err);
+        this.messageService.add({severity:'error', summary:'Error en ingreso', detail:'Algo anda mal'});
       }
     );
   }

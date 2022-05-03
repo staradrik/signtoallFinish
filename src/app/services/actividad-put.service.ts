@@ -16,8 +16,8 @@ export class ActividadPutService {
 
   constructor(private http: HttpClient, private router: Router) { }
 
-  editActivity(id:string, actividad:actividadEstudiante){
-    return this.http.put(`${this.APi_URI}/actualizarActividad/${id}`, actividad) 
+  editActivity(idEs:string, idA:string, actividad:actividadEstudiante){
+    return this.http.put(`${this.APi_URI}/actualizarActividad/${idEs}/${idA}`, actividad) 
 }
 
 }

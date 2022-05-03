@@ -11,8 +11,8 @@ export interface Actividades {
 export interface actividadEstudiante{
     id_estudiante?:string;
     id_Actividad?:string;
-    actividad_realizada?:boolean;
-    nota_actividad?:number
+    actividad_realizada?:number;
+    nota?:number
 }
 
 export interface ImgMemo {

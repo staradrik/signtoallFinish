@@ -18,7 +18,7 @@ router.put("/actualizarActividad/:id_estudiante/:id_actividad", async (req, res)
   //   return res.status(401).send("No tiene autorización");
   // }
 
-  // const payload = jwt.verify(token, jwtSecret);
+  //const payload = jwt.verify(token, jwtSecret);
 
   await pool.query(
     `UPDATE estudiante_actividad SET actividad_realizada = "${req.body.actividad_realizada}", nota_actividad = "${req.body.nota}" WHERE id_estudiante = ${id_estudiante} AND id_actividad = ${id_actividad}`

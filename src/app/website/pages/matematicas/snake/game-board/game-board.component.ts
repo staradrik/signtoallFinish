@@ -43,20 +43,29 @@ export class GameBoardComponent implements OnInit, AfterViewInit {
 
   start(currentTime: any) {  
     const score = this.food.currentScore;
-    if(score === 2){
-      let idA : string ="6";
-      this.gameWinner = true
-      let actividadHecha: actividadEstudiante = {
-        actividad_realizada:true,
-        nota_actividad:5
-      }
-      this.actividadPut.editActivity(idA ,actividadHecha ).subscribe(edit =>{
-        actividadHecha = edit
-        this.actividadPut.actRealizada = true;
-        this.actividadPut.actNota =5;
+    let existeCurso: any = localStorage.getItem("idCurso");
+    if(score === 1){
+      if(existeCurso != null || undefined){
+        let idE: any = localStorage.getItem("idEst");
+        let idA : string ="6";
+        this.gameWinner = true
+        let actividadHecha: actividadEstudiante = {
+          actividad_realizada:1,
+          nota:5
+        }
+        this.actividadPut.editActivity(idE, idA ,actividadHecha ).subscribe(edit =>{
+          console.log(edit)
+          actividadHecha = edit
+          this.actividadPut.actRealizada = true;
+          this.actividadPut.actNota = 5;
           this.messageService.add({severity:'success', summary: 'Bien hecho', detail: 'Actividad realizada'});
           setTimeout( ()=> { this.router.navigate(['/actividades'])}, 3000);
-      })
+        });
+      }else if (existeCurso == null || undefined){
+        this.gameWinner = true
+        this.messageService.add({severity:'success', summary: 'Bien hecho', detail: 'Actividad realizada'});
+      }
+      
     }
 
     if(this.gameOver || this.gameWinner) return  console.log('rf')

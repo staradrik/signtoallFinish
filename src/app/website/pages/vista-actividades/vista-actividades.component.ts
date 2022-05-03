@@ -5,14 +5,17 @@ import { EstudianteService } from '../../../services/estudiante.service';
 import { ObtenerActividadesService } from '../../../services/obtener-actividades.service';
 import { Actividades, actividadEstudiante } from 'src/app/models/Actividades';
 import { ActividadPutService } from 'src/app/services/actividad-put.service';
-
-
+import { AuthService } from 'src/app/services/auth.service';
+import jwt_decode from 'jwt-decode';
+import { map } from 'rxjs';
 @Component({
   selector: 'app-vista-actividades',
   templateUrl: './vista-actividades.component.html',
   styleUrls: ['./vista-actividades.component.scss']
 })
 export class VistaActividadesComponent implements OnInit {
+
+  esPro: string = "";
 
   activity: Actividades[]=[];
   actividadE: actividadEstudiante[] =[];
@@ -24,10 +27,14 @@ export class VistaActividadesComponent implements OnInit {
 
   val: number = 0;
 
+  variable  =localStorage.getItem("token_estudiante");
+  decodedToken!: { [key: string]: string; };
+  
   constructor(private Estudiante: EstudianteService,
       private breadcrumbService: RutaBreadcrumService,
       private primengConfig: PrimeNGConfig,
-      private actividadesService: ObtenerActividadesService,  public actividadPut: ActividadPutService) {
+      private actividadesService: ObtenerActividadesService,  public actividadPut: ActividadPutService,
+      private authService: AuthService) {
     this.primengConfig.ripple = true;
     
   }
@@ -36,6 +43,9 @@ export class VistaActividadesComponent implements OnInit {
 
     this.curso = this.Estudiante.obtenerCurso();
 
+   
+    
+
     this.actividadPut.actRealizada;
     this.actividadPut.actNota;
     
@@ -43,10 +53,26 @@ export class VistaActividadesComponent implements OnInit {
       { label: 'Actividades', routerLink: ['/actividades']}
     ]);
     
+    this.getIdStudent();
     
     this.actividadesService.getActivity().then(data => this.activity = data);
   }
 
+  decodeToken() {
+    if (this.variable != undefined) {
+    this.decodedToken = jwt_decode(this.variable);
+    }
+  }
+
+  getIdStudent(){
+    let to: any = localStorage.getItem("token_estudiante");
+    let token = to;
+    let decoded: any = jwt_decode(token); 
+    let decoV = decoded['id'];
+    localStorage.setItem('idEst', decoV)
+  }
+ 
+  
   evalueAct( status: boolean): string{
     if(this.actividadPut.actRealizada == true){
         return 'success';

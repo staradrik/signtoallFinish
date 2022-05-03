@@ -9,6 +9,8 @@ import { EstudianteService } from './estudiante.service';
 })
 export class ObtenerActividadesService {
 
+  esProfe: any = (localStorage.getItem("es_profesor"));
+
   //español
   actEspannol: MenuItem[] = [
     {
