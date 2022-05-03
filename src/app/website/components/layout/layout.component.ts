@@ -1,6 +1,6 @@
+import { AuthService } from '../../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { ObtenerActividadesService } from 'src/app/services/obtener-actividades.service';
-import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-layout',
@@ -31,7 +31,5 @@ export class LayoutComponent implements OnInit {
   ngOnInit(): void {
     this.esPro = this.actividadesService.esProfe;
   }
-
-  logout(){}
 
 }

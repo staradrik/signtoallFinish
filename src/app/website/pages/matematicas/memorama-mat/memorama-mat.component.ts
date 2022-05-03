@@ -4,6 +4,8 @@ import { MatematicasService } from '../../../../services/matematicas.service';
 import { RutaBreadcrumService } from '../../../../services/ruta-breadcrum.service';
 import { MessageService } from 'primeng/api';
 import { Router } from '@angular/router';
+import { ActividadPutService } from 'src/app/services/actividad-put.service';
+import { actividadEstudiante } from 'src/app/models/Actividades';
 
 @Component({
   selector: 'app-memorama-mat',
@@ -53,11 +55,11 @@ public interval:any; //buu
 public timerFlag:boolean = false;
 
   video: string = "https://www.youtube.com/embed/-p6psebiTR8";
-  indicaciones: string[]= ["Ver el vídeo tutorial", "Poner atención","Encuentra la pareja de cada imagen.","Enviar tu intento"];
+  indicaciones: string[]= ["Ver el vídeo tutorial", "Poner atención","Encuentra la pareja de cada imagen."];
   constructor(private memoService:MatematicasService,
               private breadcrumbService: RutaBreadcrumService,
               private messageService: MessageService,
-              private router: Router) {
+              private router: Router, private actividadPut: ActividadPutService) {
 
    }
 
@@ -135,9 +137,27 @@ public timerFlag:boolean = false;
        sec.paired = true;
        this.pairs++;
        if(this.pairs === 6){
-         this.pauseTimer();
-         this.messageService.add({severity:'success', summary: 'Bien hecho', detail: 'Actividad realizada'});
-      setTimeout( ()=> { this.router.navigate(['/actividades'])}, 3000);
+        this.pauseTimer();
+        let existeCurso: any = localStorage.getItem("idCurso");
+        if(existeCurso != null || undefined){
+          let idE: any = localStorage.getItem("idEst");
+          let idA : string ="7";
+          let actividadHecha: actividadEstudiante = {
+            actividad_realizada:1,
+            nota:5
+          }
+          this.actividadPut.editActivity(idE, idA ,actividadHecha ).subscribe(edit =>{
+            console.log(edit)
+            actividadHecha = edit
+            this.actividadPut.actRealizada = true;
+            this.actividadPut.actNota = 5;
+            this.messageService.add({severity:'success', summary: 'Bien hecho', detail: 'Actividad realizada'});
+            setTimeout( ()=> { this.router.navigate(['/actividades'])}, 3000);
+          });
+        }else if (existeCurso == null || undefined){
+          this.messageService.add({severity:'success', summary: 'Bien hecho', detail: 'Actividad realizada'});
+        }
+ 
 
        }
          

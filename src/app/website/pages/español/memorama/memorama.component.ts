@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { RootObject, Image } from '../../../../models/Actividades';
+import { RootObject, Image, actividadEstudiante } from '../../../../models/Actividades';
 import { RutaBreadcrumService } from '../../../../services/ruta-breadcrum.service';
 import { EspannolService } from '../../../../services/espannol.service';
 import { MessageService } from 'primeng/api';
 import { Router } from '@angular/router';
+import { ActividadPutService } from 'src/app/services/actividad-put.service';
 
 @Component({
   selector: 'app-memorama',
@@ -69,7 +70,7 @@ export class MemoramaComponent implements OnInit {
     private breadcrumbService: RutaBreadcrumService,
     private españolService: EspannolService,
     private messageService: MessageService,
-    private router: Router
+    private router: Router, private actividadPut: ActividadPutService
     ) {   }
 
   ngOnInit(): void {
@@ -154,8 +155,27 @@ export class MemoramaComponent implements OnInit {
       
       if(this.pairs === 6){
         this.pauseTimer();
-        this.messageService.add({severity:'success', summary:'¡Excelente!', detail:'Has completado la actividad'});
-        setTimeout( ()=> { this.router.navigate(['/actividades'])}, 2100);
+
+        let existeCurso: any = localStorage.getItem("idCurso");
+      if(existeCurso != null || undefined){
+        let idE: any = localStorage.getItem("idEst");
+        let idA : string ="1";
+        let actividadHecha: actividadEstudiante = {
+          actividad_realizada:1,
+          nota:5
+        }
+        this.actividadPut.editActivity(idE, idA ,actividadHecha ).subscribe(edit =>{
+          console.log(edit)
+          actividadHecha = edit
+          this.actividadPut.actRealizada = true;
+          this.actividadPut.actNota = 5;
+          this.messageService.add({severity:'success', summary: 'Bien hecho', detail: 'Actividad realizada'});
+          setTimeout( ()=> { this.router.navigate(['/actividades'])}, 3000);
+        });
+      }else if (existeCurso == null || undefined){
+        this.messageService.add({severity:'success', summary: 'Bien hecho', detail: 'Actividad realizada'});
+      }
+  
       }  
     }
     first.clicked= false;

@@ -32,6 +32,10 @@ export class ObtenerActividadesService {
       icon: 'pi pi-search',
       items: [
         {
+          label: 'Todas',
+          routerLink: ['/actividades']
+        },
+        {
           label: 'Memorama',
           routerLink: ['Español/memoLetras']
         },
@@ -74,6 +78,10 @@ export class ObtenerActividadesService {
       label: 'Actividades', 
       icon: 'pi pi-search',
       items: [
+        {
+          label: 'Todas',
+          routerLink: ['/actividades']
+        },
         {
           label: 'Snake',
           routerLink: ['Matematicas/snake']
