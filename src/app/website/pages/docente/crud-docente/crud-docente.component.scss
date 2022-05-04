@@ -65,8 +65,21 @@
     .p-datatable-customers .p-datatable-tbody > tr > td .p-column-title {
         display: none;
     }
+    
 }
-
+nav{
+    margin-top: -110px;
+    margin-bottom: -30px;
+    width: 97vmax;
+    img{
+        margin-right: 0px;
+        box-shadow: 0px 0px 10.5px transparent;
+        background-color: #e7e5e5;
+    }
+}
+.flex{
+    width: 72vmax;
+}
 @media screen and (max-width: 960px) {
     :host ::ng-deep {
         .p-datatable {
@@ -104,5 +117,5 @@
             }
         }
     }
-
+    
 }

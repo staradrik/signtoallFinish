@@ -11,10 +11,13 @@ import { ObtenerActividadesService } from 'src/app/services/obtener-actividades.
     margin-right: -60px;
     margin-left: -60px;
     }
-    .colegio{
-    margin-top: -110px;
-    margin-bottom: -95px;
-    margin-right: -40px;
+    #content {
+        position: relative;
+    }
+    #content img {
+        position: absolute;
+        top: -29px;
+        right: -29px;
     }
     img{
       box-shadow: 0px 0px 10.5px transparent;

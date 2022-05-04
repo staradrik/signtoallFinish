@@ -4,7 +4,6 @@ import { Image, RootObject, ImgVocavulario } from '../models/Actividades';
 import { DIRECTION_DOWN,DIRECTION_UP,DIRECTION_LEFT,DIRECTION_RIGHT } from '../website/pages/matematicas/sliding-puzzle/defs';
 import { timer } from 'rxjs';
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -12,7 +11,6 @@ export class EspannolService {
   
   constructor(private http: HttpClient) {
     this.getImaMemo();
-    //this.getImaVoca();
    }
 
   //Actividades

@@ -7,7 +7,6 @@ import { Actividades, actividadEstudiante } from 'src/app/models/Actividades';
 import { ActividadPutService } from 'src/app/services/actividad-put.service';
 import { AuthService } from 'src/app/services/auth.service';
 import jwt_decode from 'jwt-decode';
-import { map } from 'rxjs';
 @Component({
   selector: 'app-vista-actividades',
   templateUrl: './vista-actividades.component.html',

@@ -2,7 +2,6 @@ import { Component, HostListener, OnInit } from '@angular/core';
 import { BoardServiceService } from 'src/app/services/board.service';
 //import { fromEvent} from 'rxjs';
 import { keyToDirection} from './defs';
-import { BreadcrumbComponent } from '../../../components/breadcrumb/breadcrumb.component';
 import { RutaBreadcrumService } from 'src/app/services/ruta-breadcrum.service';
 
 @Component({

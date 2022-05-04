@@ -20,6 +20,10 @@ export class DocenteServiceService {
         {
           label: 'Sobre Nosotros',
           routerLink: ['/actividades/sobreNosotros']
+        },
+        {
+          label: 'Cerrar sesión',
+          routerLink: ['/actividades/logout']
         }
       ]
     },
