@@ -36,24 +36,24 @@ export class ObtenerActividadesService {
           routerLink: ['/actividades']
         },
         {
-          label: 'Memorama',
-          routerLink: ['Español/memoLetras']
-        },
-        {
-          label: 'Abecedario',
-          routerLink: ['Español/abecedario']
-        },
-        {
-          label: 'Vocabulario',
-          routerLink: ['Español/vocabulario']
+          label: 'Ahorcado',
+          routerLink: ['Español/ahorcado']
         },
         {
           label: 'Rompecabezas',
           routerLink: ['Español/rompecabezas']
         },
         {
-          label: 'Ahorcado',
-          routerLink: ['Español/ahorcado']
+          label: 'Memorama',
+          routerLink: ['Español/memoLetras']
+        },
+        {
+          label: 'Vocabulario',
+          routerLink: ['Español/vocabulario']
+        },
+        {
+          label: 'Abecedario',
+          routerLink: ['Español/abecedario']
         }
       ]
     }
@@ -83,16 +83,16 @@ export class ObtenerActividadesService {
           routerLink: ['/actividades']
         },
         {
-          label: 'Snake',
-          routerLink: ['Matematicas/snake']
-        },
-        {
           label: 'Memorama',
           routerLink: ['Matematicas/memoMate']
         },
         {
           label: 'Rompecabezas',
           routerLink: ['Matematicas/rompeMate']
+        },
+        {
+          label: 'Snake',
+          routerLink: ['Matematicas/snake']
         },
         {
           label: 'Sudoku',
