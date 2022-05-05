@@ -137,15 +137,17 @@ router.post("/registrarE", async (req, res) => {
       );
       const id = studentId[0];
 
-      const rows = await pool.query(`SELECT id_actividad FROM actividad`);
+      const rows = await pool.query(`SELECT * FROM actividad`);
       const activity = rows[0];
 
       if (courseId[0].id_curso > 0 && courseId[0].id_curso < 3) {
         for (let item = 0; item < activity.length; item++) {
           await pool.query(
-            `INSERT INTO estudiante_actividad(id_estudiante, id_actividad, actividad_realizada, nota_actividad) VALUES("${
+            `INSERT INTO estudiante_actividad(id_estudiante, id_actividad, actividad_realizada, url_actividad, nota_actividad) VALUES("${
               id[0].id_estudiante
-            }","${activity[item].id_actividad}",${0},"${0}")`
+            }","${activity[item].id_actividad}",${0}, "${
+              activity[item].url_actividad
+            }", "${0}")`
           );
 
           if (activity[item].id_actividad >= 5) {
@@ -155,9 +157,11 @@ router.post("/registrarE", async (req, res) => {
       } else {
         for (let item = 5; item < activity.length; item++) {
           await pool.query(
-            `INSERT INTO estudiante_actividad(id_estudiante, id_actividad, actividad_realizada, nota_actividad) VALUES("${
+            `INSERT INTO estudiante_actividad(id_estudiante, id_actividad, actividad_realizada, url_actividad, nota_actividad) VALUES("${
               id[0].id_estudiante
-            }","${activity[item].id_actividad}",${0},"${0}")`
+            }","${activity[item].id_actividad}",${0}, "${
+              activity[item].url_actividad
+            }", "${0}")`
           );
         }
       }

@@ -50,7 +50,7 @@ router.get("/Actividades/:id_estudiante", async (req, res) => {
   const { id_estudiante } = req.params;
 
   const rows = await pool.query(
-    `SELECT estudiante.nombres, estudiante.apellidos, actividad.nombre_actividad, estudiante_actividad.nota_actividad, actividad.url_imagen FROM actividad, estudiante_actividad, estudiante WHERE estudiante_actividad.id_actividad = actividad.id_actividad AND estudiante_actividad.id_estudiante = estudiante.id_estudiante AND estudiante.id_estudiante = ${id_estudiante}`
+    `SELECT estudiante.nombres, estudiante.apellidos, actividad.nombre_actividad, estudiante_actividad.actividad_realizada, estudiante_actividad.nota_actividad, actividad.url_imagen, estudiante_actividad.url_actividad FROM actividad, estudiante_actividad, estudiante WHERE estudiante_actividad.id_actividad = actividad.id_actividad AND estudiante_actividad.id_estudiante = estudiante.id_estudiante AND estudiante.id_estudiante = ${id_estudiante}`
   );
 
   const activity = rows[0];
