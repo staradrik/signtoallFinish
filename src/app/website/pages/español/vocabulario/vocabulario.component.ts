@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { RutaBreadcrumService } from 'src/app/services/ruta-breadcrum.service';
 import { EspannolService } from '../../../../services/espannol.service';
-import { ImgVocavulario } from '../../../../models/Actividades';
+import { actividadEstudiante, ImgVocavulario } from '../../../../models/Actividades';
 import { MessageService } from 'primeng/api';
 import { Router } from '@angular/router';
+import { ActividadPutService } from 'src/app/services/actividad-put.service';
 
 @Component({
   selector: 'app-vocabulario',
@@ -11,6 +12,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./vocabulario.component.scss']
 })
 export class VocabularioComponent implements OnInit {
+  video: string = "https://www.youtube.com/embed/A7SM7vhta3s";
+  indicaciones: string[]= ["Ver el vídeo tutorial", "Poner atención","Selecciona el nombre del objeto"];
   imagen: ImgVocavulario = {
     id: 0,
     name: "",
@@ -29,7 +32,7 @@ export class VocabularioComponent implements OnInit {
   constructor(
     private messageService: MessageService,
     private router: Router,
-    public boardGame: EspannolService,
+    public boardGame: EspannolService, private actividadPut: ActividadPutService,
     private breadcrumbService: RutaBreadcrumService,
     private españolService: EspannolService
   ) {  }
@@ -121,8 +124,28 @@ export class VocabularioComponent implements OnInit {
       this.intento += 1;
     }else{ //en caso de ganar
       this.intento += 1;
-      this.messageService.add({severity:'success', summary:'Terminaste :)', detail:`Puntaje final: ${this.puntaje}`});
-      setTimeout( ()=> { this.router.navigate(['/actividades'])}, 2100);
+      let existeCurso: any = localStorage.getItem("idCurso");
+      if(existeCurso != null || undefined){
+        let idE: any = localStorage.getItem("idEst");
+        let idA : string ="2";
+        let actividadHecha: actividadEstudiante = {
+          actividad_realizada:1,
+          nota:5
+        }
+        this.actividadPut.editActivity(idE, idA ,actividadHecha ).subscribe(edit =>{
+          console.log(edit)
+          actividadHecha = edit
+          this.actividadPut.actRealizada = true;
+          this.actividadPut.actNota = 5;
+          this.messageService.add({severity:'success', summary:'Terminaste :)', detail:`Puntaje final: ${this.puntaje}`});
+          setTimeout( ()=> { this.router.navigate(['/actividades'])}, 3000);
+        });
+      }else if (existeCurso == null || undefined){
+        this.messageService.add({severity:'success', summary:'Terminaste :)', detail:`Puntaje final: ${this.puntaje}`});
+      }
+
+
+      
     }
     this.option = "";
   }

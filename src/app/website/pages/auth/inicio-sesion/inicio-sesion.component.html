@@ -1,37 +1,23 @@
 <main class="contenedor">
-  <img
-    [src]="'assets/images/authImagenes/MonoLuna.jpg'"
-    alt="MonoLuna Mono Luna"
-    class="img"/>
-  
+
+  <img [src]="'assets/images/authImagenes/MonoLuna.jpg'" alt="MonoLuna Mono Luna" class="img"/>
+
   <div class="form">
     <div class="subContenedor">
       <br>
       <div class="boton">
-        <button 
-        routerLink="/signup" 
-        pButton type="button" 
-        label="Registrarse" 
-        class="p-button-primary"
-        icon="pi pi-user" 
-        iconPos="left"
-        ></button>
+        <button  routerLink="/signup" pButton type="button" label="Registrarse" 
+          class="p-button-primary" icon="pi pi-user" iconPos="left">
+        </button>  
       </div>
           
-      <img
-        [src]="'assets/images/authImagenes/Logo.png'"
-        alt="MonoCohete Mono"
-        class="logo"
-      />
-
+      <img [src]="'assets/images/authImagenes/Logo.png'" alt="MonoCohete Mono" class="logo"/>
+       
       <p>Bienvenid@, por favor ingresa tus datos para poder ingresar</p>
       <p class="rol">Selecciona tu rol:</p>
 
       <div class="field col-12 form-element">
-        <p-selectButton 
-          [(ngModel)]="typeName"
-          [options]="types"
-          (onOptionClick)="changeType($event)">   
+        <p-selectButton [(ngModel)]="typeName" [options]="types" (onOptionClick)="changeType($event)">    
         </p-selectButton>
       </div>
 
@@ -46,4 +32,5 @@
       </div>
     </div>
   </div>
+  
 </main>

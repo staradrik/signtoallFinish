@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { VistaActividadesComponent } from './vista-actividades/vista-actividades.component';
 import { SobreNosotrosComponent } from './sobreNosotros/sobre-nosotros.component';
 import { LayoutComponent } from '../components/layout/layout.component';
+import { LogoutComponent } from '../components/logout/logout.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,7 @@ const routes: Routes = [
         loadChildren: () => import('./matematicas/matematicas.module').then(m => m.MatematicasModule),        
       },     
       {path: 'sobreNosotros', component: SobreNosotrosComponent},   
+      {path: 'logout', component: LogoutComponent}
     ]
   }
 ];

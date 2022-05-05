@@ -2,7 +2,9 @@ import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChange
 import { Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { MessageService } from 'primeng/api';
+import { actividadEstudiante } from 'src/app/models/Actividades';
 import { MatematicasService } from 'src/app/services/matematicas.service';
+import { ActividadPutService } from 'src/app/services/actividad-put.service';
 
 
 @Component({
@@ -26,7 +28,6 @@ export class GridComponent implements OnInit, OnChanges  {
   sudokuSubmitted: boolean = false;
 
   ngOnChanges(changes: SimpleChanges) {
-      console.log('called ng on changes')
       this.randomizeDisableCells(this.numberOfCellsDisabled);
   }
 
@@ -36,7 +37,8 @@ export class GridComponent implements OnInit, OnChanges  {
 
   constructor(private modalService: NgbModal,
       private sudokuService:MatematicasService,
-      private messageService: MessageService, private router: Router) {
+      private messageService: MessageService, private router: Router,
+      private actividadPut: ActividadPutService) {
 
   }
   ngOnInit() {
@@ -50,8 +52,28 @@ export class GridComponent implements OnInit, OnChanges  {
       if (this.isSolved() == true) {
           this.isFinished = true
 
+          let existeCurso: any = localStorage.getItem("idCurso");
+      if(existeCurso != null || undefined){
+        let idE: any = localStorage.getItem("idEst");
+        let idA : string ="9";
+        let actividadHecha: actividadEstudiante = {
+          actividad_realizada:1,
+          nota:5
+        }
+        this.actividadPut.editActivity(idE, idA ,actividadHecha ).subscribe(edit =>{
+          console.log(edit)
+          actividadHecha = edit
+          this.actividadPut.actRealizada = true;
+          this.actividadPut.actNota = 5;
           this.messageService.add({severity:'success', summary: 'Bien hecho', detail: 'Actividad realizada'});
           setTimeout( ()=> { this.router.navigate(['/actividades'])}, 3000);
+        });
+      }else if (existeCurso == null || undefined){
+        this.messageService.add({severity:'success', summary: 'Bien hecho', detail: 'Actividad realizada'});
+      }
+      
+
+
       } else {
           this.isFinished = false
       }

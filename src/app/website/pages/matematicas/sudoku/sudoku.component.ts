@@ -9,6 +9,8 @@ import { RutaBreadcrumService } from '../../../../services/ruta-breadcrum.servic
 })
 export class SudokuComponent implements OnInit {
 
+  video: string = "https://www.youtube.com/embed/qPrpgEptzS0";
+  indicaciones: string[]= ["Ver el vídeo tutorial", "Poner atención","Rellenar las casillas vacias con un número en cada de ellas, de forma de que en cada columna y fila esten los números 1-9 una sola vez.","Enviar tu intento"];
   name = "Sudoku";
 difficultyCells = 35;
 

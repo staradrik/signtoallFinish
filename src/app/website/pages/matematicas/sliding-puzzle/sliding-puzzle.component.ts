@@ -12,6 +12,8 @@ import { RutaBreadcrumService } from 'src/app/services/ruta-breadcrum.service';
 })
 export class SlidingPuzzleComponent implements OnInit {
 
+  video: string = "https://www.youtube.com/embed/060K-WoP5gU";
+  indicaciones: string[]= ["Ver el vídeo tutorial", "Poner atención","Siguiendo el paso a paso, oprime la casilla a mover para organizar la secuencia de números.","Enviar tu intento"];
   title = 'Fifteen Game';
 
   constructor(

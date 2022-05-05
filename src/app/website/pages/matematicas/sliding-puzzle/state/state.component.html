@@ -1,24 +1,29 @@
 <button
-    class="start"
+    pButton type="button" icon="pi pi-arrow-right" iconPos="left"
+    label="Inicia!"
     *ngIf="!boardServiceService.isInProgress()"
     (click)="boardServiceService.startGame()">
-  Inicia!
-</button>
-
-<button
-    class="stop"
-    *ngIf="boardServiceService.isInProgress()"
-    (click)="boardServiceService.initGame()">
-  Pausar
 </button>
 
 <div *ngIf="boardServiceService.isInProgress()">
   <span>Movimientos: {{ boardServiceService.movesCount }}</span>
+  <br>
   <span>Tiempo: {{ boardServiceService.elapsedSeconds }}</span>
 </div>
+<button
+    pButton type="button" icon="pi pi-times" iconPos="left"
+    class="p-button-secondary"
+    label="Pausar!"
+    *ngIf="boardServiceService.isInProgress() && boardServiceService.finished === false"
+    (click)="boardServiceService.initGame()">
+</button>
 
 <div *ngIf="boardServiceService.finished">
-  <span>Felicitaciones! Lo lograste en {{ boardServiceService.movesCount }} movimientos
-    y {{ boardServiceService.elapsedSeconds }} segundos!</span>
+  <button *ngIf="boardServiceService.isInProgress()"
+  (click)="ganar()"
+  pButton type="button" icon="pi pi-sign-out" iconPos="left"
+  class="p-button-success"
+  label="Salir!"
+  ></button>
 </div>
-
+<p-toast></p-toast>

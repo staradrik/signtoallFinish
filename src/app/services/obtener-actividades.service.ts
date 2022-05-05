@@ -9,6 +9,8 @@ import { EstudianteService } from './estudiante.service';
 })
 export class ObtenerActividadesService {
 
+  esProfe: any = (localStorage.getItem("es_profesor"));
+
   //español
   actEspannol: MenuItem[] = [
     {
@@ -18,6 +20,10 @@ export class ObtenerActividadesService {
         {
           label: 'Sobre Nosotros',
           routerLink: ['sobreNosotros']
+        },
+        {
+          label: 'Cerrar sesión',
+          routerLink: ['logout']
         }
       ]
     },
@@ -25,6 +31,10 @@ export class ObtenerActividadesService {
       label: 'Actividades', 
       icon: 'pi pi-search',
       items: [
+        {
+          label: 'Todas',
+          routerLink: ['/actividades']
+        },
         {
           label: 'Memorama',
           routerLink: ['Español/memoLetras']
@@ -57,6 +67,10 @@ export class ObtenerActividadesService {
         {
           label: 'Sobre Nosotros',
           routerLink: ['sobreNosotros']
+        },
+        {
+          label: 'Cerrar sesión',
+          routerLink: ['logout']
         }
       ]
     },
@@ -64,6 +78,10 @@ export class ObtenerActividadesService {
       label: 'Actividades', 
       icon: 'pi pi-search',
       items: [
+        {
+          label: 'Todas',
+          routerLink: ['/actividades']
+        },
         {
           label: 'Snake',
           routerLink: ['Matematicas/snake']

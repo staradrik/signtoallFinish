@@ -9,6 +9,8 @@ import { EspannolService } from '../../../../services/espannol.service';
 })
 export class AbcDeslizanteComponent implements OnInit {
 
+  video: string = "https://www.youtube.com/embed/jzy-MTdHsZk";
+  indicaciones: string[]= ["Ver el vídeo tutorial", "Poner atención","Ordena las letras"];
   constructor(
     public boardGame: EspannolService,
     private breadcrumbService: RutaBreadcrumService

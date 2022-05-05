@@ -1,10 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-
 import {AuthService} from "../../../../../services/auth.service"
-import { RegistroProfesor } from 'src/app/models/auth';
+import { Component} from '@angular/core';
 import { MessageService } from 'primeng/api';
+import { RegistroProfesor } from 'src/app/models/auth';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form-profesor',
@@ -21,21 +19,16 @@ export class FormProfesorComponent {
     password:""
   }
 
-  tipoDoc: [{name: string}];
   
-
-
-  constructor(private router: Router, private registroService: AuthService, private messageService: MessageService) { 
-              this.tipoDoc = [{name: 'C.C'}];}
+  constructor(private router: Router, private registroService: AuthService, private messageService: MessageService) { }
 
     registrarProfesor(){
       this.registroService.registroProfesor(this.registroProfesor).subscribe(
         res => {
           this.messageService.add({severity:'success', summary:'Registro exitoso', detail:'Puedes ingresar'});
-          setTimeout( ()=> { this.router.navigate(['/login'])}, 4000);
-          console.log(res);
+          setTimeout( ()=> { this.router.navigate(['/login'])}, 4000);       
         }, err =>{
-          console.error(err);
+          this.messageService.add({severity:'error', summary:'Registro fallido', detail:'Completa los datos'});
         }
       );
     }

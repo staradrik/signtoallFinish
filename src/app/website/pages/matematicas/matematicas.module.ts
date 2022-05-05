@@ -37,6 +37,7 @@ import { StateComponent } from './sliding-puzzle/state/state.component';
 import { TileComponent } from './sliding-puzzle/tile/tile.component';
 import { SlidingPuzzleComponent } from './sliding-puzzle/sliding-puzzle.component';
 import { GameBoardComponent } from './snake/game-board/game-board.component';
+import { sharedModule } from 'src/app/shared/shared.module';
 
 
 
@@ -75,6 +76,7 @@ import { GameBoardComponent } from './snake/game-board/game-board.component';
     PasswordModule,
     RadioButtonModule,
     SelectButtonModule,
+    sharedModule,
     QuicklinkModule
   ]
 })

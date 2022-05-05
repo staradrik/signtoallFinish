@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
 import { AuthService } from '../../../services/auth.service';
+import { Component, OnInit } from '@angular/core';
+import { ObtenerActividadesService } from 'src/app/services/obtener-actividades.service';
 
 @Component({
   selector: 'app-layout',
@@ -9,13 +10,26 @@ import { AuthService } from '../../../services/auth.service';
     margin-top: -60px;
     margin-right: -60px;
     margin-left: -60px;
+    }
+    .colegio{
+    margin-top: -110px;
+    margin-bottom: -95px;
+    margin-right: -40px;
+    }
+    img{
+      box-shadow: 0px 0px 10.5px transparent;
+      background-color: #e7e5e5;
     }`
   ]
 })
-export class LayoutComponent {
+export class LayoutComponent implements OnInit {
 
-  constructor(public authService:AuthService) { }
+  esPro: string = "";
 
-  logout(){}
+  constructor(public authService:AuthService, private actividadesService: ObtenerActividadesService) { }
+  
+  ngOnInit(): void {
+    this.esPro = this.actividadesService.esProfe;
+  }
 
 }

@@ -28,15 +28,6 @@
 			"url": "/abecedario"					
 		},
         {
-			"id": "1002",
-			"name": "Vocabulario",
-			"image": "vocabulario.jpg",
-			"category": "Español",
-			"status": "SIN HACER",
-			"rating": 0,
-			"url": "/vocavulario"
-		},
-        {
 			"id": "1003",
 			"name": "Rompecabezas",
 			"image": "rompecabezas.jpg",
