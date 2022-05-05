@@ -16,22 +16,22 @@
 				<ng-template let-activity pTemplate="listItem">
 					<div class="col-12">
 						<div class="product-list-item ">
-							<div class="container">
-								<img class="image" [routerLink]="activity.category + '/' + activity.url" [src]="'assets/images/Act' + activity.category + '/' + activity.image"  [alt]="activity.name"/>
+							<div  [routerLink]=" activity.url_actividad" class="container">
+								<img class="image" [src]="'assets/images/ACTIVIDADES'  + '/' + activity.url_imagen"  />
 								<div class="midd">
-									<div class="text2">{{activity.name}}</div>
+									<div class="text2">{{activity.nombre_actividad}}</div>
 								</div>
 							</div>
 							<div class="product-list-detail">
-								<div class="product-name">{{activity.name}}
+								<div class="product-name">{{activity.nombre_actividad}}
 								</div>
-								<p-rating [ngModel]="activity.rating" [cancel]="false"></p-rating>
+								<p-rating [ngModel]="activity.nota_actividad" [cancel]="false"></p-rating>
 								
 							</div>
 							<div class="product-list-action">
 								<span class="product-price">
                                     <br>
-                                    <p-tag  styleClass="mr-4" [severity]="evalueAct(activity.status)"> {{activity.status ? "REALIZADA" : "SIN HACER"}}</p-tag>   
+                                   <p-tag  styleClass="mr-4" [severity]="evalueAct(activity.actividad_realizada)"> {{activity.actividad_realizada ? "REALIZADA" : "SIN HACER"}}</p-tag>     
                                 </span>
 								
 								<span></span>
@@ -44,17 +44,17 @@
 					<div class="col-12 md:col-6" >
 						<div class="product-grid-item card" >
 							<div class="product-grid-item-top">
-								<p-tag  styleClass="mr-4" [severity]="evalueAct(activity.status)"> {{actividadPut.actRealizada ? "REALIZADA" : "SIN HACER"}}</p-tag>   
+								<p-tag  styleClass="mr-4" [severity]="evalueAct(activity.actividad_realizada)"> {{activity.actividad_realizada ? "REALIZADA" : "SIN HACER"}}</p-tag>   
 							</div>
 							<div class="product-grid-item-content">
-								<div [routerLink]="activity.category + '/' + activity.url" class="container">
-									<img class="image" [src]="'assets/images/Act' + activity.category + '/' + activity.image"  [alt]="activity.name"/>
+								<div [routerLink]=" activity.url_actividad" class="container">
+									<img class="image" [src]="'assets/images/ACTIVIDADES'  + '/' + activity.url_imagen"  />
 									<div class="middle">
-										<div class="text">{{activity.name}}</div>
+										<div class="text">{{activity.nombre_actividad}}</div>
 									</div>
 								</div>
-								<div class="product-name">{{activity.name}}</div>
-								<p-rating [ngModel]="actividadPut.actNota" [cancel]="false"></p-rating>
+								<div class="product-name">{{activity.nombre_actividad}}</div>
+								<p-rating [ngModel]="activity.nota_actividad" [cancel]="false"></p-rating>
 							</div>
 						</div>
 					</div>

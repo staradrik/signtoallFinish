@@ -1,12 +1,23 @@
 
+// export interface Actividades {
+//     id?:string;
+//     name?:string;
+//     image?:string;
+//     category?:string;
+//     status?:string;
+//     rating?:number
+// }
+
 export interface Actividades {
-    id?:string;
-    name?:string;
-    image?:string;
-    category?:string;
-    status?:string;
-    rating?:number
+    actividad_realizada?: 0
+    apellidos?: string;
+    nombre_actividad?:  string;
+    nombres?:  string;
+    nota_actividad?: number;
+    url_actividad?:  string;
+    url_imagen?:  string;
 }
+
 
 export interface actividadEstudiante{
     id_estudiante?:string;
