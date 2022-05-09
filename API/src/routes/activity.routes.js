@@ -1,28 +1,11 @@
 const express = require("express");
 const router = express.Router();
 const pool = require("../database");
-const jwt = require("jsonwebtoken");
-
-const { jwtSecret } = require("../keys");
 
 router.put(
   "/actualizarActividad/:id_estudiante/:id_actividad",
   async (req, res) => {
     const { id_estudiante, id_actividad } = req.params;
-
-    // if (!req.headers.authorization) {
-    //   return res.status(401).send("No tiene autorización");
-    // }
-
-    // const token = req.headers.authorization.split(" ")[1];
-
-    // if (token === null) {
-    //   return res.status(401).send("No tiene autorización");
-    // }
-
-
-    // const payload = jwt.verify(token, jwtSecret);
-
 
     await pool.query(
       `UPDATE estudiante_actividad SET actividad_realizada = "${req.body.actividad_realizada}", nota_actividad = "${req.body.nota}" WHERE id_estudiante = ${id_estudiante} AND id_actividad = ${id_actividad}`
