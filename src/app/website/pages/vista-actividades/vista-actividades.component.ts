@@ -17,6 +17,7 @@ export class VistaActividadesComponent implements OnInit {
   esPro: string = "";
 
   activity: Actividades[]=[];
+  activity2: Actividades={} as Actividades;
   actividadE: actividadEstudiante[] =[];
   actividadE1: actividadEstudiante = {}  as actividadEstudiante;
   sortOptions: SelectItem[] =[];
@@ -53,8 +54,23 @@ export class VistaActividadesComponent implements OnInit {
     ]);
     
     this.getIdStudent();
+
+    this.obtenerActividades();
     
-    this.actividadesService.getActivity().then(data => this.activity = data);
+    //this.actividadesService.getActivity().then(data => this.activity = data);
+  }
+
+
+  obtenerActividades(){
+    let to: any = localStorage.getItem('idEst');
+    let idE =  to;
+
+   this.actividadPut.getActivity(idE).subscribe( actividades =>{
+     this.activity = actividades
+     this.activity2 
+     console.log(actividades)
+
+   })
   }
 
   decodeToken() {
@@ -72,11 +88,11 @@ export class VistaActividadesComponent implements OnInit {
   }
  
   
-  evalueAct( status: boolean): string{
-    if(this.actividadPut.actRealizada == true){
-        return 'success';
+  evalueAct( status: number): string{
+    if(this.activity2.actividad_realizada == 0){
+        return 'danger';
     }
-    return 'danger';
+    return 'success';
   }
 
   onSortChange(event: any) {

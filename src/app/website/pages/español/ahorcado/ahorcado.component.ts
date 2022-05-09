@@ -75,7 +75,7 @@ export class AhorcadoComponent implements OnInit {
       let existeCurso: any = localStorage.getItem("idCurso");
       if(existeCurso != null || undefined){
         let idE: any = localStorage.getItem("idEst");
-        let idA : string ="5";
+        let idA : string ="3";
         let actividadHecha: actividadEstudiante = {
           actividad_realizada:1,
           nota:5
