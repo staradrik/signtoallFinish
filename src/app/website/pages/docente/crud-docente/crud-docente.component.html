@@ -47,7 +47,7 @@
                 <!-- <th style="width: 3rem">
                     <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
                 </th> -->
-                <th pSortableColumn="documento">Identificación </th>
+                <!-- <th pSortableColumn="documento">Identificación </th> -->
                 <th pSortableColumn="nombre">Nombres </th>           
                 <th pSortableColumn="apellido">Apellidos</th>
                 <th pSortableColumn="curso">Curso</th>   
@@ -60,7 +60,7 @@
                 <!-- <td>
                     <p-tableCheckbox [value]="lista"></p-tableCheckbox>
                 </td> -->
-                <td>
+                <!-- <td>
                     <p-cellEditor>
                         <ng-template pTemplate="input">
                             <input pInputText type="number" [(ngModel)]="lista.id_estudiante">
@@ -69,7 +69,7 @@
                             {{lista.id_estudiante}}
                         </ng-template>
                     </p-cellEditor>                 
-                </td>
+                </td> -->
                 
                 <td>
                     <p-cellEditor>
@@ -114,10 +114,10 @@
                     </p-cellEditor>   
                 </td>                                    -->
                 <td>
-                    <button *ngIf="!editing" pButton pRipple type="button" pInitEditableRow icon="pi pi-pencil" (click)="onRowEditInit(lista)" class="p-button-rounded p-button-text"></button>
+                    <button *ngIf="!editing" pButton pRipple type="button" pInitEditableRow icon="pi pi-pencil" (click)="onRowEditInit(lista)" pTooltip="Editar" class="p-button-rounded p-button-text"></button>
                     <button *ngIf="editing" pButton pRipple type="button" pSaveEditableRow icon="pi pi-check" (click)="onRowEditSave(lista)" class="p-button-rounded p-button-text p-button-success mr-2"></button>
                     <button *ngIf="editing" pButton pRipple type="button" pCancelEditableRow icon="pi pi-times" (click)="onRowEditCancel(lista, ri)" class="p-button-rounded p-button-text p-button-danger"></button>
-                    <button *ngIf="!editing" pButton pRipple type="button" pCancelEditableRow icon="pi pi-trash" (click)="deleteStudent(lista)" class="p-button-rounded p-button-text p-button-danger"></button>    
+                    <button *ngIf="!editing" pButton pRipple type="button" pCancelEditableRow icon="pi pi-trash" (click)="deleteStudent(lista)" pTooltip="Eliminar" class="p-button-rounded p-button-text p-button-danger"></button>    
                 </td>
             </tr>
         </ng-template>

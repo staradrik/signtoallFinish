@@ -98,7 +98,7 @@ export class CrudDocenteComponent implements OnInit {
     this.idE = regis.id_estudiante
     parseInt(this.idE)
     let registro: RegistroEstudiante = {
-      id_estudiante: regis.id_estudiante,
+     
       nombres: regis.nombres,
       apellidos: regis.apellidos,
       id_curso: regis.id_curso
