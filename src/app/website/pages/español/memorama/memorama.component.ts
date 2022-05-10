@@ -123,7 +123,6 @@ export class MemoramaComponent implements OnInit {
     if(!this.disableFuncFlag){
       //si no se hizo clic en ninguna foto
       if(this.firstImg === undefined || !this.firstImg.clicked){
-        console.log("primera imagen acaba de hacer clic "+ image.serialNumber);
         this.firstImg = image;
         this.firstImg.id = image.id;
         this.firstImg.clicked = true;
@@ -132,13 +131,10 @@ export class MemoramaComponent implements OnInit {
       //si ya se hizo clic en la primera foto
       else  if(this.firstImg !== undefined && this.firstImg.clicked && this.firstImg.serialNumber !== image.serialNumber)
       {
-        console.log("segunda imagen acaba de hacer clic "+ image.serialNumber);
         this.secImg = image;
         this.secImg.id = image.id;
         this.secImg.clicked = true;
         this.disableFuncFlag = true;
-        console.log("id primera img "+this.firstImg.id);
-        console.log("id segunda img "+this.secImg.id);
         this.steps +=1;
         setTimeout(()=>{this.checkEquality(this.firstImg,this.secImg);},1000);
       }
@@ -165,7 +161,6 @@ export class MemoramaComponent implements OnInit {
           nota:5
         }
         this.actividadPut.editActivity(idE, idA ,actividadHecha ).subscribe(edit =>{
-          console.log(edit)
           actividadHecha = edit
           this.actividadPut.actRealizada = true;
           this.actividadPut.actNota = 5;

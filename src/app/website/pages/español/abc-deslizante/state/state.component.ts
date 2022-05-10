@@ -28,7 +28,6 @@ export class StateComponent{
           nota:5
         }
         this.actividadPut.editActivity(idE, idA ,actividadHecha ).subscribe(edit =>{
-          console.log(edit)
           actividadHecha = edit
           this.actividadPut.actRealizada = true;
           this.actividadPut.actNota = 5;
@@ -38,8 +37,6 @@ export class StateComponent{
       }else if (existeCurso == null || undefined){
         this.messageService.add({severity:'success', summary:'Felicitaciones!', detail:`Felicitaciones! Lo lograste en ${this.boardGame.movesCount} movimientos y ${this.boardGame.elapsedSeconds}  segundos!`});
       }
-
-  
       this.clear();
   }
 

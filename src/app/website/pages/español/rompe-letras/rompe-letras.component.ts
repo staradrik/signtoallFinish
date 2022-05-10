@@ -111,7 +111,6 @@ export class RompeLetrasComponent implements OnInit {
           nota:5
         }
         this.actividadPut.editActivity(idE, idA ,actividadHecha ).subscribe(edit =>{
-          console.log(edit)
           actividadHecha = edit
           this.actividadPut.actRealizada = true;
           this.actividadPut.actNota = 5;
@@ -136,7 +135,6 @@ export class RompeLetrasComponent implements OnInit {
     for (i = 0; i < sorts.length; i++) {
       ind += sorts[i].toString() + ' , ';
     }
-    console.log(ind);
   }
 
   reRandomize(): void {
@@ -173,7 +171,6 @@ export class RompeLetrasComponent implements OnInit {
 
   initializeGame(): void {
     this.gridsize = Number(this.difficulty);
-    console.log(this.gridsize);
     this.boxSize = 100 / (this.gridsize - 1);
     this.index = 0;
     this.totalBoxes = this.gridsize * this.gridsize;

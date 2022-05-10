@@ -54,8 +54,6 @@ export class CrudDocenteComponent implements OnInit {
         this.messageService.add({severity:'success', summary: 'Nuevo estudiante', detail: 'Estudiante agregado', life: 1500});
         window.location.reload();
         
-      }, err =>{
-        console.error(err);
       }
     );
   }
@@ -81,8 +79,6 @@ export class CrudDocenteComponent implements OnInit {
               this.messageService.add({severity:'success', summary: 'Eliminación', detail: 'Estudiante borrado', life: 3000});
               window.location.reload();
               
-            }, err =>{
-              console.error(err);
             });         
           }
       });
@@ -103,10 +99,8 @@ export class CrudDocenteComponent implements OnInit {
       apellidos: regis.apellidos,
       id_curso: regis.id_curso
     }
-    console.log(registro)
     this.crud.editStudent( this.idE, registro).subscribe(edit =>{
 
-      console.log(edit)
         registro = edit
         delete this.clonedStudents[this.idE];
         this.messageService.add({severity:'success', summary: 'Actualización', detail:'Información actualizada', life: 3000});

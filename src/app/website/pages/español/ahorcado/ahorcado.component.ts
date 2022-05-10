@@ -54,7 +54,6 @@ export class AhorcadoComponent implements OnInit {
     this.gano = false;
     this.intentos = 0;
     this.res = tempRes;
-    console.log("fruta", this.res)
     this.frutaSrc = this.frutaArray[this.res].src;
     this.palabra = this.frutaArray[this.res].name;
     this.palabraOculta = '___ '.repeat(this.palabra.length);
@@ -81,7 +80,6 @@ export class AhorcadoComponent implements OnInit {
           nota:5
         }
         this.actividadPut.editActivity(idE, idA ,actividadHecha ).subscribe(edit =>{
-          console.log(edit)
           actividadHecha = edit
           this.actividadPut.actRealizada = true;
           this.actividadPut.actNota = 5;
@@ -91,8 +89,6 @@ export class AhorcadoComponent implements OnInit {
       }else if (existeCurso == null || undefined){
         this.messageService.add({severity:'success', summary: 'Bien hecho', detail: 'Actividad realizada'});
       }
-      
-      
     }
     if ( this.intentos >= 9 ){
       this.perdio = true;

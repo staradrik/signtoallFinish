@@ -32,9 +32,8 @@ export class VistaActividadesComponent implements OnInit {
   
   constructor(private Estudiante: EstudianteService,
       private breadcrumbService: RutaBreadcrumService,
-      private primengConfig: PrimeNGConfig,
-      private actividadesService: ObtenerActividadesService,  public actividadPut: ActividadPutService,
-      private authService: AuthService) {
+      private primengConfig: PrimeNGConfig,  
+      public actividadPut: ActividadPutService) {
     this.primengConfig.ripple = true;
     
   }
@@ -42,10 +41,6 @@ export class VistaActividadesComponent implements OnInit {
   ngOnInit(): void {
 
     this.curso = this.Estudiante.obtenerCurso();
-
-   
-    
-
     this.actividadPut.actRealizada;
     this.actividadPut.actNota;
     
@@ -68,8 +63,6 @@ export class VistaActividadesComponent implements OnInit {
    this.actividadPut.getActivity(idE).subscribe( actividades =>{
      this.activity = actividades
      this.activity2 
-     console.log(actividades)
-
    })
   }
 

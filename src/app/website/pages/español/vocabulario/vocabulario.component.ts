@@ -74,8 +74,6 @@ export class VocabularioComponent implements OnInit {
       case 4:
         this.n4 = this.imagenArray[res].name;
         break;
-      default:
-        console.log("algo salio mal :(")
     }
   }
 
@@ -95,7 +93,6 @@ export class VocabularioComponent implements OnInit {
       this.n3 = this.imagenArray[this.difRandomInt(this.randomInt(15,-1),res)].name;
       this.n4 = this.imagenArray[this.difRandomInt(this.randomInt(15,-1),res)].name;
       i++;
-      //console.log("loop:", i);
     }
   }
   
@@ -115,7 +112,6 @@ export class VocabularioComponent implements OnInit {
       if (this.option === this.imagen.name){ //respuesta correcta
         this.puntaje += 1
         this.messageService.add({severity:'success', summary:'Respuesta correcta :)', detail:`Puntaje: ${this.puntaje}`});
-        console.log("puntaje: ", this.puntaje);
         this.generate();
       }else{
         this.messageService.add({severity:'error', summary:'Respuesta incorrecta :(', detail:`Puntaje: ${this.puntaje}`});
@@ -133,7 +129,6 @@ export class VocabularioComponent implements OnInit {
           nota:5
         }
         this.actividadPut.editActivity(idE, idA ,actividadHecha ).subscribe(edit =>{
-          console.log(edit)
           actividadHecha = edit
           this.actividadPut.actRealizada = true;
           this.actividadPut.actNota = 5;
@@ -143,9 +138,6 @@ export class VocabularioComponent implements OnInit {
       }else if (existeCurso == null || undefined){
         this.messageService.add({severity:'success', summary:'Terminaste :)', detail:`Puntaje final: ${this.puntaje}`});
       }
-
-
-      
     }
     this.option = "";
   }
